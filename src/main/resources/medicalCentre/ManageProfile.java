@@ -28,9 +28,9 @@ public class ManageProfile extends javax.swing.JFrame {
         user1 = log.username1;
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
 
             ResultSet rp = stmt.executeQuery("select * from user where username='" + user1 + "'");
@@ -405,9 +405,9 @@ public class ManageProfile extends javax.swing.JFrame {
         // </editor-fold>
         Login lo = new Login();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
             // ResultSet rs=stmt.executeQuery("select * from user");

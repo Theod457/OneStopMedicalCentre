@@ -17,12 +17,12 @@ public class FixAppointment extends javax.swing.JFrame {
     public FixAppointment() {
         initComponents();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             ResultSet rp = stmt.executeQuery(
-                    "select * from appointmentbooking where appoint_id=(select max(appoint_id) from appointmentbooking)");
+                    "select * from appointment where appoint_id=(select max(appoint_id) from appointment)");
             rp.next();
             int nod = rp.getInt(2), nop = rp.getInt(3);
             // System.out.println(nod+"hi");
@@ -79,6 +79,8 @@ public class FixAppointment extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1550, 825));
+        setResizable(false);
 
         jPanel1.setBackground(java.awt.Color.lightGray);
 
@@ -95,7 +97,7 @@ public class FixAppointment extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addGap(497, 497, 497)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel2)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(

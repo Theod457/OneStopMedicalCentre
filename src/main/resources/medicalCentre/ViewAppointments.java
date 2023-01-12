@@ -22,12 +22,12 @@ public class ViewAppointments extends javax.swing.JFrame {
     public ViewAppointments() {
         initComponents();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             ResultSet rp = stmt.executeQuery(
-                    "select a.appoint_id,d.name,a.dateofapp,a.time from appointmentbooking as a,doctor as d where a.doc_id=d.doc_id and (a.dateofapp >=(select curdate()) and id="
+                    "select a.appoint_id,d.name,a.APPOINTMENT_DATE,a.time from appointment as a,doctor as d where a.doc_id=d.doc_id and (a.APPOINTMENT_DATE >=(select curdate()) and id="
                             + Login.id1 + ")");
             int x = 800;
             int w = 950;

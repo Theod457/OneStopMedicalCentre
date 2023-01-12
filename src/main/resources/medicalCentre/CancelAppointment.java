@@ -19,12 +19,12 @@ public class CancelAppointment extends javax.swing.JFrame {
     public CancelAppointment() {
         initComponents();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             // int y=0;
-            ResultSet rp = stmt.executeQuery("select * from appointmentbooking where appoint_id=" + ViewAppointments.r);
+            ResultSet rp = stmt.executeQuery("select * from appointment where appoint_id=" + ViewAppointments.r);
             rp.next();
             nor = rp.getInt(2);
             appid = rp.getInt(1);
@@ -257,12 +257,12 @@ public class CancelAppointment extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
-            stmt.executeUpdate("delete from appointmentbooking where appoint_id=" + appid);
+            stmt.executeUpdate("delete from appointment where appoint_id=" + appid);
             JOptionPane.showMessageDialog(rootPane, "Your Appointment is Cancelled");
             ChooseAppointment ca = new ChooseAppointment();
             dispose();

@@ -324,9 +324,9 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
             ResultSet rs = stmt.executeQuery("select * from user");
@@ -359,9 +359,9 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
         username1 = username.getText();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
             ResultSet rs = stmt.executeQuery("select * from user");
@@ -483,7 +483,7 @@ public class Register extends javax.swing.JFrame {
 
         System.out.println("signup");
         // try {
-        // Class.forName("com.mysql.jdbc.Driver");
+        // Class.forName("com.mysql.cj.jdbc.Driver");
         // Connection conn =
         // DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment","raghs","root");
         // Statement stmt=conn.createStatement();

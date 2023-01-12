@@ -20,12 +20,12 @@ public class EditAppointment extends javax.swing.JFrame {
     public EditAppointment() {
         initComponents();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             int y = 0;
-            ResultSet rp = stmt.executeQuery("select * from appointmentbooking where appoint_id=" + ViewAppointments.r);
+            ResultSet rp = stmt.executeQuery("select * from appointment where appoint_id=" + ViewAppointments.r);
             rp.next();
             nor = rp.getInt(2);
             nop = rp.getInt(3);
@@ -73,7 +73,12 @@ public class EditAppointment extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocationByPlatform(true);
+        setBounds(new java.awt.Rectangle(0, 0, 1600, 900));
+        setMaximumSize(new java.awt.Dimension(1500, 750));
+        setMinimumSize(new java.awt.Dimension(1500, 750));
+        setPreferredSize(new java.awt.Dimension(1550, 800));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1600, 900));
 
         jPanel1.setBackground(java.awt.Color.lightGray);
 
@@ -252,7 +257,7 @@ public class EditAppointment extends javax.swing.JFrame {
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(156, 156, 156))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -269,9 +274,9 @@ public class EditAppointment extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(259, 259, 259)
+                .addGap(76, 76, 76)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 165, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         pack();
@@ -282,13 +287,13 @@ public class EditAppointment extends javax.swing.JFrame {
         SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
         date2 = dcn.format(jCalendar1.getDate());
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
-            stmt.executeUpdate("update appointmentbooking set dateofapp = '" + date2 + "' where id =" + nop
-                    + " and dateofapp > (select curdate())");
+            stmt.executeUpdate("update appointment set APPOINTMENT_DATE = '" + date2 + "' where id =" + nop
+                    + " and APPOINTMENT_DATE > (select curdate())");
             JOptionPane.showMessageDialog(rootPane, "Your Appointment Date is changed to " + date2);
             ChooseAppointment ca = new ChooseAppointment();
             dispose();

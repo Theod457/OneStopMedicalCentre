@@ -52,9 +52,9 @@ public class SelectDoctor extends javax.swing.JFrame {
         // // System.out.println(array[i].toString());
         // }
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             ResultSet rp = stmt.executeQuery("select * from doctor where specailization='" + docname1 + "'");
             x = 70;
@@ -161,7 +161,7 @@ public class SelectDoctor extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(rootPane, "Please Select Date!!");
                         } else {
                             try {
-                                Class.forName("com.mysql.jdbc.Driver");
+                                Class.forName("com.mysql.cj.jdbc.Driver");
                                 Connection conn = DriverManager.getConnection(
                                         "jdbc:mysql://localhost:3306/doctorappointment", "raghs", "root");
                                 Statement stmt = conn.createStatement();
@@ -169,7 +169,7 @@ public class SelectDoctor extends javax.swing.JFrame {
                                 rp.next();
                                 money = rp.getInt(5);
                                 stmt.executeUpdate(
-                                        "insert into appointmentbooking(id,doc_id,dateofapp,time)" + "values("
+                                        "insert into appointment(id,doc_id,APPOINTMENT_DATE,time)" + "values("
                                                 + Login.id1 + "," + r + ",'" + date2 + "','" + rp.getTime(6) + "')");
                                 Payment f = new Payment();
                                 dispose();
@@ -182,7 +182,7 @@ public class SelectDoctor extends javax.swing.JFrame {
                 });
                 // if(SelectDoctor.l==1)
                 // {
-                // stmt.executeUpdate("insert into appointmentbooking(id,doc_id,dateofapp)"+
+                // stmt.executeUpdate("insert into appointment(id,doc_id,APPOINTMENT_DATE)"+
                 // "values("+Login.id1+","+doctor_id+",'"+date+"')");
                 //
                 // break;

@@ -19,13 +19,14 @@ public class AppointmentHistory extends javax.swing.JFrame {
     public AppointmentHistory() {
         initComponents();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment", "raghs",
-                    "root");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
+
             Statement stmt = conn.createStatement();
             ResultSet rp = stmt.executeQuery(
-                    "select doctor.name,appointmentbooking.dateofapp from appointmentbooking,doctor where doctor.doc_id=appointmentbooking.doc_id and (appointmentbooking.id="
-                            + Login.id1 + " and appointmentbooking.dateofapp<curdate())");
+                    "select doctor.DOCTOR_NAME, appointment.APPOINTMENT_DATE from appointment,doctor where doctor.DOCTOR_ID=appointment.DOCTOR_ID and (appointment.APPOINTMENT_ID="
+                            + Login.id1 + " and appointment.APPOINTMENT_DATE<curdate())");
             // rp.next();
             int x = 550, y = 350;
             Panel panel = new Panel();
