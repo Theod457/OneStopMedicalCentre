@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class EditAppointment extends javax.swing.JFrame {
     public static String date2;
-    public static int nor, nop;
+    public static int docID, userID;
 
     /**
      * Creates new form EditAppointment
@@ -25,18 +25,18 @@ public class EditAppointment extends javax.swing.JFrame {
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             int y = 0;
-            ResultSet rp = stmt.executeQuery("select * from appointment where appoint_id=" + ViewAppointments.r);
-            rp.next();
-            nor = rp.getInt(2);
-            nop = rp.getInt(3);
-            doa.setText(String.valueOf(rp.getString(4)));
+            ResultSet appointmentTable = stmt.executeQuery("select * from appointment where APPOINTMENT_ID=" + ViewAppointments.r);
+            appointmentTable.next();
+            docID = appointmentTable.getInt("DOCTOR_ID");
+            userID = appointmentTable.getInt("USER_ID");
+            doa.setText(String.valueOf(appointmentTable.getString("APPOINTMENT_DATE")));
 
-            ResultSet rd = stmt.executeQuery("select * from doctor where doc_id=" + nor);
+            ResultSet rd = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
 
             rd.next();
-            nod.setText(String.valueOf(rd.getString(2)));
+            nod.setText(String.valueOf(rd.getString("DOCTOR_NAME")));
 
-            ResultSet rs = stmt.executeQuery("select * from user where id=" + nop);
+            ResultSet rs = stmt.executeQuery("select * from user where USER_ID=" + userID);
             rs.next();
         } catch (Exception e) {
             e.printStackTrace();
@@ -292,7 +292,7 @@ public class EditAppointment extends javax.swing.JFrame {
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
-            stmt.executeUpdate("update appointment set APPOINTMENT_DATE = '" + date2 + "' where id =" + nop
+            stmt.executeUpdate("update appointment set APPOINTMENT_DATE = '" + date2 + "' where id =" + userID
                     + " and APPOINTMENT_DATE > (select curdate())");
             JOptionPane.showMessageDialog(rootPane, "Your Appointment Date is changed to " + date2);
             ChooseAppointment ca = new ChooseAppointment();

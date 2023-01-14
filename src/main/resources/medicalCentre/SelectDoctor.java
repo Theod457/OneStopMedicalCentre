@@ -20,11 +20,10 @@ import java.sql.Time;
  */
 public class SelectDoctor extends javax.swing.JFrame {
 
-    public static int id, p = 1, l = 0, r, money;
-    public static int doctor_id;
+    public static int docID, dateSelectCheck = 1, l = 0, r;
     public static Date date = new Date();
-    public static String date2;
-    public static Time time5;
+    public static String dateString;
+    public static Time time;
 
     // public static Statement stmt;
     /**
@@ -32,9 +31,9 @@ public class SelectDoctor extends javax.swing.JFrame {
      */
     public SelectDoctor() {
         initComponents();
-        int x, y, w, p;
+        int x, y, w, dateSelectCheck;
         date = null;
-        String docname1 = Specialisation.docname;
+        String docname1 = Specialisation.docName;
         String name;
         JLabel[] array = new JLabel[10];
 
@@ -131,8 +130,8 @@ public class SelectDoctor extends javax.swing.JFrame {
                 // .setText(String.valueOf(rp.getString(2)));
                 // name1=null;
                 y += 55;
-                id = rp.getInt("doc_id");
-                // System.out.println(id);
+                docID = rp.getInt("DOCTOR_ID");
+                // System.out.println(docID);
                 JButton b = new JButton(" Book Appointment " + rp.getInt(1));
                 b.setFont(new java.awt.Font("Ubuntu", 1, 19));
                 this.add(b);
@@ -140,7 +139,7 @@ public class SelectDoctor extends javax.swing.JFrame {
                 b.setBounds(80, y, 215, 55);
                 b.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        // System.out.println(id);
+                        // System.out.println(docID);
                         String o = b.getText();
                         int h = o.length();
                         // char ch = getCharFromString(o, h-1);
@@ -154,36 +153,34 @@ public class SelectDoctor extends javax.swing.JFrame {
                         }
                         // System.out.println(o.charAt(h-1));
                         // System.out.println(o);
-                        // time5 = rp.getTime("timmings");
-                        doctor_id = SelectDoctor.id;
-                        // System.out.println(SelectDoctor.id);
-                        if (SelectDoctor.p == 1) {
-                            JOptionPane.showMessageDialog(rootPane, "Please Select Date!!");
+                        // time = rp.getTime("DOCTOR_TIME");
+                        // System.out.println(SelectDoctor.docID);
+                        if (SelectDoctor.dateSelectCheck == 1) {
+                            JOptionPane.showMessageDialog(rootPane, "Please Select A Date");
                         } else {
                             try {
                                 Class.forName("com.mysql.cj.jdbc.Driver");
                                 Connection conn = DriverManager.getConnection(
                                         "jdbc:mysql://localhost:3306/doctorappointment", "raghs", "root");
                                 Statement stmt = conn.createStatement();
-                                ResultSet rp = stmt.executeQuery("select * from doctor where doc_id=" + r);
+                                ResultSet rp = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + r);
                                 rp.next();
-                                money = rp.getInt(5);
                                 stmt.executeUpdate(
-                                        "insert into appointment(id,doc_id,APPOINTMENT_DATE,time)" + "values("
-                                                + Login.id1 + "," + r + ",'" + date2 + "','" + rp.getTime(6) + "')");
+                                        "insert into appointment(USER_ID, DOCTOR_ID, APPOINTMENT_DATE, APPOINTMENT_TIME)" + "values("
+                                                + Login.userIDInput + "," + r + ",'" + dateString + "','" + rp.getTime("DOCTOR_TIME") + "')");
                                 Payment f = new Payment();
                                 dispose();
                                 f.setVisible(true);
-                            } catch (Exception p) {
-                                p.printStackTrace();
+                            } catch (Exception dateSelectCheck) {
+                                dateSelectCheck.printStackTrace();
                             }
                         }
                     }
                 });
                 // if(SelectDoctor.l==1)
                 // {
-                // stmt.executeUpdate("insert into appointment(id,doc_id,APPOINTMENT_DATE)"+
-                // "values("+Login.id1+","+doctor_id+",'"+date+"')");
+                // stmt.executeUpdate("insert into appointment(docID,DOCTOR_ID,APPOINTMENT_DATE)"+
+                // "values("+Login.userIDInput+","+doctor_id+",'"+date+"')");
                 //
                 // break;
                 // }
@@ -355,9 +352,9 @@ public class SelectDoctor extends javax.swing.JFrame {
         // TODO add your handling code here:
         Date comdate = new Date();
         String f;
-        p = 0;
+        dateSelectCheck = 0;
         SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
-        date2 = dcn.format(jCalendar1.getDate());
+        dateString = dcn.format(jCalendar1.getDate());
         // dcn.format(comdate);
         // System.out.println(comdate);
     }// GEN-LAST:event_jButton1ActionPerformed

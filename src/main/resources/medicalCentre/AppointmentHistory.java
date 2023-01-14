@@ -24,18 +24,18 @@ public class AppointmentHistory extends javax.swing.JFrame {
                     "WinMyDowSQL119");
 
             Statement stmt = conn.createStatement();
-            ResultSet rp = stmt.executeQuery(
+            ResultSet appointmentTable = stmt.executeQuery(
                     "select doctor.DOCTOR_NAME, appointment.APPOINTMENT_DATE from appointment,doctor where doctor.DOCTOR_ID=appointment.DOCTOR_ID and (appointment.APPOINTMENT_ID="
-                            + Login.id1 + " and appointment.APPOINTMENT_DATE<curdate())");
-            // rp.next();
+                            + Login.userIDInput + " and appointment.APPOINTMENT_DATE<curdate())");
+            // appointmentTable.next();
             int x = 550, y = 350;
             Panel panel = new Panel();
             panel.setBounds(40, 80, 200, 200);
             panel.setBackground(Color.yellow);
-            while (rp.next()) {
+            while (appointmentTable.next()) {
                 JLabel name2 = new JLabel();
                 name2.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                name2.setText("You had a Appointment with " + rp.getString(1) + " on " + rp.getString(2));
+                name2.setText("You had an appointment with " + appointmentTable.getString("DOCTOR_NAME") + " on " + appointmentTable.getString("APPOINTMENT_DATE"));
                 this.add(name2);
                 name2.setOpaque(true);
                 name2.setBounds(x, y, 600, 50);

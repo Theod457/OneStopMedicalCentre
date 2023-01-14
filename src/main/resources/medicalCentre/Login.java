@@ -14,19 +14,17 @@ import javax.swing.JOptionPane;
  * @author raghavendhra
  */
 public class Login extends javax.swing.JFrame {
-    public static String username1;
-    public static String password1;
+    public static String usernameInput;
+    public static String passwordInput;
     public static String user;
     public static String pass;
-    public static int p=0;
-    public static int id1;
+    public static int loginSuccess = 0;
+    public static int userIDInput;
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
-        
-        
     }
 
     /**
@@ -230,7 +228,7 @@ public class Login extends javax.swing.JFrame {
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
-        password1 = password.getText();
+        passwordInput = password.getText();
         
     }//GEN-LAST:event_passwordActionPerformed
 
@@ -243,7 +241,7 @@ public class Login extends javax.swing.JFrame {
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
-        username1 = username.getText();
+        usernameInput = username.getText();
         
     }//GEN-LAST:event_usernameActionPerformed
 
@@ -251,27 +249,28 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
          try {
            Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment","raghs","root");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
                 Statement stmt=conn.createStatement();  
                 //stmt.executeQuery("use doctorappointment");
                 ResultSet rs=stmt.executeQuery("select * from user");
                 while(rs.next())
                 {
                     //System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3)); 
-                    user = rs.getString(2);
-                    pass = rs.getString(3);
-                    if(user.equals(username1)&&pass.equals(password1))
+                    user = rs.getString("USER_NAME");
+                    pass = rs.getString("USER_PASS");
+                    if(user.equals(usernameInput)&&pass.equals(passwordInput))
                     {
                         //System.out.println("Welcome " + user);
-                        id1=rs.getInt(1);
+                        userIDInput=rs.getInt("USER_ID");
                         ChooseAppointment mp = new ChooseAppointment();
                         dispose();
-                        p=1;
+                        loginSuccess=1;
                         mp.setVisible(true);
                     }
                     
                 }
-                if(p==0)
+                if(loginSuccess==0)
                 {
                     JOptionPane.showMessageDialog(rootPane,"Wrong Password");
                 }
@@ -319,7 +318,7 @@ public class Login extends javax.swing.JFrame {
         //System.out.println(username1+"100000");
 //        try {
 //           Class.forName("com.mysql.cj.jdbc.Driver");
-//                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment","raghs","root");
+//                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root", "WinMyDowSQL119");
 //                Statement stmt=conn.createStatement();  
 //                //stmt.executeQuery("use doctorappointment");
 //                ResultSet rs=stmt.executeQuery("select * from user");
@@ -339,7 +338,7 @@ public class Login extends javax.swing.JFrame {
                 new Login().setVisible(true);
             }
         });
-               // System.out.println(username1+"100000");
+               // System.out.println(usernameInput+"100000");
 
     }
 

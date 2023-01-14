@@ -15,8 +15,8 @@ import java.sql.Statement;
  * @author raghavendhra
  */
 public class ManageProfile extends javax.swing.JFrame {
-    public static String user1;
-    public static int ii = 0;
+    public static String currUser;
+    public static int changePass = 0;
 
     /**
      * Creates new form ManageProfile
@@ -25,7 +25,7 @@ public class ManageProfile extends javax.swing.JFrame {
 
         initComponents();
         Login log = new Login();
-        user1 = log.username1;
+        currUser = log.usernameInput;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -33,16 +33,14 @@ public class ManageProfile extends javax.swing.JFrame {
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
 
-            ResultSet rp = stmt.executeQuery("select * from user where username='" + user1 + "'");
+            ResultSet rp = stmt.executeQuery("select * from user where USER_NAME='" + currUser + "'");
             rp.next();
 
-            String gen = rp.getString(4);
-
-            wgender.setText(String.valueOf(gen));
-            wbg.setText(String.valueOf(rp.getString(5)));
-            wcontact.setText(String.valueOf(rp.getString(6)));
-            wcity.setText(String.valueOf(rp.getString(7)));
-            wuser.setText(String.valueOf(rp.getString(2)));
+            wgender.setText(String.valueOf(rp.getString("USER_GENDER")));
+            wbg.setText(String.valueOf(rp.getString("USER_BLOOD")));
+            wcontact.setText(String.valueOf(rp.getString("USER_CONTACT")));
+            wcity.setText(String.valueOf(rp.getString("USER_ADDRESS")));
+            wuser.setText(String.valueOf(rp.getString("USER_NAME")));
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -346,7 +344,7 @@ public class ManageProfile extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        ii = 1;
+        changePass = 1;
         ForgotPassword fp = new ForgotPassword();
         dispose();
         fp.setVisible(true);
@@ -411,8 +409,8 @@ public class ManageProfile extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
             // ResultSet rs=stmt.executeQuery("select * from user");
-            // System.out.println(user1 + "MP");
-            ResultSet rp = stmt.executeQuery("select * from user where username='" + Login.username1 + "'");
+            // System.out.println(currUser + "MP");
+            ResultSet rp = stmt.executeQuery("select * from user where username='" + Login.usernameInput + "'");
             rp.next();
             System.out.println(rp.getString(3));
             conn.close();
@@ -427,7 +425,7 @@ public class ManageProfile extends javax.swing.JFrame {
             }
         });
         // ManageProfile l = new ManageProfile();
-        // System.out.println(l.user1);
+        // System.out.println(l.currUser);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

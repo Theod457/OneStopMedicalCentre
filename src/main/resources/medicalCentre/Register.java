@@ -11,16 +11,18 @@ import java.sql.Statement;
  * @author raghavendhra
  */
 public class Register extends javax.swing.JFrame {
-    public static String username1;
-    public static String password1;
-    public static String password2;
-    public static int t = 0, z = 1, y = 0;
-    public static String pass = null;
-    public static int pp = 1;
-    public static String gender1;
-    public static String blood;
-    public static String contact1;
-    public static String city1;
+    public static String usernameInput;
+    public static String passwordInput;
+    public static String repasswordInput;
+    public static int passwordCheck = 0;
+    public static int usernameCheck = 1;
+    public static int contactCheck = 0;
+    public static int duplicateUserCheck = 1;
+    public static String finalPasswordInput = null;
+    public static String genderInput;
+    public static String bloodInput;
+    public static String contactInput;
+    public static String cityInput;
 
     /**
      * Creates new form Signup
@@ -330,12 +332,12 @@ public class Register extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
             ResultSet rs = stmt.executeQuery("select * from user");
-            if (z == 0) {
+            if (usernameCheck == 0) {
                 JOptionPane.showMessageDialog(rootPane, "Please enter valid username");
             }
-            if (t == 1 && pp != 0 && z == 1 && y == 0) {
-                stmt.executeUpdate("insert into user(username,password,gender,blood_group,Contact,city)" + "values('"
-                        + username1 + "','" + pass + "','" + gender1 + "','" + blood + "'," + contact1 + ",'" + city1
+            if (passwordCheck == 1 && duplicateUserCheck == 1 && usernameCheck == 1 && contactCheck == 1) {
+                stmt.executeUpdate("insert into user(USER_NAME,USER_PASS,USER_GENDER,USER_BLOOD,USER_CONTACT,USER_CITY)" + "values('"
+                        + usernameInput + "','" + finalPasswordInput + "','" + genderInput + "','" + bloodInput + "'," + contactInput + ",'" + cityInput
                         + "')");
             }
             conn.close();
@@ -357,7 +359,7 @@ public class Register extends javax.swing.JFrame {
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
-        username1 = username.getText();
+        usernameInput = username.getText();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
@@ -368,48 +370,49 @@ public class Register extends javax.swing.JFrame {
             while (rs.next()) {
                 // {
                 // System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
-                if (username1.equals(rs.getString(2))) {
-                    pp = 0;
+                if (usernameInput.equals(rs.getString("USER_NAME"))) {
+                    duplicateUserCheck = 0;
                     // AlreadyExists ae = new AlreadyExists();
                     // ae.setVisible(true);
-                    JOptionPane.showMessageDialog(rootPane, "Username Exists, Please Enter another Username");
+                    JOptionPane.showMessageDialog(rootPane, "User Already Exists. Please Enter Another Username.");
                 }
             }
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        int k = username1.length(), l = 0;
+        int k = usernameInput.length(), l = 0;
+
+        // check the username to make sure that not all of them are symbols
         for (int i = 0; i < k; i++) {
-            if (username1.charAt(i) >= 48 && username1.charAt(i) <= 57) {
+            if (usernameInput.charAt(i) >= 33 && usernameInput.charAt(i) <= 57) {
                 l++;
             } else {
-                z = 1;
+                usernameCheck = 1;
             }
         }
         if (l == k) {
-            z = 0;
-            JOptionPane.showMessageDialog(rootPane, "Please Enter Valid Username");
+            usernameCheck = 0;
+            JOptionPane.showMessageDialog(rootPane, "Please Enter a Valid Username");
         }
-        // System.out.println(username1);
+        // System.out.println(usernameInput);
     }// GEN-LAST:event_usernameActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
-        password1 = password.getText();
-        // System.out.print(password1);
+        passwordInput = password.getText();
+        // System.out.print(passwordInput);
     }// GEN-LAST:event_passwordActionPerformed
 
     private void repasswordActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_repasswordActionPerformed
         // TODO add your handling code here:
-        password2 = repassword.getText();
-        // System.out.print(password2);
-        if (password1.equals(password2)) {
-            pass = password1;
-            // System.out.println(pass);
-            t = 1;
+        repasswordInput = repassword.getText();
+        if (passwordInput.equals(repasswordInput)) {
+            finalPasswordInput = passwordInput;
+            // System.out.println(finalPasswordInput);
+            passwordCheck = 1;
             // stmt.executeUpdate("insert into user(username,password)"+ "values('"+
-            // username1 + "','amrita')");
+            // usernameInput + "','amrita')");
         } else {
             JOptionPane.showMessageDialog(rootPane, "Password Does not Match!!");
             // System.out.println("Wrong Password");
@@ -418,24 +421,27 @@ public class Register extends javax.swing.JFrame {
 
     private void ContactActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ContactActionPerformed
         // TODO add your handling code here:
-        contact1 = Contact.getText();
-        int k = contact1.length();
-        if (k == 10) {
-            y = 1;
+        contactInput = Contact.getText();
+        int k = contactInput.length();
+        // input validation: All phone number globally can only have between 8 and 16 digits, including +
+        // Lowest: Niue +683-xxxx (8 digits)
+        // Highest: Austria +43-xxxxxxxxxxxxx (16 digits)
+        if (k >= 8 && k <= 16) {
+            contactCheck = 1;
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Phone Number Invaild");
+            JOptionPane.showMessageDialog(rootPane, "Phone Number is Invalid. Please Enter a Valid Phone Number.");
         }
     }// GEN-LAST:event_ContactActionPerformed
 
     private void cityActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cityActionPerformed
         // TODO add your handling code here:
-        city1 = city.getText();
+        cityInput = city.getText();
     }// GEN-LAST:event_cityActionPerformed
 
     private void gendersActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_gendersActionPerformed
         // TODO add your handling code here:
-        gender1 = (String) genders.getSelectedItem();
-        // System.out.println(gender1);
+        genderInput = (String) genders.getSelectedItem();
+        // System.out.println(genderInput);
     }// GEN-LAST:event_gendersActionPerformed
 
     private void gendersMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_gendersMouseClicked
@@ -444,7 +450,7 @@ public class Register extends javax.swing.JFrame {
 
     private void bloodg1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_bloodg1ActionPerformed
         // TODO add your handling code here:
-        blood = (String) bloodg1.getSelectedItem();
+        bloodInput = (String) bloodg1.getSelectedItem();
 
     }// GEN-LAST:event_bloodg1ActionPerformed
 
@@ -485,17 +491,17 @@ public class Register extends javax.swing.JFrame {
         // try {
         // Class.forName("com.mysql.cj.jdbc.Driver");
         // Connection conn =
-        // DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment","raghs","root");
+        // DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root", "WinMyDowSQL119");
         // Statement stmt=conn.createStatement();
         // //stmt.executeQuery("use doctorappointment");
         // //ResultSet rs=stmt.executeQuery("select * from user");
         //// while(rs.next())
         //// {
         //// System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
-        // if(t==1)
+        // if(passwordCheck==1)
         // {
         // stmt.executeUpdate("insert into user(username,password)"+ "values('"+
-        // username1 + "','"+pass+"')");
+        // usernameInput + "','"+finalPasswordInput+"')");
         // }
         // conn.close();
         // }

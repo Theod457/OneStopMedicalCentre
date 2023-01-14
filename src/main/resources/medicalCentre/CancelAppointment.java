@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author raghavendhra
  */
 public class CancelAppointment extends javax.swing.JFrame {
-    public static int appid, nor, nop;
+    public static int appID, docID;
 
     /**
      * Creates new form CancelAppointment
@@ -23,17 +23,16 @@ public class CancelAppointment extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
-            // int y=0;
-            ResultSet rp = stmt.executeQuery("select * from appointment where appoint_id=" + ViewAppointments.r);
-            rp.next();
-            nor = rp.getInt(2);
-            appid = rp.getInt(1);
-            dateofappo.setText(String.valueOf(rp.getString(4)));
+            ResultSet appointmentTable = stmt.executeQuery("select * from appointment where APPOINTMENT_ID=" + ViewAppointments.r);
+            appointmentTable.next();
+            docID = appointmentTable.getInt("DOCTOR_ID");
+            appID = appointmentTable.getInt("APPOINTMENT_ID");
+            dateofappo.setText(String.valueOf(appointmentTable.getString("APPOINTMENT_DATE")));
 
-            ResultSet rd = stmt.executeQuery("select * from doctor where doc_id=" + nor);
+            ResultSet rd = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
 
             rd.next();
-            nod.setText(String.valueOf(rd.getString(2)));
+            nod.setText(String.valueOf(rd.getString("DOCTOR_NAME")));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -261,9 +260,8 @@ public class CancelAppointment extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
-            // stmt.executeQuery("use doctorappointment");
-            stmt.executeUpdate("delete from appointment where appoint_id=" + appid);
-            JOptionPane.showMessageDialog(rootPane, "Your Appointment is Cancelled");
+            stmt.executeUpdate("delete from appointment where APPOINTMENT_ID=" + appID);
+            JOptionPane.showMessageDialog(rootPane, "Your Appointment Is Cancelled");
             ChooseAppointment ca = new ChooseAppointment();
             dispose();
             ca.setVisible(true);

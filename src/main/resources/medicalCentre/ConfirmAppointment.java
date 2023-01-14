@@ -9,12 +9,12 @@ import java.sql.Statement;
  *
  * @author raghavendhra
  */
-public class FixAppointment extends javax.swing.JFrame {
+public class ConfirmAppointment extends javax.swing.JFrame {
 
     /**
      * Creates new form FixAppointment
      */
-    public FixAppointment() {
+    public ConfirmAppointment() {
         initComponents();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -32,9 +32,9 @@ public class FixAppointment extends javax.swing.JFrame {
             doctorTable.next();
             nameofdoctor.setText(String.valueOf(doctorTable.getString("DOCTOR_NAME")));
 
-            ResultSet rs = stmt.executeQuery("select * from user where USER_ID=" + userID);
-            rs.next();
-            nameofpat.setText(String.valueOf(rs.getString(2)));
+            ResultSet userTable = stmt.executeQuery("select * from user where USER_ID=" + userID);
+            userTable.next();
+            nameofpat.setText(String.valueOf(userTable.getString(2)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -315,24 +315,25 @@ public class FixAppointment extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FixAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ConfirmAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FixAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ConfirmAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FixAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ConfirmAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FixAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(ConfirmAppointment.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         }
+        // </editor-fold>
         // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FixAppointment().setVisible(true);
+                new ConfirmAppointment().setVisible(true);
             }
         });
     }

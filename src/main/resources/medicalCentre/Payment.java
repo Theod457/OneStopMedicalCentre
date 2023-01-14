@@ -16,7 +16,7 @@ public class Payment extends javax.swing.JFrame {
      */
     public Payment() {
         initComponents();
-       money.setText(String.valueOf(SelectDoctor.money));
+//       money.setText(String.valueOf(SelectDoctor.money));
     }
 
     /**
@@ -244,7 +244,7 @@ public class Payment extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        FixAppointment fa = new FixAppointment();
+        ConfirmAppointment fa = new ConfirmAppointment();
         dispose();
         fa.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed

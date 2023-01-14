@@ -27,8 +27,8 @@ public class ViewAppointments extends javax.swing.JFrame {
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             ResultSet rp = stmt.executeQuery(
-                    "select a.appoint_id,d.name,a.APPOINTMENT_DATE,a.time from appointment as a,doctor as d where a.doc_id=d.doc_id and (a.APPOINTMENT_DATE >=(select curdate()) and id="
-                            + Login.id1 + ")");
+                    "select a.APPOINTMENT_ID,d.DOCTOR_NAME,a.APPOINTMENT_DATE,a.time from appointment as a,doctor as d where a.DOCTOR_ID=d.DOCTOR_ID and (a.APPOINTMENT_DATE >=(select curdate()) and id="
+                            + Login.userIDInput + ")");
             int x = 800;
             int w = 950;
             int y = 250;
@@ -89,14 +89,14 @@ public class ViewAppointments extends javax.swing.JFrame {
                 id = rp.getInt(1);
                 // System.out.println(id);
                 ChooseAppointment.ea = 1;
-                JButton b = new JButton("Edit Appointment " + id);
-                b.setFont(new java.awt.Font("Ubuntu", 1, 19));
-                this.add(b);
-                b.setOpaque(true);
-                b.setBounds(700, y, 210, 45);
-                b.addActionListener(new ActionListener() {
+                JButton editButton = new JButton("Edit Appointment " + id);
+                editButton.setFont(new java.awt.Font("Ubuntu", 1, 19));
+                this.add(editButton);
+                editButton.setOpaque(true);
+                editButton.setBounds(700, y, 210, 45);
+                editButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        String oo = b.getText();
+                        String oo = editButton.getText();
                         int h = oo.length();
                         // char ch = getCharFromString(o, h-1);
                         // System.out.println(h);
@@ -112,14 +112,14 @@ public class ViewAppointments extends javax.swing.JFrame {
                         o.setVisible(true);
                     }
                 });
-                JButton b1 = new JButton("Cancel Appointment" + id);
-                b1.setFont(new java.awt.Font("Ubuntu", 1, 19));
-                this.add(b1);
-                b1.setOpaque(true);
-                b1.setBounds(930, y, 230, 45);
-                b1.addActionListener(new ActionListener() {
+                JButton cancelButton = new JButton("Cancel Appointment" + id);
+                cancelButton.setFont(new java.awt.Font("Ubuntu", 1, 19));
+                this.add(cancelButton);
+                cancelButton.setOpaque(true);
+                cancelButton.setBounds(930, y, 230, 45);
+                cancelButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        String oo = b1.getText();
+                        String oo = cancelButton.getText();
                         int h = oo.length();
                         // char ch = getCharFromString(o, h-1);
                         // System.out.println(h);

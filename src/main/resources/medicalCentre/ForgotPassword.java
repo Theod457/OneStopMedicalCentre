@@ -17,12 +17,11 @@ import javax.swing.JOptionPane;
  * @author raghavendhra
  */
 public class ForgotPassword extends javax.swing.JFrame {
-    public static String username1;
-    public static String pass1;
-    public static String repass1;
-    public static String pass2;
+    public static String usernameInput;
+    public static String passInput;
+    public static String repassInput;
     public static int t=1;
-    public static int ii;
+    public static int changePass;
     
     /**
      * Creates new form ForgotPassword
@@ -219,34 +218,33 @@ public class ForgotPassword extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-        if(pass1.equals(repass1))
+        if(passInput.equals(repassInput))
         {
-            pass2 = pass1;
-            System.out.println(pass);
             t=1;
-           // stmt.executeUpdate("insert into user(username,password)"+ "values('"+ username1 + "','amrita')");
+           // stmt.executeUpdate("insert into user(username,password)"+ "values('"+ usernameInput + "','amrita')");
         }
         else
         {
-                JOptionPane.showMessageDialog(rootPane,"Wrong Password");
+                JOptionPane.showMessageDialog(rootPane,"Password does not match.");
         }
          try {
            Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doctorappointment","raghs","root");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");
                 Statement stmt=conn.createStatement();  
                 //stmt.executeQuery("use doctorappointment");
-                ResultSet rs=stmt.executeQuery("select * from user");
+                ResultSet userTable =stmt.executeQuery("select * from user");
               
                   if(t==1)
                   {
-                    stmt.executeUpdate("update user set password = '"+pass2+"' where username='"+username1+"'");
+                    stmt.executeUpdate("update user set USER_PASS = '"+repassInput+"' where USER_NAME='"+usernameInput+"'");
                   }
                 conn.close();
         }
          catch (Exception e) {
                     e.printStackTrace();
 		}
-         if(ManageProfile.ii==0)
+         if(ManageProfile.changePass==0)
          {
         Login login = new Login();
         dispose();
@@ -262,17 +260,17 @@ public class ForgotPassword extends javax.swing.JFrame {
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
-        username1 = username.getText();
+        usernameInput = username.getText();
     }//GEN-LAST:event_usernameActionPerformed
 
     private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
         // TODO add your handling code here:
-        pass1 = pass.getText();
+        passInput = pass.getText();
     }//GEN-LAST:event_passActionPerformed
 
     private void repassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repassActionPerformed
         // TODO add your handling code here:
-        repass1 = repass.getText();
+        repassInput = repass.getText();
     }//GEN-LAST:event_repassActionPerformed
 
     /**
