@@ -1,5 +1,7 @@
 package main.resources.medicalCentre;
 
+import java.io.*;
+import java.util.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -14,7 +16,7 @@ import javax.swing.JLabel;
  * @author raghavendhra
  */
 public class ViewAppointments extends javax.swing.JFrame {
-    public static int id, r;
+    public static int appID;
 
     /**
      * Creates new form ViewAppointments
@@ -27,15 +29,16 @@ public class ViewAppointments extends javax.swing.JFrame {
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             ResultSet rp = stmt.executeQuery(
-                    "select a.APPOINTMENT_ID,d.DOCTOR_NAME,a.APPOINTMENT_DATE,a.time from appointment as a,doctor as d where a.DOCTOR_ID=d.DOCTOR_ID and (a.APPOINTMENT_DATE >=(select curdate()) and id="
+                    "select a.APPOINTMENT_ID, d.DOCTOR_NAME, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME from appointment as a,doctor as d where a.DOCTOR_ID=d.DOCTOR_ID and (a.APPOINTMENT_DATE >=(select curdate()) and USER_ID="
                             + Login.userIDInput + ")");
             int x = 800;
             int w = 950;
             int y = 250;
-            // name1.setText(" " );
+
+            int labelButtonSequence = 1;
             while (rp.next()) {
-                rp.next();
-                rp.previous();
+//                rp.next();
+//                rp.previous();
                 JLabel name2 = new JLabel();
                 name2.setFont(new java.awt.Font("Ubuntu", 1, 17));
                 name2.setText("Name : ");
@@ -46,7 +49,7 @@ public class ViewAppointments extends javax.swing.JFrame {
 
                 JLabel name1 = new JLabel();
                 name1.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                name1.setText(String.valueOf(rp.getString(2)));
+                name1.setText(String.valueOf(rp.getString("d.DOCTOR_NAME")));
                 this.add(name1);
                 name1.setOpaque(true);
                 name1.setBounds(w, y, 200, 50);
@@ -62,7 +65,7 @@ public class ViewAppointments extends javax.swing.JFrame {
 
                 JLabel time = new JLabel();
                 time.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                time.setText(String.valueOf(rp.getString(3)));
+                time.setText(String.valueOf(rp.getString("a.APPOINTMENT_DATE")));
                 this.add(time);
                 time.setOpaque(true);
                 time.setBounds(w, y, 100, 50);
@@ -80,57 +83,61 @@ public class ViewAppointments extends javax.swing.JFrame {
 
                 JLabel gender = new JLabel();
                 gender.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                gender.setText(String.valueOf(rp.getString(4)));
+                gender.setText(String.valueOf(rp.getString("a.APPOINTMENT_TIME")));
                 this.add(gender);
                 gender.setOpaque(true);
                 gender.setBounds(w, y, 150, 50);
                 y += 55;
 
-                id = rp.getInt(1);
-                // System.out.println(id);
+                appID = rp.getInt("APPOINTMENT_ID");
+                // System.out.println(appID);
                 ChooseAppointment.ea = 1;
-                JButton editButton = new JButton("Edit Appointment " + id);
+                JButton editButton = new JButton("Edit Appointment");
+                editButton.setToolTipText(String.valueOf(rp.getInt("APPOINTMENT_ID")));
                 editButton.setFont(new java.awt.Font("Ubuntu", 1, 19));
                 this.add(editButton);
                 editButton.setOpaque(true);
                 editButton.setBounds(700, y, 210, 45);
                 editButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        String oo = editButton.getText();
-                        int h = oo.length();
-                        // char ch = getCharFromString(o, h-1);
-                        // System.out.println(h);
-                        if (h == 17) {
-                            r = oo.charAt(h - 1) - '0';
-                        } else {
-                            int b = oo.charAt(h - 2) - '0';
-                            int bb = oo.charAt(h - 1) - '0';
-                            r = (b * 10) + bb;
-                        }
+                        appID = Integer.valueOf(editButton.getToolTipText());
+//                        String oo = editButton.getText();
+//                        int h = oo.length();
+//                        // char ch = getCharFromString(o, h-1);
+//                        // System.out.println(h);
+//                        if (h == 17) {
+//                            r = oo.charAt(h - 1) - '0';
+//                        } else {
+//                            int b = oo.charAt(h - 2) - '0';
+//                            int bb = oo.charAt(h - 1) - '0';
+//                            r = (b * 10) + bb;
+//                        }
                         EditAppointment o = new EditAppointment();
                         dispose();
                         o.setVisible(true);
                     }
                 });
-                JButton cancelButton = new JButton("Cancel Appointment" + id);
+                JButton cancelButton = new JButton("Cancel Appointment");
+                cancelButton.setToolTipText(String.valueOf(rp.getInt("APPOINTMENT_ID")));
                 cancelButton.setFont(new java.awt.Font("Ubuntu", 1, 19));
                 this.add(cancelButton);
                 cancelButton.setOpaque(true);
                 cancelButton.setBounds(930, y, 230, 45);
                 cancelButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        String oo = cancelButton.getText();
-                        int h = oo.length();
-                        // char ch = getCharFromString(o, h-1);
-                        // System.out.println(h);
-                        // System.out.println(h);
-                        if (h == 19) {
-                            r = oo.charAt(h - 1) - '0';
-                        } else {
-                            int b = oo.charAt(h - 2) - '0';
-                            int bb = oo.charAt(h - 1) - '0';
-                            r = (b * 10) + bb;
-                        }
+                        appID = Integer.valueOf(cancelButton.getToolTipText());
+//                        String oo = cancelButton.getText();
+//                        int h = oo.length();
+//                        // char ch = getCharFromString(o, h-1);
+//                        // System.out.println(h);
+//                        // System.out.println(h);
+//                        if (h == 19) {
+//                            r = oo.charAt(h - 1) - '0';
+//                        } else {
+//                            int b = oo.charAt(h - 2) - '0';
+//                            int bb = oo.charAt(h - 1) - '0';
+//                            r = (b * 10) + bb;
+//                        }
                         CancelAppointment o = new CancelAppointment();
                         dispose();
                         o.setVisible(true);

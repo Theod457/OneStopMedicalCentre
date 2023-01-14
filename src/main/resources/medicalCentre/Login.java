@@ -247,20 +247,25 @@ public class Login extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
+        usernameActionPerformed(evt);
+        passwordActionPerformed(evt);
          try {
            Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                     "WinMyDowSQL119");
                 Statement stmt=conn.createStatement();  
                 //stmt.executeQuery("use doctorappointment");
+                // set loginSuccess to 0 so that the login will be re-authenticated for different users.
+                loginSuccess = 0;
                 ResultSet rs=stmt.executeQuery("select * from user");
                 while(rs.next())
                 {
-                    //System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3)); 
                     user = rs.getString("USER_NAME");
                     pass = rs.getString("USER_PASS");
+
                     if(user.equals(usernameInput)&&pass.equals(passwordInput))
                     {
+                        System.out.println(user + pass);
                         //System.out.println("Welcome " + user);
                         userIDInput=rs.getInt("USER_ID");
                         ChooseAppointment mp = new ChooseAppointment();
@@ -268,9 +273,8 @@ public class Login extends javax.swing.JFrame {
                         loginSuccess=1;
                         mp.setVisible(true);
                     }
-                    
                 }
-                if(loginSuccess==0)
+                if(loginSuccess == 0)
                 {
                     JOptionPane.showMessageDialog(rootPane,"Wrong Password");
                 }

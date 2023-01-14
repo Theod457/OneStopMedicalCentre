@@ -15,9 +15,11 @@ public class Register extends javax.swing.JFrame {
     public static String passwordInput;
     public static String repasswordInput;
     public static int passwordCheck = 0;
-    public static int usernameCheck = 1;
+    public static int rePasswordCheck = 0;
+    public static int usernameCheck = 0;
     public static int contactCheck = 0;
-    public static int duplicateUserCheck = 1;
+    public static int cityCheck = 0;
+    public static int duplicateUserCheck = 0;
     public static String finalPasswordInput = null;
     public static String genderInput;
     public static String bloodInput;
@@ -324,7 +326,13 @@ public class Register extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-
+        usernameActionPerformed(evt);
+        passwordActionPerformed(evt);
+        repasswordActionPerformed(evt);
+        bloodg1ActionPerformed(evt);
+        cityActionPerformed(evt);
+        gendersActionPerformed(evt);
+        ContactActionPerformed(evt);
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
@@ -332,22 +340,24 @@ public class Register extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
             ResultSet rs = stmt.executeQuery("select * from user");
-            if (usernameCheck == 0) {
-                JOptionPane.showMessageDialog(rootPane, "Please enter valid username");
-            }
-            if (passwordCheck == 1 && duplicateUserCheck == 1 && usernameCheck == 1 && contactCheck == 1) {
-                stmt.executeUpdate("insert into user(USER_NAME,USER_PASS,USER_GENDER,USER_BLOOD,USER_CONTACT,USER_CITY)" + "values('"
+//            System.out.println(passwordCheck);
+//            System.out.println(duplicateUserCheck);
+//            System.out.println(usernameCheck);
+//            System.out.println(contactCheck);
+            if (passwordCheck == 1 && rePasswordCheck == 1 && duplicateUserCheck == 1 && usernameCheck == 1 && contactCheck == 1 && cityCheck == 1) {
+                stmt.executeUpdate("insert into user(USER_NAME,USER_PASS,USER_GENDER,USER_BLOOD,USER_CONTACT,USER_ADDRESS)" + "values('"
                         + usernameInput + "','" + finalPasswordInput + "','" + genderInput + "','" + bloodInput + "'," + contactInput + ",'" + cityInput
                         + "')");
+                JOptionPane.showMessageDialog(rootPane, "Registration Successful");
+                Login login = new Login();
+                dispose();
+                login.setVisible(true);
             }
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        Login login = new Login();
-        dispose();
-        login.setVisible(true);
+        
     }// GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
@@ -359,6 +369,7 @@ public class Register extends javax.swing.JFrame {
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
+        System.out.println("Testing ");
         usernameInput = username.getText();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -367,60 +378,81 @@ public class Register extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
             ResultSet rs = stmt.executeQuery("select * from user");
-            while (rs.next()) {
-                // {
-                // System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
-                if (usernameInput.equals(rs.getString("USER_NAME"))) {
+
+            duplicateUserCheck = 0;
+            while (rs.next())
+            {
+                if (!usernameInput.equals(rs.getString("USER_NAME"))) {
+                    duplicateUserCheck = 1;
+                    continue;
+                }
+                else {
                     duplicateUserCheck = 0;
-                    // AlreadyExists ae = new AlreadyExists();
-                    // ae.setVisible(true);
                     JOptionPane.showMessageDialog(rootPane, "User Already Exists. Please Enter Another Username.");
+                    break;
                 }
             }
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        int k = usernameInput.length(), l = 0;
 
-        // check the username to make sure that not all of them are symbols
+        // set usernameCheck to 0 every time the "Register" button is clicked, so that multiple registration can be done during one program run
+        usernameCheck = 0;
+        int k = usernameInput.length(), l = 0;
+        // check the username to make sure that not all of them are symbols, and not empty
         for (int i = 0; i < k; i++) {
             if (usernameInput.charAt(i) >= 33 && usernameInput.charAt(i) <= 57) {
                 l++;
-            } else {
-                usernameCheck = 1;
-            }
+            } 
         }
         if (l == k) {
             usernameCheck = 0;
             JOptionPane.showMessageDialog(rootPane, "Please Enter a Valid Username");
+        }
+        else {
+            usernameCheck = 1;
         }
         // System.out.println(usernameInput);
     }// GEN-LAST:event_usernameActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
+        passwordCheck = 0;
         passwordInput = password.getText();
+        if (passwordInput.length() < 8 || passwordInput.length() > 20) {
+            passwordCheck = 0;
+            JOptionPane.showMessageDialog(rootPane, "Please Enter a Valid Password. Your Password Must Be Between 8 to 20 Characters Long.");
+        }
+        else{
+            passwordCheck = 1;
+        }
         // System.out.print(passwordInput);
     }// GEN-LAST:event_passwordActionPerformed
 
     private void repasswordActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_repasswordActionPerformed
         // TODO add your handling code here:
+        rePasswordCheck = 0;
         repasswordInput = repassword.getText();
-        if (passwordInput.equals(repasswordInput)) {
-            finalPasswordInput = passwordInput;
-            // System.out.println(finalPasswordInput);
-            passwordCheck = 1;
-            // stmt.executeUpdate("insert into user(username,password)"+ "values('"+
-            // usernameInput + "','amrita')");
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Password Does not Match!!");
-            // System.out.println("Wrong Password");
+        // check whether the passwords match if and only if the password is valid
+        if (passwordCheck == 1) {
+            if (passwordInput.equals(repasswordInput)) {
+                rePasswordCheck = 1;
+                finalPasswordInput = passwordInput;
+                // System.out.println(finalPasswordInput);
+                // stmt.executeUpdate("insert into user(username,password)"+ "values('"+
+                // usernameInput + "','amrita')");
+            } else {
+                rePasswordCheck = 0;
+                JOptionPane.showMessageDialog(rootPane, "Passwords Do not Match. Please Retype Your Passwords.");
+            }
         }
+
     }// GEN-LAST:event_repasswordActionPerformed
 
     private void ContactActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ContactActionPerformed
         // TODO add your handling code here:
+        contactCheck = 0;
         contactInput = Contact.getText();
         int k = contactInput.length();
         // input validation: All phone number globally can only have between 8 and 16 digits, including +
@@ -429,13 +461,21 @@ public class Register extends javax.swing.JFrame {
         if (k >= 8 && k <= 16) {
             contactCheck = 1;
         } else {
+            contactCheck = 0;
             JOptionPane.showMessageDialog(rootPane, "Phone Number is Invalid. Please Enter a Valid Phone Number.");
         }
     }// GEN-LAST:event_ContactActionPerformed
 
     private void cityActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cityActionPerformed
         // TODO add your handling code here:
+        cityCheck = 0;
         cityInput = city.getText();
+        if (cityInput.length() > 0) {
+            contactCheck = 1;
+        } else {
+            contactCheck = 0;
+            JOptionPane.showMessageDialog(rootPane, "Phone Number is Invalid. Please Enter a Valid Phone Number.");
+        }
     }// GEN-LAST:event_cityActionPerformed
 
     private void gendersActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_gendersActionPerformed
@@ -487,7 +527,6 @@ public class Register extends javax.swing.JFrame {
         // </editor-fold>
         // </editor-fold>
 
-        System.out.println("signup");
         // try {
         // Class.forName("com.mysql.cj.jdbc.Driver");
         // Connection conn =

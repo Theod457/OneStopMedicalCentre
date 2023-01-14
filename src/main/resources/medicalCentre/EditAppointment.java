@@ -25,7 +25,7 @@ public class EditAppointment extends javax.swing.JFrame {
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             int y = 0;
-            ResultSet appointmentTable = stmt.executeQuery("select * from appointment where APPOINTMENT_ID=" + ViewAppointments.r);
+            ResultSet appointmentTable = stmt.executeQuery("select * from appointment where APPOINTMENT_ID=" + ViewAppointments.appID);
             appointmentTable.next();
             docID = appointmentTable.getInt("DOCTOR_ID");
             userID = appointmentTable.getInt("USER_ID");
@@ -292,7 +292,7 @@ public class EditAppointment extends javax.swing.JFrame {
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
-            stmt.executeUpdate("update appointment set APPOINTMENT_DATE = '" + date2 + "' where id =" + userID
+            stmt.executeUpdate("update appointment set APPOINTMENT_DATE = '" + date2 + "' where USER_ID =" + userID
                     + " and APPOINTMENT_DATE > (select curdate())");
             JOptionPane.showMessageDialog(rootPane, "Your Appointment Date is changed to " + date2);
             ChooseAppointment ca = new ChooseAppointment();

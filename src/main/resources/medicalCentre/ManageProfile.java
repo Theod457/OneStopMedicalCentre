@@ -35,7 +35,6 @@ public class ManageProfile extends javax.swing.JFrame {
 
             ResultSet rp = stmt.executeQuery("select * from user where USER_NAME='" + currUser + "'");
             rp.next();
-
             wgender.setText(String.valueOf(rp.getString("USER_GENDER")));
             wbg.setText(String.valueOf(rp.getString("USER_BLOOD")));
             wcontact.setText(String.valueOf(rp.getString("USER_CONTACT")));

@@ -20,7 +20,7 @@ import java.sql.Time;
  */
 public class SelectDoctor extends javax.swing.JFrame {
 
-    public static int docID, dateSelectCheck = 1, l = 0, r;
+    public static int docID, dateSelectCheck = 0, l = 0, r;
     public static Date date = new Date();
     public static String dateString;
     public static Time time;
@@ -55,7 +55,7 @@ public class SelectDoctor extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
-            ResultSet rp = stmt.executeQuery("select * from doctor where specailization='" + docname1 + "'");
+            ResultSet rp = stmt.executeQuery("select * from doctor where DOCTOR_SPEC='" + docname1 + "'");
             x = 70;
             w = 260;
             y = 250;
@@ -73,7 +73,7 @@ public class SelectDoctor extends javax.swing.JFrame {
 
                 JLabel name1 = new JLabel();
                 name1.setFont(new java.awt.Font("Ubuntu", 1, 18));
-                name1.setText(String.valueOf(rp.getString(2)));
+                name1.setText(String.valueOf(rp.getString("DOCTOR_NAME")));
                 this.add(name1);
                 name1.setOpaque(true);
                 name1.setBounds(w, y, 200, 50);
@@ -89,7 +89,7 @@ public class SelectDoctor extends javax.swing.JFrame {
 
                 JLabel time = new JLabel();
                 time.setFont(new java.awt.Font("Ubuntu", 1, 18));
-                time.setText(String.valueOf(rp.getString(6)));
+                time.setText(String.valueOf(rp.getString("DOCTOR_TIME")));
                 this.add(time);
                 time.setOpaque(true);
                 time.setBounds(w, y, 100, 50);
@@ -105,14 +105,6 @@ public class SelectDoctor extends javax.swing.JFrame {
                 gender1.setBounds(x, y, 100, 50);
                 // y-=50;
 
-                JLabel gender = new JLabel();
-                gender.setFont(new java.awt.Font("Ubuntu", 1, 18));
-                gender.setText(String.valueOf(rp.getString(3)));
-                this.add(gender);
-                gender.setOpaque(true);
-                gender.setBounds(w, y, 150, 50);
-                y += 45;
-
                 JLabel amount1 = new JLabel();
                 amount1.setFont(new java.awt.Font("Ubuntu", 1, 18));
                 amount1.setText("Amount : ");
@@ -121,53 +113,53 @@ public class SelectDoctor extends javax.swing.JFrame {
                 amount1.setBounds(x, y, 100, 50);
                 // x+=50;
 
-                JLabel amount = new JLabel();
-                amount.setFont(new java.awt.Font("Ubuntu", 1, 18));
-                amount.setText(String.valueOf(rp.getString(5)));
-                this.add(amount);
-                amount.setOpaque(true);
-                amount.setBounds(w, y, 150, 50);
-                // .setText(String.valueOf(rp.getString(2)));
-                // name1=null;
-                y += 55;
+//                JLabel amount = new JLabel();
+//                amount.setFont(new java.awt.Font("Ubuntu", 1, 18));
+//                amount.setText(String.valueOf(rp.getString(5)));
+//                this.add(amount);
+//                amount.setOpaque(true);
+//                amount.setBounds(w, y, 150, 50);
+//                // .setText(String.valueOf(rp.getString(2)));
+//                // name1=null;
+//                y += 55;
                 docID = rp.getInt("DOCTOR_ID");
                 // System.out.println(docID);
-                JButton b = new JButton(" Book Appointment " + rp.getInt(1));
-                b.setFont(new java.awt.Font("Ubuntu", 1, 19));
-                this.add(b);
-                b.setOpaque(true);
-                b.setBounds(80, y, 215, 55);
-                b.addActionListener(new ActionListener() {
+                JButton bookButton = new JButton(" Book Appointment");
+                bookButton.setFont(new java.awt.Font("Ubuntu", 1, 19));
+                this.add(bookButton);
+                bookButton.setOpaque(true);
+                bookButton.setBounds(80, y, 215, 55);
+                bookButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         // System.out.println(docID);
-                        String o = b.getText();
-                        int h = o.length();
-                        // char ch = getCharFromString(o, h-1);
-                        System.out.println(h);
-                        if (h == 17) {
-                            r = o.charAt(h - 1) - '0';
-                        } else {
-                            int b = o.charAt(h - 2) - '0';
-                            int bb = o.charAt(h - 1) - '0';
-                            r = (b * 10) + bb;
-                        }
+//                        String o = bookButton.getText();
+//                        int h = o.length();
+//                        // char ch = getCharFromString(o, h-1);
+//                        System.out.println(h);
+//                        if (h == 17) {
+//                            r = o.charAt(h - 1) - '0';
+//                        } else {
+//                            int bookButton = o.charAt(h - 2) - '0';
+//                            int bb = o.charAt(h - 1) - '0';
+//                            r = (bookButton * 10) + bb;
+//                        }
                         // System.out.println(o.charAt(h-1));
                         // System.out.println(o);
                         // time = rp.getTime("DOCTOR_TIME");
                         // System.out.println(SelectDoctor.docID);
-                        if (SelectDoctor.dateSelectCheck == 1) {
+                        if (SelectDoctor.dateSelectCheck == 0) {
                             JOptionPane.showMessageDialog(rootPane, "Please Select A Date");
                         } else {
                             try {
                                 Class.forName("com.mysql.cj.jdbc.Driver");
-                                Connection conn = DriverManager.getConnection(
-                                        "jdbc:mysql://localhost:3306/doctorappointment", "raghs", "root");
+                                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                                        "WinMyDowSQL119");
                                 Statement stmt = conn.createStatement();
-                                ResultSet rp = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + r);
+                                ResultSet rp = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
                                 rp.next();
                                 stmt.executeUpdate(
                                         "insert into appointment(USER_ID, DOCTOR_ID, APPOINTMENT_DATE, APPOINTMENT_TIME)" + "values("
-                                                + Login.userIDInput + "," + r + ",'" + dateString + "','" + rp.getTime("DOCTOR_TIME") + "')");
+                                                + Login.userIDInput + "," + docID + ",'" + dateString + "','" + rp.getTime("DOCTOR_TIME") + "')");
                                 Payment f = new Payment();
                                 dispose();
                                 f.setVisible(true);
@@ -352,7 +344,7 @@ public class SelectDoctor extends javax.swing.JFrame {
         // TODO add your handling code here:
         Date comdate = new Date();
         String f;
-        dateSelectCheck = 0;
+        dateSelectCheck = 1;
         SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
         dateString = dcn.format(jCalendar1.getDate());
         // dcn.format(comdate);

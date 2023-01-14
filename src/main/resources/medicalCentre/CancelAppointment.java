@@ -23,7 +23,7 @@ public class CancelAppointment extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
-            ResultSet appointmentTable = stmt.executeQuery("select * from appointment where APPOINTMENT_ID=" + ViewAppointments.r);
+            ResultSet appointmentTable = stmt.executeQuery("select * from appointment where APPOINTMENT_ID=" + ViewAppointments.appID);
             appointmentTable.next();
             docID = appointmentTable.getInt("DOCTOR_ID");
             appID = appointmentTable.getInt("APPOINTMENT_ID");
@@ -75,7 +75,7 @@ public class CancelAppointment extends javax.swing.JFrame {
         jLabel1.setForeground(java.awt.Color.white);
         jLabel1.setText("Amrita Hospitals");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/onlinedoctorappointmentsystem/icon.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/hospitalIcon.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
