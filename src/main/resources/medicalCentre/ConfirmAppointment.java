@@ -21,26 +21,20 @@ public class FixAppointment extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
-            ResultSet rp = stmt.executeQuery(
-                    "select * from appointment where appoint_id=(select max(appoint_id) from appointment)");
-            rp.next();
-            int nod = rp.getInt(2), nop = rp.getInt(3);
-            // System.out.println(nod+"hi");
-            timeofappointment.setText(String.valueOf(rp.getString(4)));
-            time.setText(String.valueOf(rp.getString(5)));
-            ResultSet rd = stmt.executeQuery("select * from doctor where doc_id=" + nod);
-            // System.out.println(nop+"hii");
+            ResultSet appointmentTable = stmt.executeQuery(
+                    "select * from appointment where APPOINTMENT_ID=(select max(APPOINTMENT_ID) from appointment)");
+            appointmentTable.next();
+            int docID = appointmentTable.getInt("DOCTOR_ID"), userID = appointmentTable.getInt("USER_ID");
+            appDate.setText(String.valueOf(appointmentTable.getString("APPOINTMENT_DATE")));
+            appTime.setText(String.valueOf(appointmentTable.getString("APPOINTMENT_TIME")));
+            ResultSet doctorTable = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
 
-            rd.next();
-            nameofdoctor.setText(String.valueOf(rd.getString(2)));
+            doctorTable.next();
+            nameofdoctor.setText(String.valueOf(doctorTable.getString("DOCTOR_NAME")));
 
-            ResultSet rs = stmt.executeQuery("select * from user where id=" + nop);
+            ResultSet rs = stmt.executeQuery("select * from user where USER_ID=" + userID);
             rs.next();
-            // System.out.println(rd.getString(2));
-            // System.out.println(rs.getString(2));
             nameofpat.setText(String.valueOf(rs.getString(2)));
-            // timeofappointment.setText(String.valueOf(rp.getString(4)));
-            // time.setText(String.valueOf(rp.getString(5)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -68,18 +62,17 @@ public class FixAppointment extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         nameofdoctor = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        timeofappointment = new javax.swing.JLabel();
+        appDate = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        time = new javax.swing.JLabel();
+        appTime = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1550, 825));
         setResizable(false);
 
         jPanel1.setBackground(java.awt.Color.lightGray);
@@ -124,7 +117,7 @@ public class FixAppointment extends javax.swing.JFrame {
 
         jLabel6.setText("on ");
 
-        timeofappointment.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
+        appDate.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
 
         jLabel7.setText(" ,please make sure you reach before 15 minutes.");
 
@@ -134,7 +127,7 @@ public class FixAppointment extends javax.swing.JFrame {
 
         jLabel10.setText("at");
 
-        time.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
+        appTime.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -160,11 +153,11 @@ public class FixAppointment extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(timeofappointment, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(appDate, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(appTime, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)))))
                 .addContainerGap())
@@ -205,14 +198,14 @@ public class FixAppointment extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(timeofappointment, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(appDate, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(time, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(appTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGap(28, 28, 28)
                 .addComponent(jLabel11)
                 .addGap(58, 58, 58)
@@ -345,6 +338,8 @@ public class FixAppointment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel appDate;
+    private javax.swing.JLabel appTime;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -363,7 +358,5 @@ public class FixAppointment extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel nameofdoctor;
     private javax.swing.JLabel nameofpat;
-    private javax.swing.JLabel time;
-    private javax.swing.JLabel timeofappointment;
     // End of variables declaration//GEN-END:variables
 }
