@@ -27,7 +27,7 @@ public class CancelAppointment extends javax.swing.JFrame {
             appointmentTable.next();
             docID = appointmentTable.getInt("DOCTOR_ID");
             appID = appointmentTable.getInt("APPOINTMENT_ID");
-            dateofappo.setText(String.valueOf(appointmentTable.getString("APPOINTMENT_DATE")));
+            dateofappo.setText(String.valueOf(appointmentTable.getDate("APPOINTMENT_DATE")));
 
             ResultSet rd = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
 

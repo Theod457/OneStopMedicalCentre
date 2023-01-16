@@ -218,44 +218,53 @@ public class ForgotPassword extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-        if(passInput.equals(repassInput))
-        {
-            t=1;
-           // stmt.executeUpdate("insert into user(username,password)"+ "values('"+ usernameInput + "','amrita')");
+        usernameActionPerformed(evt);
+        passActionPerformed(evt);
+        repassActionPerformed(evt);
+
+        if (passInput.length() < 8 || passInput.length() > 20) {
+            JOptionPane.showMessageDialog(rootPane, "Please Enter a Valid Password. Your Password Must Be Between 8 to 20 Characters Long.");
         }
-        else
-        {
-                JOptionPane.showMessageDialog(rootPane,"Password does not match.");
-        }
-         try {
-           Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
-                    "WinMyDowSQL119");
-                Statement stmt=conn.createStatement();  
-                //stmt.executeQuery("use doctorappointment");
-                ResultSet userTable =stmt.executeQuery("select * from user");
-              
-                  if(t==1)
-                  {
+        else{
+            if(passInput.equals(repassInput))
+            {
+                t=1;
+                // stmt.executeUpdate("insert into user(username,password)"+ "values('"+ usernameInput + "','amrita')");
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                            "WinMyDowSQL119");
+                    Statement stmt=conn.createStatement();
+                    //stmt.executeQuery("use doctorappointment");
+                    ResultSet userTable =stmt.executeQuery("select * from user");
                     stmt.executeUpdate("update user set USER_PASS = '"+repassInput+"' where USER_NAME='"+usernameInput+"'");
-                  }
-                conn.close();
-        }
-         catch (Exception e) {
+                    JOptionPane.showMessageDialog(rootPane,"Password Changed Successfully");
+                    conn.close();
+                }
+                catch (Exception e) {
                     e.printStackTrace();
-		}
-         if(ManageProfile.changePass==0)
-         {
-        Login login = new Login();
-        dispose();
-        login.setVisible(true);
-         }
-         else
-         {
-             ManageProfile mp = new ManageProfile();
-             dispose();
-             mp.setVisible(true);
-         }
+                }
+                if(ManageProfile.changePass == 0) {
+                    Login login = new Login();
+                    dispose();
+                    login.setVisible(true);
+                }
+                else
+                {
+                    ManageProfile.changePass = 0;
+                    ManageProfile mp = new ManageProfile();
+                    dispose();
+                    mp.setVisible(true);
+                }
+            }
+            else {
+                JOptionPane.showMessageDialog(rootPane,"Password does not match.");
+            }
+        }
+
+
+
+
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed

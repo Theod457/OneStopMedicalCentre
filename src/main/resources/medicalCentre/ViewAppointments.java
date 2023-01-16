@@ -56,37 +56,37 @@ public class ViewAppointments extends javax.swing.JFrame {
                 // System.out.println(rp.getString(2));
                 y += 40;
 
-                JLabel time2 = new JLabel();
-                time2.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                time2.setText("Date : ");
-                this.add(time2);
-                time2.setOpaque(true);
-                time2.setBounds(x, y, 80, 50);
+                JLabel date2 = new JLabel();
+                date2.setFont(new java.awt.Font("Ubuntu", 1, 17));
+                date2.setText("Date : ");
+                this.add(date2);
+                date2.setOpaque(true);
+                date2.setBounds(x, y, 80, 50);
 
-                JLabel time = new JLabel();
-                time.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                time.setText(String.valueOf(rp.getString("a.APPOINTMENT_DATE")));
-                this.add(time);
-                time.setOpaque(true);
-                time.setBounds(w, y, 100, 50);
+                JLabel date = new JLabel();
+                date.setFont(new java.awt.Font("Ubuntu", 1, 17));
+                date.setText(String.valueOf(rp.getDate("a.APPOINTMENT_DATE")));
+                this.add(date);
+                date.setOpaque(true);
+                date.setBounds(w, y, 100, 50);
                 // x+=100;
                 y += 40;
                 // y-=50;
 
-                JLabel gender1 = new JLabel();
-                gender1.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                gender1.setText("Time : ");
-                this.add(gender1);
-                gender1.setOpaque(true);
-                gender1.setBounds(x, y, 100, 50);
+                JLabel time2 = new JLabel();
+                time2.setFont(new java.awt.Font("Ubuntu", 1, 17));
+                time2.setText("Time : ");
+                this.add(time2);
+                time2.setOpaque(true);
+                time2.setBounds(x, y, 100, 50);
                 // y-=50;
 
-                JLabel gender = new JLabel();
-                gender.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                gender.setText(String.valueOf(rp.getString("a.APPOINTMENT_TIME")));
-                this.add(gender);
-                gender.setOpaque(true);
-                gender.setBounds(w, y, 150, 50);
+                JLabel time = new JLabel();
+                time.setFont(new java.awt.Font("Ubuntu", 1, 17));
+                time.setText(String.valueOf(rp.getTime("a.APPOINTMENT_TIME")));
+                this.add(time);
+                time.setOpaque(true);
+                time.setBounds(w, y, 150, 50);
                 y += 55;
 
                 appID = rp.getInt("APPOINTMENT_ID");

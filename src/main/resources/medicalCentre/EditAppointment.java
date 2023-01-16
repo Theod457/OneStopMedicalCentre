@@ -29,7 +29,7 @@ public class EditAppointment extends javax.swing.JFrame {
             appointmentTable.next();
             docID = appointmentTable.getInt("DOCTOR_ID");
             userID = appointmentTable.getInt("USER_ID");
-            doa.setText(String.valueOf(appointmentTable.getString("APPOINTMENT_DATE")));
+            doa.setText(String.valueOf(appointmentTable.getDate("APPOINTMENT_DATE")));
 
             ResultSet rd = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
 

@@ -25,8 +25,8 @@ public class ConfirmAppointment extends javax.swing.JFrame {
                     "select * from appointment where APPOINTMENT_ID=(select max(APPOINTMENT_ID) from appointment)");
             appointmentTable.next();
             int docID = appointmentTable.getInt("DOCTOR_ID"), userID = appointmentTable.getInt("USER_ID");
-            appDate.setText(String.valueOf(appointmentTable.getString("APPOINTMENT_DATE")));
-            appTime.setText(String.valueOf(appointmentTable.getString("APPOINTMENT_TIME")));
+            appDate.setText(String.valueOf(appointmentTable.getDate("APPOINTMENT_DATE")));
+            appTime.setText(String.valueOf(appointmentTable.getTime("APPOINTMENT_TIME")));
             ResultSet doctorTable = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
 
             doctorTable.next();

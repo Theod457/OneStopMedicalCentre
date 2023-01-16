@@ -340,10 +340,13 @@ public class Register extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
             ResultSet rs = stmt.executeQuery("select * from user");
-//            System.out.println(passwordCheck);
-//            System.out.println(duplicateUserCheck);
-//            System.out.println(usernameCheck);
-//            System.out.println(contactCheck);
+            System.out.println(passwordCheck);
+            System.out.println(rePasswordCheck);
+            System.out.println(duplicateUserCheck);
+            System.out.println(usernameCheck);
+            System.out.println(contactCheck);
+            System.out.println(cityCheck);
+
             if (passwordCheck == 1 && rePasswordCheck == 1 && duplicateUserCheck == 1 && usernameCheck == 1 && contactCheck == 1 && cityCheck == 1) {
                 stmt.executeUpdate("insert into user(USER_NAME,USER_PASS,USER_GENDER,USER_BLOOD,USER_CONTACT,USER_ADDRESS)" + "values('"
                         + usernameInput + "','" + finalPasswordInput + "','" + genderInput + "','" + bloodInput + "'," + contactInput + ",'" + cityInput
@@ -471,9 +474,9 @@ public class Register extends javax.swing.JFrame {
         cityCheck = 0;
         cityInput = city.getText();
         if (cityInput.length() > 0) {
-            contactCheck = 1;
+            cityCheck = 1;
         } else {
-            contactCheck = 0;
+            cityCheck = 0;
             JOptionPane.showMessageDialog(rootPane, "Phone Number is Invalid. Please Enter a Valid Phone Number.");
         }
     }// GEN-LAST:event_cityActionPerformed

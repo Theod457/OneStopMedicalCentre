@@ -97,21 +97,21 @@ public class SelectDoctor extends javax.swing.JFrame {
                 y += 45;
                 // y-=50;
 
-                JLabel gender1 = new JLabel();
-                gender1.setFont(new java.awt.Font("Ubuntu", 1, 18));
-                gender1.setText("Gender : ");
-                this.add(gender1);
-                gender1.setOpaque(true);
-                gender1.setBounds(x, y, 100, 50);
-                // y-=50;
-
-                JLabel amount1 = new JLabel();
-                amount1.setFont(new java.awt.Font("Ubuntu", 1, 18));
-                amount1.setText("Amount : ");
-                this.add(amount1);
-                amount1.setOpaque(true);
-                amount1.setBounds(x, y, 100, 50);
-                // x+=50;
+//                JLabel gender1 = new JLabel();
+//                gender1.setFont(new java.awt.Font("Ubuntu", 1, 18));
+//                gender1.setText("Gender : ");
+//                this.add(gender1);
+//                gender1.setOpaque(true);
+//                gender1.setBounds(x, y, 100, 50);
+//                // y-=50;
+//
+//                JLabel amount1 = new JLabel();
+//                amount1.setFont(new java.awt.Font("Ubuntu", 1, 18));
+//                amount1.setText("Amount : ");
+//                this.add(amount1);
+//                amount1.setOpaque(true);
+//                amount1.setBounds(x, y, 100, 50);
+//                // x+=50;
 
 //                JLabel amount = new JLabel();
 //                amount.setFont(new java.awt.Font("Ubuntu", 1, 18));
@@ -125,6 +125,7 @@ public class SelectDoctor extends javax.swing.JFrame {
                 docID = rp.getInt("DOCTOR_ID");
                 // System.out.println(docID);
                 JButton bookButton = new JButton(" Book Appointment");
+                bookButton.setToolTipText(String.valueOf(rp.getInt("DOCTOR_ID")));
                 bookButton.setFont(new java.awt.Font("Ubuntu", 1, 19));
                 this.add(bookButton);
                 bookButton.setOpaque(true);
@@ -151,15 +152,16 @@ public class SelectDoctor extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(rootPane, "Please Select A Date");
                         } else {
                             try {
+                                int doctorIDInput = Integer.valueOf(bookButton.getToolTipText());
                                 Class.forName("com.mysql.cj.jdbc.Driver");
                                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                                         "WinMyDowSQL119");
                                 Statement stmt = conn.createStatement();
-                                ResultSet rp = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
-                                rp.next();
+                                ResultSet doctorTable = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + doctorIDInput);
+                                doctorTable.next();
                                 stmt.executeUpdate(
                                         "insert into appointment(USER_ID, DOCTOR_ID, APPOINTMENT_DATE, APPOINTMENT_TIME)" + "values("
-                                                + Login.userIDInput + "," + docID + ",'" + dateString + "','" + rp.getTime("DOCTOR_TIME") + "')");
+                                                + Login.userIDInput + "," + doctorIDInput + ",'" + dateString + "','" + doctorTable.getTime("DOCTOR_TIME") + "')");
                                 Payment f = new Payment();
                                 dispose();
                                 f.setVisible(true);
@@ -335,7 +337,7 @@ public class SelectDoctor extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-        ChooseAppointment s = new ChooseAppointment();
+        Specialisation s = new Specialisation();
         dispose();
         s.setVisible(true);
     }// GEN-LAST:event_jToggleButton1ActionPerformed
@@ -347,6 +349,7 @@ public class SelectDoctor extends javax.swing.JFrame {
         dateSelectCheck = 1;
         SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
         dateString = dcn.format(jCalendar1.getDate());
+        JOptionPane.showMessageDialog(rootPane, "Date Selection Confirmed");
         // dcn.format(comdate);
         // System.out.println(comdate);
     }// GEN-LAST:event_jButton1ActionPerformed

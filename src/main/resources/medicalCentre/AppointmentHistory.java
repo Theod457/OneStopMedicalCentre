@@ -35,7 +35,7 @@ public class AppointmentHistory extends javax.swing.JFrame {
             while (appointmentTable.next()) {
                 JLabel name2 = new JLabel();
                 name2.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                name2.setText("You had an appointment with " + appointmentTable.getString("DOCTOR_NAME") + " on " + appointmentTable.getString("APPOINTMENT_DATE"));
+                name2.setText("You had an appointment with " + appointmentTable.getString("DOCTOR_NAME") + " on " + appointmentTable.getDate("APPOINTMENT_DATE") + appointmentTable.getTime("APPOINTMENT_TIME"));
                 this.add(name2);
                 name2.setOpaque(true);
                 name2.setBounds(x, y, 600, 50);
