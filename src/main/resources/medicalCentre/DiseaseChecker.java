@@ -17,7 +17,7 @@ public class DiseaseChecker extends javax.swing.JFrame {
      */
     public DiseaseChecker() {
         initComponents();
-        Map<String, int> symptomCheck = new HashMap<String, int>();
+        Map<String, Integer> symptomCheck = new HashMap<String, Integer>();
         symptomCheck.put("Eye pain", 0);
         symptomCheck.put("Blurry Vision", 0);
         symptomCheck.put("Fever", 0);
@@ -44,7 +44,7 @@ public class DiseaseChecker extends javax.swing.JFrame {
 
         System.out.println("Sorry, we don't have any information regarding the possible diseases. ");
 
-        Map<String, Boolean> diseaseCheck = new HashMap<String, Boolean>();
+        Map<String, Boolean> doctorCheck = new HashMap<String, Boolean>();
 
 
     }
