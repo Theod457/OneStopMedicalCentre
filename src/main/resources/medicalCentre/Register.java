@@ -64,6 +64,8 @@ public class Register extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jLabel11 = new javax.swing.JLabel();
         identityNumber = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        Login = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -71,7 +73,6 @@ public class Register extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 153, 0));
         setForeground(new java.awt.Color(0, 102, 102));
-        setPreferredSize(new java.awt.Dimension(1550, 825));
         setResizable(false);
         setSize(new java.awt.Dimension(1550, 825));
 
@@ -83,6 +84,7 @@ public class Register extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel1.setText("Name (as per IC/Passport)");
 
+        username.setToolTipText("username must not contain only symbols");
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
@@ -92,7 +94,7 @@ public class Register extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel2.setText("Password");
 
-        password.setToolTipText("must be between 8-20 characters");
+        password.setToolTipText("password must be between 8-20 characters");
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
@@ -145,6 +147,7 @@ public class Register extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel7.setText("Contact");
 
+        Contact.setToolTipText("Contract must include country code. Example: +60142927219");
         Contact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ContactActionPerformed(evt);
@@ -152,9 +155,10 @@ public class Register extends javax.swing.JFrame {
         });
 
         jToggleButton1.setBackground(new java.awt.Color(0, 102, 51));
-        jToggleButton1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jToggleButton1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setText("SIGN UP");
+        jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -164,9 +168,26 @@ public class Register extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel11.setText("IC/Passport Number");
 
+        identityNumber.setToolTipText("Example: 020204075129 (IC), A12345678(Passport)");
         identityNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 identityNumberActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel9.setText("Already have an account?");
+
+        Login.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        Login.setForeground(new java.awt.Color(0, 0, 204));
+        Login.setText("Login now");
+        Login.setBorder(null);
+        Login.setBorderPainted(false);
+        Login.setContentAreaFilled(false);
+        Login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginActionPerformed(evt);
             }
         });
 
@@ -198,8 +219,14 @@ public class Register extends javax.swing.JFrame {
                             .addComponent(Contact, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
                             .addComponent(city)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(268, 268, 268)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(372, 372, 372)
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(390, 390, 390)
+                        .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(247, 247, 247)
+                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(153, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -241,9 +268,13 @@ public class Register extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(repassword, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(44, 44, 44)
                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(246, 246, 246))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Login)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -255,7 +286,8 @@ public class Register extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 102, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Back");
+        jButton1.setText("BACK");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -267,17 +299,17 @@ public class Register extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(218, 218, 218)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(54, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(24, 24, 24))
@@ -298,7 +330,9 @@ public class Register extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -421,13 +455,15 @@ public class Register extends javax.swing.JFrame {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                         "WinMyDowSQL119");
-                Statement stmt = conn.createStatement();
-                // stmt.executeQuery("use doctorappointment");
+                // ResultSet.TYPE_SCROLL_INSENSITIVE enables us to use rs.first() to move the pointer back to the start of the result set
+                // This is because the pointer is moved forward once during if(rs.next() == false)
+                Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery("select * from user");
                 if (rs.next() == false) {
                     duplicateUserCheck = 1;
                 }
                 else {
+                    rs.beforeFirst();
                     while (rs.next())
                     {
                         if (!IDInput.equals(rs.getString("USER_ID"))) {
@@ -464,14 +500,14 @@ public class Register extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
             ResultSet rs = stmt.executeQuery("select * from user");
-//            System.out.println("Checking");
-//            System.out.println(passwordCheck);
-//            System.out.println(rePasswordCheck);
-//            System.out.println(duplicateUserCheck);
-//            System.out.println(usernameCheck);
-//            System.out.println(contactCheck);
-//            System.out.println(addressCheck);
-//            System.out.println(IDCheck);
+            System.out.println("Checking");
+            System.out.println(passwordCheck);
+            System.out.println(rePasswordCheck);
+            System.out.println(duplicateUserCheck);
+            System.out.println(usernameCheck);
+            System.out.println(contactCheck);
+            System.out.println(addressCheck);
+            System.out.println(IDCheck);
 
             if (passwordCheck == 1 && rePasswordCheck == 1 && duplicateUserCheck == 1 && usernameCheck == 1 && contactCheck == 1 && addressCheck == 1 && IDCheck == 1) {
                 stmt.executeUpdate("insert into user(USER_ID, USER_NAME,USER_PASS,USER_GENDER,USER_BLOOD,USER_CONTACT,USER_ADDRESS)" + "values('"
@@ -496,6 +532,12 @@ public class Register extends javax.swing.JFrame {
         addressCheck = 0;
         duplicateUserCheck = 0;
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+        Login login = new Login();
+        dispose();
+        login.setVisible(true);
+    }//GEN-LAST:event_LoginActionPerformed
 
 
 
@@ -564,6 +606,7 @@ public class Register extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Contact;
+    private javax.swing.JButton Login;
     private javax.swing.JComboBox<String> bloodg1;
     private javax.swing.JTextField city;
     private javax.swing.JComboBox<String> genders;
@@ -579,6 +622,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JToggleButton jToggleButton1;
