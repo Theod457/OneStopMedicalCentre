@@ -519,9 +519,9 @@ public class Register extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Main ma = new Main();
+        FrontPage fp = new FrontPage();
         dispose();
-        ma.setVisible(true);
+        fp.setVisible(true);
     }// GEN-LAST:event_jButton1ActionPerformed
 
     private void identityNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_identityNumberActionPerformed

@@ -239,9 +239,9 @@ public class Login extends javax.swing.JFrame {
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
-        Main ma = new Main();
+        FrontPage fp = new FrontPage();
         dispose();
-        ma.setVisible(true);
+        fp.setVisible(true);
     }//GEN-LAST:event_BackActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
