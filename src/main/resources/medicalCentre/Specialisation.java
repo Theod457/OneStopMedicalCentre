@@ -306,9 +306,9 @@ public class Specialisation extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-        Main m = new Main();
+        FrontPage fp = new FrontPage();
         dispose();
-        m.setVisible(true);
+        fp.setVisible(true);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void NeurologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NeurologistActionPerformed
