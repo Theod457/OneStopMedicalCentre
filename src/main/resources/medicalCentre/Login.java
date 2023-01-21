@@ -16,10 +16,10 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
     public static String usernameInput;
     public static String passwordInput;
-    public static String user;
-    public static String pass;
+    public static String userIDInput;
+    public static int usernameCheck;
+    public static int passwordCheck;
     public static int loginSuccess = 0;
-    public static int userIDInput;
     /**
      * Creates new form Login
      */
@@ -39,7 +39,7 @@ public class Login extends javax.swing.JFrame {
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
@@ -59,15 +59,15 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
         jLabel5.setText("LOGIN");
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 102));
-        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("BACK");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setPreferredSize(new java.awt.Dimension(130, 57));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Back.setBackground(new java.awt.Color(0, 102, 102));
+        Back.setFont(new java.awt.Font("Ubuntu", 1, 19)); // NOI18N
+        Back.setForeground(new java.awt.Color(255, 255, 255));
+        Back.setText("BACK");
+        Back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Back.setPreferredSize(new java.awt.Dimension(130, 57));
+        Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BackActionPerformed(evt);
             }
         });
 
@@ -79,7 +79,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(291, 291, 291)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))
         );
         jPanel1Layout.setVerticalGroup(
@@ -87,7 +87,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(36, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13))
         );
@@ -216,22 +216,33 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
-        // TODO add your handling code here:
         passwordInput = password.getText();
-        
+        if (passwordInput.length() == 0){
+            passwordCheck = 0;
+            JOptionPane.showMessageDialog(rootPane, "Password field cannot be empty");
+        }
+        else{
+            passwordCheck = 1;
+        }
     }//GEN-LAST:event_passwordActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
         Main ma = new Main();
         dispose();
         ma.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BackActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
         usernameInput = username.getText();
-        
+        if (usernameInput.length() == 0){
+            usernameCheck = 0;
+            JOptionPane.showMessageDialog(rootPane, "Name field cannot be empty");
+        }
+        else{
+            usernameCheck = 1;
+        }
     }//GEN-LAST:event_usernameActionPerformed
 
     private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
@@ -249,34 +260,35 @@ public class Login extends javax.swing.JFrame {
                     "WinMyDowSQL119");
                 Statement stmt=conn.createStatement();  
                 //stmt.executeQuery("use doctorappointment");
-                // set loginSuccess to 0 so that the login will be re-authenticated for different users.
-                loginSuccess = 0;
+
                 ResultSet rs=stmt.executeQuery("select * from user");
                 while(rs.next())
                 {
-                    user = rs.getString("USER_NAME");
-                    pass = rs.getString("USER_PASS");
+                    String user = rs.getString("USER_NAME");
+                    String pass = rs.getString("USER_PASS");
 
                     if(user.equals(usernameInput)&&pass.equals(passwordInput))
                     {
-                        System.out.println(user + pass);
-                        //System.out.println("Welcome " + user);
-                        userIDInput=rs.getInt("USER_ID");
+                        userIDInput = rs.getString("USER_ID");
                         ChooseAppointment mp = new ChooseAppointment();
                         dispose();
                         loginSuccess=1;
                         mp.setVisible(true);
                     }
                 }
-                if(loginSuccess == 0)
+                if(loginSuccess == 0 && passwordCheck == 1 && usernameCheck == 1)
                 {
-                    JOptionPane.showMessageDialog(rootPane,"Wrong Password");
+                    JOptionPane.showMessageDialog(rootPane,"Wrong password or name");
                 }
                 conn.close();
         }
          catch (Exception e) {
                     e.printStackTrace();
 		}
+        // set all checks to 0 so that the login will be re-authenticated for different users.
+        usernameCheck = 0;
+        passwordCheck = 0;
+        loginSuccess = 0;
     }//GEN-LAST:event_LoginActionPerformed
 
     /**
@@ -333,9 +345,9 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JButton Login;
     private javax.swing.JButton Register;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
