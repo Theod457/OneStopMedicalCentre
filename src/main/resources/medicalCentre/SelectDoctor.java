@@ -1,4 +1,4 @@
-                                                                                                                      bnnnnnnnnnnnnnnnnnnn                                    package main.resources.medicalCentre;
+package main.resources.medicalCentre;
 
 import java.util.*;
 import java.awt.event.ActionEvent;
@@ -20,7 +20,7 @@ import java.sql.Time;
  */
 public class SelectDoctor extends javax.swing.JFrame {
 
-    public static int docID, dateSelectCheck = 0, l = 0, r;
+    public static int docID, dateSelectCheck = 0;
     public static Date date = new Date();
     public static String dateString;
     public static Time time;
