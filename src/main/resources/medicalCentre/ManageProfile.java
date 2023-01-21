@@ -16,7 +16,6 @@ import java.sql.Statement;
  */
 public class ManageProfile extends javax.swing.JFrame {
     public static String currUser;
-    public static int changePass = 0;
 
     /**
      * Creates new form ManageProfile
@@ -343,7 +342,6 @@ public class ManageProfile extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        changePass = 1;
         ForgotPassword fp = new ForgotPassword();
         dispose();
         fp.setVisible(true);
