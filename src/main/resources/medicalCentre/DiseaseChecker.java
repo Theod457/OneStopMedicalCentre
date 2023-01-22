@@ -1,5 +1,6 @@
-package medicalCentre;
+package main.resources.medicalCentre;
 
+import javax.swing.*;
 import java.util.*;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -11,40 +12,14 @@ import java.util.*;
  * @author ASUS
  */
 public class DiseaseChecker extends javax.swing.JFrame {
+    public static Map<String, Integer> symptomCheck = new HashMap<String, Integer>();
+    public static Map<String, Integer> diseaseCheck = new HashMap<String, Integer>();
 
     /**
      * Creates new form DiseaseChecker
      */
     public DiseaseChecker() {
         initComponents();
-        Map<String, Integer> symptomCheck = new HashMap<String, Integer>();
-        symptomCheck.put("Eye pain", 0);
-        symptomCheck.put("Blurry Vision", 0);
-        symptomCheck.put("Fever", 0);
-        symptomCheck.put("Cough", 0);
-        symptomCheck.put("Stomachache", 0);
-        symptomCheck.put("Headache", 0);
-        symptomCheck.put("Heartburn", 0);
-        symptomCheck.put("Tiredness", 0);
-        symptomCheck.put("Amnesia", 0);
-        symptomCheck.put("Chest Pain", 0);
-        symptomCheck.put("Shortness of Breath", 0);
-
-        Map<String, Integer> diseaseCheck = new HashMap<String, Integer>();
-        diseaseCheck.put("Coronary artery disease", 0);
-        diseaseCheck.put("Diabetes", 0);
-        diseaseCheck.put("Glaucoma", 0);
-        diseaseCheck.put("Tonsilitis", 0);
-        diseaseCheck.put("Ear infection", 0);
-        diseaseCheck.put("Eye infection", 0);
-        diseaseCheck.put("Lumbar disk disease", 0);
-        diseaseCheck.put("Coronary artery disease", 0);
-        diseaseCheck.put("Coronary artery disease", 0);
-        diseaseCheck.put("Coronary artery disease", 0);
-
-        System.out.println("Sorry, we don't have any information regarding the possible diseases. ");
-
-        Map<String, Boolean> doctorCheck = new HashMap<String, Boolean>();
 
 
     }
@@ -58,21 +33,374 @@ public class DiseaseChecker extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        EyePain = new javax.swing.JCheckBox();
+        BlurryVision = new javax.swing.JCheckBox();
+        Fever = new javax.swing.JCheckBox();
+        Cough = new javax.swing.JCheckBox();
+        SoreThroat = new javax.swing.JCheckBox();
+        Earache = new javax.swing.JCheckBox();
+        Stomachache = new javax.swing.JCheckBox();
+        Headache = new javax.swing.JCheckBox();
+        ChestPain = new javax.swing.JCheckBox();
+        BackPain = new javax.swing.JCheckBox();
+        LimbPain = new javax.swing.JCheckBox();
+        Heartburn = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
+        Fatigue = new javax.swing.JCheckBox();
+        TroubleHearing = new javax.swing.JCheckBox();
+        ShortnessOfBreath = new javax.swing.JCheckBox();
+        LimbNumbness = new javax.swing.JCheckBox();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        Back = new javax.swing.JButton();
+        Confirm = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(null);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/PersonCoughing.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(0, 390, 560, 441);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setText("Select the symptom(s) that you are currently experiencing");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(690, 170, 490, 25);
+
+        EyePain.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        EyePain.setText("Eye Pain");
+        EyePain.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EyePain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EyePainActionPerformed(evt);
+            }
+        });
+        jPanel2.add(EyePain);
+        EyePain.setBounds(680, 230, 95, 29);
+
+        BlurryVision.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        BlurryVision.setText("Blurry Vision");
+        BlurryVision.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(BlurryVision);
+        BlurryVision.setBounds(680, 290, 160, 29);
+
+        Fever.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Fever.setText("Fever");
+        Fever.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(Fever);
+        Fever.setBounds(680, 350, 69, 29);
+
+        Cough.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Cough.setText("Cough");
+        Cough.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(Cough);
+        Cough.setBounds(680, 410, 110, 29);
+
+        SoreThroat.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        SoreThroat.setText("Sore Throat");
+        SoreThroat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(SoreThroat);
+        SoreThroat.setBounds(680, 470, 123, 29);
+
+        Earache.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Earache.setText("Earache");
+        Earache.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(Earache);
+        Earache.setBounds(680, 530, 90, 29);
+
+        Stomachache.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Stomachache.setText("Stomachache");
+        Stomachache.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(Stomachache);
+        Stomachache.setBounds(680, 590, 137, 29);
+
+        Headache.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Headache.setText("Headache");
+        Headache.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(Headache);
+        Headache.setBounds(680, 650, 108, 29);
+
+        ChestPain.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ChestPain.setText("Chest Pain");
+        ChestPain.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(ChestPain);
+        ChestPain.setBounds(1070, 230, 130, 29);
+
+        BackPain.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        BackPain.setText("Back Pain");
+        BackPain.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(BackPain);
+        BackPain.setBounds(1070, 290, 106, 29);
+
+        LimbPain.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        LimbPain.setText("Limb Pain");
+        LimbPain.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LimbPain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LimbPainActionPerformed(evt);
+            }
+        });
+        jPanel2.add(LimbPain);
+        LimbPain.setBounds(1070, 350, 140, 29);
+
+        Heartburn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Heartburn.setText("Heartburn");
+        Heartburn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(Heartburn);
+        Heartburn.setBounds(1070, 410, 150, 29);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/hospitalIcon.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(0, 0, 170, 170);
+
+        Fatigue.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Fatigue.setText("Fatigue");
+        Fatigue.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(Fatigue);
+        Fatigue.setBounds(1070, 470, 110, 29);
+
+        TroubleHearing.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        TroubleHearing.setText("Trouble Hearing");
+        TroubleHearing.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(TroubleHearing);
+        TroubleHearing.setBounds(1070, 530, 180, 29);
+
+        ShortnessOfBreath.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ShortnessOfBreath.setText("Shortness of Breath");
+        ShortnessOfBreath.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(ShortnessOfBreath);
+        ShortnessOfBreath.setBounds(1070, 590, 210, 29);
+
+        LimbNumbness.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        LimbNumbness.setText("Limb Numbness");
+        LimbNumbness.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LimbNumbness.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LimbNumbnessActionPerformed(evt);
+            }
+        });
+        jPanel2.add(LimbNumbness);
+        LimbNumbness.setBounds(1070, 650, 180, 29);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
+        jLabel3.setText("DISEASE CHECKER");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(650, 60, 350, 50);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/DiseaseCheckerLogo.png"))); // NOI18N
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(610, 50, 50, 70);
+
+        Back.setBackground(new java.awt.Color(0, 102, 102));
+        Back.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        Back.setForeground(new java.awt.Color(255, 255, 255));
+        Back.setText("BACK");
+        Back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Back);
+        Back.setBounds(1360, 50, 130, 57);
+
+        Confirm.setBackground(new java.awt.Color(0, 102, 51));
+        Confirm.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
+        Confirm.setForeground(new java.awt.Color(255, 255, 255));
+        Confirm.setText("CONFIRM");
+        Confirm.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Confirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Confirm);
+        Confirm.setBounds(860, 700, 200, 49);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/DiseaseCheckerBackground.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(0, 0, 1550, 870);
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, 830));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void EyePainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EyePainActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_EyePainActionPerformed
+
+    private void LimbPainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimbPainActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LimbPainActionPerformed
+
+    private void LimbNumbnessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimbNumbnessActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LimbNumbnessActionPerformed
+
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+        Main m = new Main();
+        dispose();
+        m.setVisible(true);
+    }//GEN-LAST:event_BackActionPerformed
+
+    private void ConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmActionPerformed
+        // initialise the values inside the map, and reset it to 0 if it already exists
+        symptomCheck.put("Eye Pain", 0);
+        symptomCheck.put("Blurry Vision", 0);
+        symptomCheck.put("Fever", 0);
+        symptomCheck.put("Cough", 0);
+        symptomCheck.put("Sore Throat", 0);
+        symptomCheck.put("Earache", 0);
+        symptomCheck.put("Stomachache", 0);
+        symptomCheck.put("Headache", 0);
+        symptomCheck.put("Chest Pain", 0);
+        symptomCheck.put("Back Pain", 0);
+        symptomCheck.put("Limb Pain", 0);
+        symptomCheck.put("Heartburn", 0);
+        symptomCheck.put("Fatigue", 0);
+        symptomCheck.put("Trouble Hearing", 0);
+        symptomCheck.put("Shortness of Breath", 0);
+        symptomCheck.put("Limb Numbness", 0);
+
+        diseaseCheck.put("Coronary Artery Disease", 0);
+        diseaseCheck.put("Internal Blood Clots", 0);
+        diseaseCheck.put("Glaucoma", 0);
+        diseaseCheck.put("Tonsillitis", 0);
+        diseaseCheck.put("Ear Infection", 0);
+        diseaseCheck.put("Conjunctivitis", 0);
+        diseaseCheck.put("Herniated Disk", 0);
+        diseaseCheck.put("GERD", 0);
+        diseaseCheck.put("Bronchitis", 0);
+
+        // set the value in symptom check to 1 if the symptom is checked
+        if (EyePain.isSelected())
+            symptomCheck.put("Eye Pain", 1);
+        if (BlurryVision.isSelected())
+            symptomCheck.put("Blurry Vision", 1);
+        if (Fever.isSelected())
+            symptomCheck.put("Fever", 1);
+        if (Cough.isSelected())
+            symptomCheck.put("Cough", 1);
+        if (SoreThroat.isSelected())
+            symptomCheck.put("Sore Throat", 1);
+        if (Earache.isSelected())
+            symptomCheck.put("Earache", 1);
+        if (Stomachache.isSelected())
+            symptomCheck.put("Stomachache", 1);
+        if (Headache.isSelected())
+            symptomCheck.put("Headache", 1);
+        if (ChestPain.isSelected())
+            symptomCheck.put("Chest Pain", 1);
+        if (BackPain.isSelected())
+            symptomCheck.put("Back Pain", 1);
+        if (LimbPain.isSelected())
+            symptomCheck.put("Limb Pain", 1);
+        if (Heartburn.isSelected())
+            symptomCheck.put("Heartburn", 1);
+        if (Fatigue.isSelected())
+            symptomCheck.put("Fatigue", 1);
+        if (TroubleHearing.isSelected())
+            symptomCheck.put("Trouble Hearing", 1);
+        if (ShortnessOfBreath.isSelected())
+            symptomCheck.put("Shortness of Breath", 1);
+        if (LimbNumbness.isSelected())
+            symptomCheck.put("Limb Numbness", 1);
+
+        // associate the symptoms to the diseases
+        // the largest the value, the higher the probability of the disease
+        // symptoms with higher probability of indicating a certain disease has a probability increment of 3 (For example, Heartburn for GERD)
+        if (symptomCheck.get("Eye Pain") == 1) {
+            diseaseCheck.put("Glaucoma", diseaseCheck.get("Glaucoma") + 3);
+            diseaseCheck.put("Conjunctivitis", diseaseCheck.get("Conjunctivitis") + 1);
+        }
+        if (symptomCheck.get("Blurry Vision") == 1) {
+            diseaseCheck.put("Glaucoma", diseaseCheck.get("Glaucoma") + 1);
+            diseaseCheck.put("Conjunctivitis", diseaseCheck.get("Conjunctivitis") + 3);
+        }
+        if (symptomCheck.get("Fever") == 1) {
+            diseaseCheck.put("Bronchitis", diseaseCheck.get("Bronchitis") + 1);
+            diseaseCheck.put("Tonsillitis", diseaseCheck.get("Tonsillitis") + 1);
+        }
+        if (symptomCheck.get("Cough") == 1) {
+            diseaseCheck.put("Bronchitis", diseaseCheck.get("Bronchitis") + 1);
+            diseaseCheck.put("GERD", diseaseCheck.get("GERD") + 1);
+            diseaseCheck.put("Tonsillitis", diseaseCheck.get("Tonsillitis") + 1);
+            diseaseCheck.put("Internal Blood Clots", diseaseCheck.get("Internal Blood Clots") + 1);
+        }
+        if (symptomCheck.get("Sore Throat") == 1) {
+            diseaseCheck.put("Tonsillitis", diseaseCheck.get("Tonsillitis") + 1);
+            diseaseCheck.put("GERD", diseaseCheck.get("GERD") + 1);
+        }
+        if (symptomCheck.get("Earache") == 1) {
+            diseaseCheck.put("Ear Infection", diseaseCheck.get("Ear Infection") + 3);
+            diseaseCheck.put("Tonsillitis", diseaseCheck.get("Tonsillitis") + 1);
+        }
+        if (symptomCheck.get("Stomachache") == 1) {
+            diseaseCheck.put("GERD", diseaseCheck.get("GERD") + 1);
+        }
+        if (symptomCheck.get("Headache") == 1) {
+            diseaseCheck.put("Ear Infection", diseaseCheck.get("Ear Infection") + 1);
+            diseaseCheck.put("Tonsillitis", diseaseCheck.get("Tonsillitis") + 1);
+            diseaseCheck.put("Glaucoma", diseaseCheck.get("Glaucoma") + 1);
+        }
+        if (symptomCheck.get("Chest Pain") == 1) {
+            diseaseCheck.put("Bronchitis", diseaseCheck.get("Bronchitis") + 1);
+            diseaseCheck.put("GERD", diseaseCheck.get("GERD") + 1);
+            diseaseCheck.put("Internal Blood Clots", diseaseCheck.get("Internal Blood Clots") + 1);
+            diseaseCheck.put("Coronary Artery Disease", diseaseCheck.get("Coronary Artery Disease") + 3);
+        }
+        if (symptomCheck.get("Back Pain") == 1) {
+            diseaseCheck.put("Herniated Disk", diseaseCheck.get("Herniated Disk") + 3);
+        }
+        if (symptomCheck.get("Limb Pain") == 1) {
+            diseaseCheck.put("Herniated Disk", diseaseCheck.get("Herniated Disk") + 1);
+            diseaseCheck.put("Internal Blood Clots", diseaseCheck.get("Internal Blood Clots") + 3);
+        }
+        if (symptomCheck.get("Heartburn") == 1) {
+            diseaseCheck.put("GERD", diseaseCheck.get("GERD") + 3);
+        }
+        if (symptomCheck.get("Fatigue") == 1) {
+            diseaseCheck.put("Bronchitis", diseaseCheck.get("Ear Infection") + 1);
+            diseaseCheck.put("Coronary Artery Disease", diseaseCheck.get("Ear Infection") + 1);
+        }
+        if (symptomCheck.get("Trouble Hearing") == 1) {
+            diseaseCheck.put("Ear Infection", diseaseCheck.get("Ear Infection") + 3);
+        }
+        if (symptomCheck.get("Shortness of Breath") == 1) {
+            diseaseCheck.put("Bronchitis", diseaseCheck.get("Bronchitis") + 3);
+            diseaseCheck.put("Internal Blood Clots", diseaseCheck.get("Internal Blood Clots") + 1);
+            diseaseCheck.put("Coronary Artery Disease", diseaseCheck.get("Coronary Artery Disease") + 1);
+        }
+        if (symptomCheck.get("Limb Numbness") == 1) {
+            diseaseCheck.put("Herniated Disk", diseaseCheck.get("Herniated Disk") + 3);
+        }
+
+        boolean atLeastOneDisease = false;
+        for (int diseaseProbability: diseaseCheck.values()) {
+            if (diseaseProbability > 0)
+                atLeastOneDisease = true;
+        }
+        if (!atLeastOneDisease)
+            JOptionPane.showMessageDialog(rootPane,"Please select at least one symptom.");
+        else {
+            DiseaseCheckerResult dcr = new DiseaseCheckerResult();
+            dispose();
+            dcr.setVisible(true);
+        }
+    }//GEN-LAST:event_ConfirmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,5 +438,30 @@ public class DiseaseChecker extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
+    private javax.swing.JCheckBox BackPain;
+    private javax.swing.JCheckBox BlurryVision;
+    private javax.swing.JCheckBox ChestPain;
+    private javax.swing.JButton Confirm;
+    private javax.swing.JCheckBox Cough;
+    private javax.swing.JCheckBox Earache;
+    private javax.swing.JCheckBox EyePain;
+    private javax.swing.JCheckBox Fatigue;
+    private javax.swing.JCheckBox Fever;
+    private javax.swing.JCheckBox Headache;
+    private javax.swing.JCheckBox Heartburn;
+    private javax.swing.JCheckBox LimbNumbness;
+    private javax.swing.JCheckBox LimbPain;
+    private javax.swing.JCheckBox ShortnessOfBreath;
+    private javax.swing.JCheckBox SoreThroat;
+    private javax.swing.JCheckBox Stomachache;
+    private javax.swing.JCheckBox TroubleHearing;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
