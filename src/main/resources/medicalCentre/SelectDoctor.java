@@ -1,4 +1,5 @@
 package main.resources.medicalCentre;
+
 import java.util.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,7 +20,7 @@ import java.sql.Time;
  */
 public class SelectDoctor extends javax.swing.JFrame {
 
-    public static int docID, dateSelectCheck = 0, l = 0, r;
+    public static int docID, dateSelectCheck = 0;
     public static Date date = new Date();
     public static String dateString;
     public static Time time;
@@ -352,9 +353,9 @@ public class SelectDoctor extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Main m = new Main();
+        FrontPage fp = new FrontPage();
         dispose();
-        m.setVisible(true);
+        fp.setVisible(true);
     }// GEN-LAST:event_jButton2ActionPerformed
 
     /**

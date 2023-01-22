@@ -21,92 +21,43 @@ public class Specialisation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Gastroenterologist = new javax.swing.JButton();
-        Neurologist = new javax.swing.JToggleButton();
-        Pulmonologist = new javax.swing.JToggleButton();
-        Otolaryngologist = new javax.swing.JToggleButton();
-        Ophthalmologist = new javax.swing.JToggleButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         label1 = new java.awt.Label();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        Neurologist = new javax.swing.JToggleButton();
+        Ophthalmologist = new javax.swing.JToggleButton();
+        Otolaryngologist = new javax.swing.JToggleButton();
+        Pulmonologist = new javax.swing.JToggleButton();
         jButton3 = new javax.swing.JButton();
+        Gastroenterologist = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Gastroenterologist.setBackground(java.awt.Color.gray);
-        Gastroenterologist.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        Gastroenterologist.setForeground(java.awt.Color.white);
-        Gastroenterologist.setText("Gastroenterologist");
-        Gastroenterologist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GastroenterologistActionPerformed(evt);
-            }
-        });
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Neurologist.setBackground(java.awt.Color.gray);
-        Neurologist.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        Neurologist.setForeground(java.awt.Color.white);
-        Neurologist.setText("Neurologist");
-        Neurologist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NeurologistActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(14, 94, 111));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1550, 32767));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1550, 182));
 
-        Pulmonologist.setBackground(java.awt.Color.gray);
-        Pulmonologist.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        Pulmonologist.setForeground(java.awt.Color.white);
-        Pulmonologist.setText("Pulmonologist");
-        Pulmonologist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PulmonologistActionPerformed(evt);
-            }
-        });
-
-        Otolaryngologist.setBackground(java.awt.Color.gray);
-        Otolaryngologist.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        Otolaryngologist.setForeground(java.awt.Color.white);
-        Otolaryngologist.setText("Otolaryngologist");
-        Otolaryngologist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OtolaryngologistActionPerformed(evt);
-            }
-        });
-
-        Ophthalmologist.setBackground(java.awt.Color.gray);
-        Ophthalmologist.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        Ophthalmologist.setForeground(java.awt.Color.white);
-        Ophthalmologist.setText("Ophthalmologist");
-        Ophthalmologist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OphthalmologistActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Gas.jpeg"))); // NOI18N
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Cardilogy.jpeg"))); // NOI18N
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/cole-eye-services.jpg"))); // NOI18N
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/lungs.jpeg"))); // NOI18N
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/ent.png"))); // NOI18N
-
-        jPanel1.setBackground(java.awt.Color.lightGray);
-
-        label1.setFont(new java.awt.Font("Dialog", 3, 48)); // NOI18N
+        label1.setAlignment(java.awt.Label.CENTER);
+        label1.setBackground(new java.awt.Color(14, 94, 111));
+        label1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        label1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         label1.setForeground(java.awt.Color.white);
-        label1.setText("Amrita Hospitals");
+        label1.setName(""); // NOI18N
+        label1.setText("Amrita Hospital");
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/hospitalIcon.png"))); // NOI18N
 
@@ -114,150 +65,173 @@ public class Specialisation extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel6)
-                .addGap(448, 448, 448)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 1195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel6)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(26, 26, 26))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel6))
+                    .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        jButton1.setText("Home");
+        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 7020, -1));
+
+        jButton1.setBackground(new java.awt.Color(2, 153, 153));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setLabel("HOME");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 190, 136, 48));
 
-        jToggleButton1.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        jToggleButton1.setText("Log out");
+        jToggleButton1.setBackground(new java.awt.Color(2, 153, 153));
+        jToggleButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton1.setText("LOG OUT");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
             }
         });
+        jPanel5.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 190, 136, 48));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Brain.jpeg"))); // NOI18N
-
-        jLabel8.setFont(new java.awt.Font("Ubuntu", 1, 30)); // NOI18N
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Select Specialization");
+        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, -1, -1));
 
-        jButton3.setBackground(java.awt.Color.gray);
-        jButton3.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
+        Neurologist.setBackground(new java.awt.Color(0, 102, 102));
+        Neurologist.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        Neurologist.setForeground(java.awt.Color.white);
+        Neurologist.setText("Neurologist");
+        Neurologist.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        Neurologist.setMaximumSize(new java.awt.Dimension(208, 33));
+        Neurologist.setMinimumSize(new java.awt.Dimension(208, 33));
+        Neurologist.setPreferredSize(new java.awt.Dimension(208, 33));
+        Neurologist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NeurologistActionPerformed(evt);
+            }
+        });
+        jPanel5.add(Neurologist, new org.netbeans.lib.awtextra.AbsoluteConstraints(1105, 450, 210, 50));
+
+        Ophthalmologist.setBackground(new java.awt.Color(0, 102, 102));
+        Ophthalmologist.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        Ophthalmologist.setForeground(java.awt.Color.white);
+        Ophthalmologist.setText("Ophthalmologist");
+        Ophthalmologist.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        Ophthalmologist.setMaximumSize(new java.awt.Dimension(208, 33));
+        Ophthalmologist.setMinimumSize(new java.awt.Dimension(208, 33));
+        Ophthalmologist.setPreferredSize(new java.awt.Dimension(208, 33));
+        Ophthalmologist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OphthalmologistActionPerformed(evt);
+            }
+        });
+        jPanel5.add(Ophthalmologist, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 730, 210, 50));
+
+        Otolaryngologist.setBackground(new java.awt.Color(0, 102, 102));
+        Otolaryngologist.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        Otolaryngologist.setForeground(java.awt.Color.white);
+        Otolaryngologist.setText("Otolaryngologist");
+        Otolaryngologist.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        Otolaryngologist.setMaximumSize(new java.awt.Dimension(208, 33));
+        Otolaryngologist.setMinimumSize(new java.awt.Dimension(208, 33));
+        Otolaryngologist.setPreferredSize(new java.awt.Dimension(208, 33));
+        Otolaryngologist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OtolaryngologistActionPerformed(evt);
+            }
+        });
+        jPanel5.add(Otolaryngologist, new org.netbeans.lib.awtextra.AbsoluteConstraints(685, 730, 210, 50));
+
+        Pulmonologist.setBackground(new java.awt.Color(0, 102, 102));
+        Pulmonologist.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        Pulmonologist.setForeground(java.awt.Color.white);
+        Pulmonologist.setText("Pulmonologist");
+        Pulmonologist.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        Pulmonologist.setMaximumSize(new java.awt.Dimension(208, 33));
+        Pulmonologist.setMinimumSize(new java.awt.Dimension(208, 33));
+        Pulmonologist.setPreferredSize(new java.awt.Dimension(208, 33));
+        Pulmonologist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PulmonologistActionPerformed(evt);
+            }
+        });
+        jPanel5.add(Pulmonologist, new org.netbeans.lib.awtextra.AbsoluteConstraints(1105, 730, 210, 50));
+
+        jButton3.setBackground(new java.awt.Color(0, 102, 102));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jButton3.setForeground(java.awt.Color.white);
         jButton3.setText("Cardiologist");
+        jButton3.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        jButton3.setMaximumSize(new java.awt.Dimension(208, 33));
+        jButton3.setMinimumSize(new java.awt.Dimension(208, 33));
+        jButton3.setPreferredSize(new java.awt.Dimension(208, 33));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel5.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 450, 210, 50));
+
+        Gastroenterologist.setBackground(new java.awt.Color(0, 102, 102));
+        Gastroenterologist.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        Gastroenterologist.setForeground(java.awt.Color.white);
+        Gastroenterologist.setText("Gastroenterologist");
+        Gastroenterologist.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        Gastroenterologist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GastroenterologistActionPerformed(evt);
+            }
+        });
+        jPanel5.add(Gastroenterologist, new org.netbeans.lib.awtextra.AbsoluteConstraints(685, 450, 210, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/1.png"))); // NOI18N
+        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 240, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/2.png"))); // NOI18N
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/3.png"))); // NOI18N
+        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 520, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/4.png"))); // NOI18N
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 520, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/5.png"))); // NOI18N
+        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 240, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/6.png"))); // NOI18N
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(603, 603, 603)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel5)
-                                                .addGap(420, 420, 420))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addGap(30, 30, 30)
-                                                .addComponent(Pulmonologist)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(Otolaryngologist)
-                                                .addGap(109, 109, 109)))
-                                        .addGap(353, 353, 353))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel1)
-                                        .addGap(426, 426, 426)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(58, 58, 58)
-                                        .addComponent(Ophthalmologist))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(13, 13, 13)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(906, 906, 906)
-                        .addComponent(Gastroenterologist)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Neurologist, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)))
-                .addGap(62, 62, 62))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1540, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(6246, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(7, 7, 7)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Neurologist, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Gastroenterologist, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)))
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Otolaryngologist, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Pulmonologist, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ophthalmologist, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1046, Short.MAX_VALUE))
         );
 
         pack();
@@ -306,9 +280,9 @@ public class Specialisation extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-        Main m = new Main();
+        FrontPage fp = new FrontPage();
         dispose();
-        m.setVisible(true);
+        fp.setVisible(true);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void NeurologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NeurologistActionPerformed
@@ -388,6 +362,9 @@ public class Specialisation extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JToggleButton jToggleButton1;
     private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
