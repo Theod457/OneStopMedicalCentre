@@ -251,6 +251,7 @@ public class ManageProfile extends javax.swing.JFrame {
 
         jLabel11.setBackground(java.awt.Color.white);
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/PasswordBackground.png"))); // NOI18N
+        jLabel11.setPreferredSize(new java.awt.Dimension(1550, 825));
         getContentPane().add(jLabel11);
         jLabel11.setBounds(-10, 0, 1540, 790);
 

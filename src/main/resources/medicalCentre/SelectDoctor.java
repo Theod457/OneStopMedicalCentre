@@ -280,9 +280,9 @@ public class SelectDoctor extends javax.swing.JFrame {
         jLabel1.setBackground(java.awt.Color.white);
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Select Doctor");
+        jLabel1.setText("SELECT DOCTOR");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(590, 190, 360, 41);
+        jLabel1.setBounds(600, 190, 350, 41);
 
         jButton2.setBackground(new java.awt.Color(2, 153, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N

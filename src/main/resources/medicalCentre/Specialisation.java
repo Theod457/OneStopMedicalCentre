@@ -110,8 +110,8 @@ public class Specialisation extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Select Specialization");
-        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, -1, -1));
+        jLabel8.setText("SELECT SPECIALISATION");
+        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 190, 350, -1));
 
         Neurologist.setBackground(new java.awt.Color(0, 102, 102));
         Neurologist.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
