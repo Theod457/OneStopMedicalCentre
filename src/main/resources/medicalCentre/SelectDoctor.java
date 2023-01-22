@@ -64,37 +64,37 @@ public class SelectDoctor extends javax.swing.JFrame {
                 // rp.next();
                 // rp.previous();
                 JLabel name2 = new JLabel();
-                name2.setFont(new java.awt.Font("Ubuntu", 1, 18));
+                name2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20));
                 name2.setText("Name : ");
                 this.add(name2);
                 name2.setOpaque(true);
-                name2.setBounds(x, y, 100, 50);
+                name2.setBounds(x, y, 100, 70);
                 // y+=50
 
                 JLabel name1 = new JLabel();
-                name1.setFont(new java.awt.Font("Ubuntu", 1, 18));
+                name1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20));
                 name1.setText(String.valueOf(rp.getString("DOCTOR_NAME")));
                 this.add(name1);
                 name1.setOpaque(true);
-                name1.setBounds(w, y, 200, 50);
+                name1.setBounds(w, y, 200, 70);
                 // System.out.println(rp.getString(2));
-                y += 45;
+                y += 65;
 
                 JLabel time2 = new JLabel();
-                time2.setFont(new java.awt.Font("Ubuntu", 1, 18));
+                time2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20));
                 time2.setText("Time : ");
                 this.add(time2);
                 time2.setOpaque(true);
-                time2.setBounds(x, y, 100, 50);
+                time2.setBounds(x, y, 100, 70);
 
                 JLabel time = new JLabel();
-                time.setFont(new java.awt.Font("Ubuntu", 1, 18));
+                time.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20));
                 time.setText(String.valueOf(rp.getString("DOCTOR_TIME")));
                 this.add(time);
                 time.setOpaque(true);
-                time.setBounds(w, y, 100, 50);
+                time.setBounds(w, y, 100, 70);
                 // x+=100;
-                y += 45;
+                y += 65;
                 // y-=50;
 
 //                JLabel gender1 = new JLabel();
@@ -126,10 +126,10 @@ public class SelectDoctor extends javax.swing.JFrame {
                 // System.out.println(docID);
                 JButton bookButton = new JButton(" Book Appointment");
                 bookButton.setToolTipText(String.valueOf(rp.getInt("DOCTOR_ID")));
-                bookButton.setFont(new java.awt.Font("Ubuntu", 1, 19));
+                bookButton.setFont(new java.awt.Font("Segoe UI Bold", 1, 20));
                 this.add(bookButton);
                 bookButton.setOpaque(true);
-                bookButton.setBounds(80, y, 215, 55);
+                bookButton.setBounds(70, y, 215, 55);
                 bookButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         // System.out.println(docID);
@@ -201,32 +201,44 @@ public class SelectDoctor extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        label1 = new java.awt.Label();
         jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jCalendar1 = new com.toedter.calendar.JCalendar();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(116, 150, 93));
-        setForeground(new java.awt.Color(153, 255, 0));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setForeground(new java.awt.Color(0, 0, 0));
+        setPreferredSize(new java.awt.Dimension(1540, 810));
+        setSize(new java.awt.Dimension(1540, 810));
+        getContentPane().setLayout(null);
 
-        jToggleButton1.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        jToggleButton1.setText("Back");
+        jToggleButton1.setBackground(new java.awt.Color(2, 153, 153));
+        jToggleButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton1.setSelected(true);
+        jToggleButton1.setText("BACK");
+        jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jToggleButton1);
+        jToggleButton1.setBounds(15, 190, 135, 45);
 
-        jPanel1.setBackground(new java.awt.Color(40, 89, 79));
+        jPanel1.setBackground(new java.awt.Color(14, 94, 111));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/hospitalIcon.png"))); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Ubuntu", 3, 48)); // NOI18N
-        jLabel3.setForeground(java.awt.Color.white);
-        jLabel3.setText("Amrita Hospital ");
+        label1.setAlignment(java.awt.Label.CENTER);
+        label1.setBackground(new java.awt.Color(14, 94, 111));
+        label1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        label1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        label1.setForeground(java.awt.Color.white);
+        label1.setName(""); // NOI18N
+        label1.setText("Amrita Hospital");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -234,102 +246,65 @@ public class SelectDoctor extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addGap(613, 613, 613)
-                .addComponent(jLabel3)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 1195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 564, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(55, 55, 55))
+                .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jButton1.setBackground(java.awt.Color.gray);
-        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1939, 170);
+
+        jButton1.setBackground(new java.awt.Color(0, 102, 51));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jButton1.setForeground(java.awt.Color.white);
-        jButton1.setText("Confirm Date");
+        jButton1.setText("CONFIRM DATE");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jPanel2.setBackground(new java.awt.Color(3, 56, 38));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
+        getContentPane().add(jButton1);
+        jButton1.setBounds(1040, 690, 200, 50);
 
         jLabel1.setBackground(java.awt.Color.white);
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 3, 48)); // NOI18N
-        jLabel1.setForeground(java.awt.Color.gray);
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Select Doctor");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(590, 190, 360, 41);
 
-        jButton2.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        jButton2.setText("Logout");
+        jButton2.setBackground(new java.awt.Color(2, 153, 153));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("LOG OUT");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(1380, 190, 135, 45);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(628, 628, 628)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1451, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(346, 346, 346))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(94, 94, 94)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(406, Short.MAX_VALUE))
-        );
+        jCalendar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 30, true));
+        jCalendar1.setDate(new java.util.Date(1674380306000L));
+        jCalendar1.setMinimumSize(new java.awt.Dimension(250, 250));
+        jCalendar1.setPreferredSize(new java.awt.Dimension(250, 250));
+        getContentPane().add(jCalendar1);
+        jCalendar1.setBounds(890, 260, 500, 400);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
@@ -358,6 +333,13 @@ public class SelectDoctor extends javax.swing.JFrame {
         fp.setVisible(true);
     }// GEN-LAST:event_jButton2ActionPerformed
 
+//        private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
+//        // TODO add your handling code here:
+//        ConfirmAppointment ca = new ConfirmAppointment();
+//        dispose();
+//        ca.setVisible(true);
+//    }// GEN-LAST:event_jButton3ActionPerformed
+        
     /**
      * @param args the command line arguments
      */
@@ -408,9 +390,8 @@ public class SelectDoctor extends javax.swing.JFrame {
     private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JToggleButton jToggleButton1;
+    private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
 }
