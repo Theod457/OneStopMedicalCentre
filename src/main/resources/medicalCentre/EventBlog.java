@@ -137,7 +137,11 @@ public class EventBlog extends javax.swing.JFrame {
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/PasswordBackground.png"))); // NOI18N
         Background.setText("jLabel1");
+<<<<<<< HEAD
         jPanel1.add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, -1));
+=======
+        jPanel1.add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 20, 1550, -1));
+>>>>>>> b9f873697103a95d23e7600fde7b5f789598fc59
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

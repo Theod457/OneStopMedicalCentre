@@ -63,6 +63,13 @@ public class SelectDoctor extends javax.swing.JFrame {
             while (rp.next()) {
                 // rp.next();
                 // rp.previous();
+                JLabel name3 = new JLabel();
+                name3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20));
+                name3.setText("Name : ");
+                this.add(name3);
+                name3.setOpaque(true);
+                name3.setBounds(x, y, 100, 70);
+
                 JLabel name2 = new JLabel();
                 name2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20));
                 name2.setText("Name : ");
@@ -78,7 +85,14 @@ public class SelectDoctor extends javax.swing.JFrame {
                 name1.setOpaque(true);
                 name1.setBounds(w, y, 200, 70);
                 // System.out.println(rp.getString(2));
-                y += 65;
+                y += 55;
+
+                JLabel time3 = new JLabel();
+                time3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20));
+                time3.setText("Time : ");
+                this.add(time3);
+                time3.setOpaque(true);
+                time3.setBounds(x, y, 100, 70);
 
                 JLabel time2 = new JLabel();
                 time2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20));
@@ -94,7 +108,7 @@ public class SelectDoctor extends javax.swing.JFrame {
                 time.setOpaque(true);
                 time.setBounds(w, y, 100, 70);
                 // x+=100;
-                y += 65;
+                y += 55;
                 // y-=50;
 
 //                JLabel gender1 = new JLabel();
@@ -159,13 +173,12 @@ public class SelectDoctor extends javax.swing.JFrame {
                                 Statement stmt = conn.createStatement();
                                 ResultSet doctorTable = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + doctorIDInput);
                                 doctorTable.next();
-                                System.out.println(Login.userIDInput);
                                 stmt.executeUpdate(
                                         "insert into appointment(USER_ID, DOCTOR_ID, APPOINTMENT_DATE, APPOINTMENT_TIME)" + "values("
-                                                + "'" + Login.userIDInput + "'" + "," + doctorIDInput + ",'" + dateString + "','" + doctorTable.getTime("DOCTOR_TIME") + "')");
-                                Payment f = new Payment();
+                                                + Login.userIDInput + "," + doctorIDInput + ",'" + dateString + "','" + doctorTable.getTime("DOCTOR_TIME") + "')");
+                                ConfirmAppointment ca = new ConfirmAppointment();
                                 dispose();
-                                f.setVisible(true);
+                                ca.setVisible(true);
                             } catch (Exception dateSelectCheck) {
                                 dateSelectCheck.printStackTrace();
                             }
@@ -280,9 +293,9 @@ public class SelectDoctor extends javax.swing.JFrame {
         jLabel1.setBackground(java.awt.Color.white);
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SELECT DOCTOR");
+        jLabel1.setText("Select Doctor");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(600, 190, 350, 41);
+        jLabel1.setBounds(590, 190, 360, 41);
 
         jButton2.setBackground(new java.awt.Color(2, 153, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
