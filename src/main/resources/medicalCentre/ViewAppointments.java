@@ -248,7 +248,7 @@ public class ViewAppointments extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        AppoinmentHistory ah = new AppointmentHistory();
+        AppointmentHistory ah = new AppointmentHistory();
         dispose();
         ah.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
