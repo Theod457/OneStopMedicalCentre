@@ -474,7 +474,7 @@ public class Register extends javax.swing.JFrame {
                 finalPasswordInput = passwordInput;
             } else {
                 rePasswordCheck = 0;
-                JOptionPane.showMessageDialog(rootPane, "Passwords Do not Match. Please Retype Your Passwords.");
+                JOptionPane.showMessageDialog(rootPane, "Passwords Do Not Match. Please Retype Your Passwords.");
             }
         }
     }//GEN-LAST:event_repasswordActionPerformed
