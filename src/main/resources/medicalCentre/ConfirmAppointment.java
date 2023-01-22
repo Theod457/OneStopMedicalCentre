@@ -1,6 +1,5 @@
 package main.resources.medicalCentre;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -13,6 +12,7 @@ import javax.swing.ImageIcon;
  * @author raghavendhra
  */
 public class ConfirmAppointment extends javax.swing.JFrame {
+    public static String appDate;
 
     /**
      * Creates new form FixAppointment
@@ -146,7 +146,7 @@ public class ConfirmAppointment extends javax.swing.JFrame {
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                                                 .addGroup(jPanel2Layout.createParallelGroup(
-                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                javax.swing.GroupLayout.Alignment.LEADING)
                                                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                                                                 .addGap(139, 139, 139)
                                                                                 .addComponent(jLabel13,
@@ -168,7 +168,7 @@ public class ConfirmAppointment extends javax.swing.JFrame {
                                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
                                                                 jPanel2Layout.createSequentialGroup()
                                                                         .addGroup(jPanel2Layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        javax.swing.GroupLayout.Alignment.LEADING)
                                                                                 .addComponent(jLabel16)
                                                                                 .addGroup(jPanel2Layout
                                                                                         .createSequentialGroup()
