@@ -159,9 +159,10 @@ public class SelectDoctor extends javax.swing.JFrame {
                                 Statement stmt = conn.createStatement();
                                 ResultSet doctorTable = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + doctorIDInput);
                                 doctorTable.next();
+                                System.out.println(Login.userIDInput);
                                 stmt.executeUpdate(
                                         "insert into appointment(USER_ID, DOCTOR_ID, APPOINTMENT_DATE, APPOINTMENT_TIME)" + "values("
-                                                + Login.userIDInput + "," + doctorIDInput + ",'" + dateString + "','" + doctorTable.getTime("DOCTOR_TIME") + "')");
+                                                + "'" + Login.userIDInput + "'" + "," + doctorIDInput + ",'" + dateString + "','" + doctorTable.getTime("DOCTOR_TIME") + "')");
                                 Payment f = new Payment();
                                 dispose();
                                 f.setVisible(true);
