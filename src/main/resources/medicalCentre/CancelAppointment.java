@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -261,7 +262,18 @@ public class CancelAppointment extends javax.swing.JFrame {
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             stmt.executeUpdate("delete from appointment where APPOINTMENT_ID=" + appID);
-            JOptionPane.showMessageDialog(rootPane, "Your Appointment Is Cancelled");
+            ImageIcon Icon_C = new ImageIcon (CancelAppointment.class.getResource("asset/cancel.png"));
+            JOptionPane.showMessageDialog(null, "YOUR APPOINTMENT IS CANCELLED", "CANCELLATION OF APPOINTMENT",
+                    JOptionPane.INFORMATION_MESSAGE);
+
+            String[] appointmentCancellationReason = {"Need Reschedule","Need Change another doctor","Found another hospital nearby","Custom"};
+            String userChoice="";
+            userChoice = (String) JOptionPane.showInputDialog(null, "Choose the reason why you want to cancle this appointment",
+                    "Appointment Cancellation Reason", JOptionPane.QUESTION_MESSAGE, null, appointmentCancellationReason, appointmentCancellationReason[0]);
+            if (userChoice == "Custom"){
+                userChoice = (String) JOptionPane.showInputDialog("Reason of cancellation appointment");
+            }
+            JOptionPane.showMessageDialog(null, "Thank you!");
             ChooseAppointment ca = new ChooseAppointment();
             dispose();
             ca.setVisible(true);

@@ -311,6 +311,7 @@ public class ConfirmAppointment extends javax.swing.JFrame {
         String[] appointmentNotificationChoices = { "One week before", "One day before", "One hour before", "Custom" };
         String userChoice = "";
         if (result == 0) {
+            // Drop down menu for user to choose options
             userChoice = (String) JOptionPane.showInputDialog(null, "Choose your notification",
                     "Appoinment notification", JOptionPane.QUESTION_MESSAGE, null, appointmentNotificationChoices,
                     appointmentNotificationChoices[0]);
