@@ -1,5 +1,4 @@
-                                                                                                                      bnnnnnnnnnnnnnnnnnnn                                    package main.resources.medicalCentre;
-
+package main.resources.medicalCentre;
 import java.util.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
