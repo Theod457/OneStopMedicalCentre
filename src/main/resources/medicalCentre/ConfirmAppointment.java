@@ -13,7 +13,6 @@ import javax.swing.ImageIcon;
  * @author raghavendhra
  */
 public class ConfirmAppointment extends javax.swing.JFrame {
-    public static String appDate;
 
     /**
      * Creates new form FixAppointment
