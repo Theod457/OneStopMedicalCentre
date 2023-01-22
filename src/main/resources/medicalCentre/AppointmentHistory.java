@@ -58,17 +58,17 @@ public class AppointmentHistory extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -81,6 +81,15 @@ public class AppointmentHistory extends javax.swing.JFrame {
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
+        jButton1.setText("Home");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 289, 105, 50));
 
         jPanel1.setBackground(new java.awt.Color(14, 93, 109));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,24 +118,10 @@ public class AppointmentHistory extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "APPOINtMENT ID", "APPOINTMENT DATE", "APPOINTMENT TIME", "DOCTOR NAME"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(360, 290, 840, 440);
-
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/clipboard.png"))); // NOI18N
         jLabel3.setText("YOUR PREVIOUS APPOINTMENTS");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(430, 180, 690, 110);
+        jLabel3.setBounds(540, 180, 510, 59);
 
         jButton3.setBackground(new java.awt.Color(3, 153, 153));
         jButton3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
@@ -138,7 +133,7 @@ public class AppointmentHistory extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton3);
-        jButton3.setBounds(360, 740, 410, 50);
+        jButton3.setBounds(360, 730, 410, 50);
 
         jButton4.setBackground(new java.awt.Color(3, 153, 153));
         jButton4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
@@ -150,19 +145,20 @@ public class AppointmentHistory extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton4);
-        jButton4.setBounds(790, 740, 410, 50);
+        jButton4.setBounds(790, 730, 410, 50);
 
-        jButton1.setBackground(new java.awt.Color(15, 132, 153));
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Home");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "APPOINtMENT ID", "APPOINTMENT DATE", "APPOINTMENT TIME", "DOCTOR NAME"
             }
-        });
-        jPanel2.add(jButton1);
-        jButton1.setBounds(110, 290, 105, 50);
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel2.add(jScrollPane1);
+        jScrollPane1.setBounds(360, 250, 840, 460);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/FrontpageBackground.png"))); // NOI18N
         jPanel2.add(jLabel1);
