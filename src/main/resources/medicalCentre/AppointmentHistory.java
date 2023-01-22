@@ -25,8 +25,8 @@ public class AppointmentHistory extends javax.swing.JFrame {
 
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(
-                    "select doctor.DOCTOR_NAME, appointment.APPOINTMENT_DATE from appointment,doctor where doctor.DOCTOR_ID=appointment.DOCTOR_ID and (appointment.APPOINTMENT_ID="
-                            + Login.userIDInput + " and appointment.APPOINTMENT_DATE<curdate())");
+                    "select doctor.DOCTOR_NAME, appointment.APPOINTMENT_DATE, appointment.APPOINTMENT_TIME from appointment,doctor where doctor.DOCTOR_ID=appointment.DOCTOR_ID and (appointment.USER_ID="
+                            + Login.userIDInput + " and appointment.APPOINTMENT_DATE < curdate())");
             // appointmentTable.next();
             int x = 550, y = 350;
             Panel panel = new Panel();
@@ -35,7 +35,7 @@ public class AppointmentHistory extends javax.swing.JFrame {
             while (appointmentTable.next()) {
                 JLabel name2 = new JLabel();
                 name2.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                name2.setText("You had an appointment with " + appointmentTable.getString("DOCTOR_NAME") + " on " + appointmentTable.getDate("APPOINTMENT_DATE") + appointmentTable.getTime("APPOINTMENT_TIME"));
+                name2.setText("You had an appointment with " + appointmentTable.getString("DOCTOR_NAME") + " on " + appointmentTable.getDate("APPOINTMENT_DATE") + " " + appointmentTable.getTime("APPOINTMENT_TIME"));
                 this.add(name2);
                 name2.setOpaque(true);
                 name2.setBounds(x, y, 600, 50);

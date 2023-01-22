@@ -294,7 +294,7 @@ public class EditAppointment extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
             stmt.executeUpdate("update appointment set APPOINTMENT_DATE = '" + date2 + "' where USER_ID =" + userID
-                    + " and APPOINTMENT_DATE > (select curdate())");
+                    + " and APPOINTMENT_DATE > (select curdate()) " + "and " + "APPOINTMENT_ID = " + ViewAppointments.appID);
             JOptionPane.showMessageDialog(rootPane, "Your Appointment Date is changed to " + date2);
             ChooseAppointment ca = new ChooseAppointment();
             dispose();
