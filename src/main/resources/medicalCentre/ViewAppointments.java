@@ -274,7 +274,7 @@ public class ViewAppointments extends javax.swing.JFrame {
             
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(
-                    "select APPOINTMENT_ID, APPOINTMENT_DATE, APPOINTMENT_TIME, DOCTOR_ID from appointment where USER_ID = " + Login.userIDInput + " and APPOINTMENT_DATE => sysdate()");
+                    "select APPOINTMENT_ID, APPOINTMENT_DATE, APPOINTMENT_TIME, DOCTOR_ID from appointment where USER_ID = " + Login.userIDInput + " and APPOINTMENT_DATE >= sysdate()");
             
             while(appointmentTable.next()){
                 String appointmentID = appointmentTable.getString("APPOINTMENT_ID");
