@@ -31,7 +31,7 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        jLogOutButton = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -41,13 +41,13 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        jProfileButton = new javax.swing.JButton();
+        jPreviousButton = new javax.swing.JButton();
+        jBookButton = new javax.swing.JButton();
+        jUpcomingButton = new javax.swing.JButton();
+        jHomeButton = new javax.swing.JButton();
+        jDiseaseButton = new javax.swing.JButton();
+        jEventButton = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -67,13 +67,13 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/hospitalIcon.png"))); // NOI18N
         jLabel1.setText("\n");
 
-        jButton5.setBackground(new java.awt.Color(3, 153, 153));
-        jButton5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("LOG OUT\n");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jLogOutButton.setBackground(new java.awt.Color(3, 153, 153));
+        jLogOutButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLogOutButton.setForeground(new java.awt.Color(255, 255, 255));
+        jLogOutButton.setText("LOG OUT\n");
+        jLogOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jLogOutButtonActionPerformed(evt);
             }
         });
 
@@ -86,7 +86,7 @@ public class AppointmentMainPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 378, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(319, 319, 319)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLogOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(132, 132, 132))
         );
         jPanel1Layout.setVerticalGroup(
@@ -96,7 +96,7 @@ public class AppointmentMainPage extends javax.swing.JFrame {
                 .addGap(64, 64, 64)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLogOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1608, -1));
@@ -144,89 +144,89 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         jPanel4.add(jLabel3);
         jLabel3.setBounds(120, 210, 750, 270);
 
-        jButton1.setBackground(new java.awt.Color(0, 127, 63));
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("MANAGE PROFILE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jProfileButton.setBackground(new java.awt.Color(0, 127, 63));
+        jProfileButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jProfileButton.setForeground(new java.awt.Color(255, 255, 255));
+        jProfileButton.setText("MANAGE PROFILE");
+        jProfileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jProfileButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton1);
-        jButton1.setBounds(780, 500, 410, 50);
+        jPanel4.add(jProfileButton);
+        jProfileButton.setBounds(780, 500, 410, 50);
 
-        jButton4.setBackground(new java.awt.Color(0, 127, 63));
-        jButton4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("PREVIOUS APPOINTMENTS");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jPreviousButton.setBackground(new java.awt.Color(0, 127, 63));
+        jPreviousButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jPreviousButton.setForeground(new java.awt.Color(255, 255, 255));
+        jPreviousButton.setText("PREVIOUS APPOINTMENTS");
+        jPreviousButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jPreviousButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton4);
-        jButton4.setBounds(340, 640, 410, 50);
+        jPanel4.add(jPreviousButton);
+        jPreviousButton.setBounds(340, 640, 410, 50);
 
-        jButton2.setBackground(new java.awt.Color(0, 127, 63));
-        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("BOOK APPOINTMENT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jBookButton.setBackground(new java.awt.Color(0, 127, 63));
+        jBookButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jBookButton.setForeground(new java.awt.Color(255, 255, 255));
+        jBookButton.setText("BOOK APPOINTMENT");
+        jBookButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jBookButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton2);
-        jButton2.setBounds(340, 570, 410, 50);
+        jPanel4.add(jBookButton);
+        jBookButton.setBounds(340, 570, 410, 50);
 
-        jButton3.setBackground(new java.awt.Color(0, 127, 63));
-        jButton3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("UPCOMING APPOINTMENTS");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jUpcomingButton.setBackground(new java.awt.Color(0, 127, 63));
+        jUpcomingButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jUpcomingButton.setForeground(new java.awt.Color(255, 255, 255));
+        jUpcomingButton.setText("UPCOMING APPOINTMENTS");
+        jUpcomingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jUpcomingButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton3);
-        jButton3.setBounds(780, 570, 410, 50);
+        jPanel4.add(jUpcomingButton);
+        jUpcomingButton.setBounds(780, 570, 410, 50);
 
-        jButton6.setBackground(new java.awt.Color(0, 127, 63));
-        jButton6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("HOME PAGE");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jHomeButton.setBackground(new java.awt.Color(0, 127, 63));
+        jHomeButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jHomeButton.setForeground(new java.awt.Color(255, 255, 255));
+        jHomeButton.setText("HOME PAGE");
+        jHomeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                jHomeButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton6);
-        jButton6.setBounds(340, 500, 410, 50);
+        jPanel4.add(jHomeButton);
+        jHomeButton.setBounds(340, 500, 410, 50);
 
-        jButton7.setBackground(new java.awt.Color(0, 127, 63));
-        jButton7.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("DISEASE CHECKER");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        jDiseaseButton.setBackground(new java.awt.Color(0, 127, 63));
+        jDiseaseButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jDiseaseButton.setForeground(new java.awt.Color(255, 255, 255));
+        jDiseaseButton.setText("DISEASE CHECKER");
+        jDiseaseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                jDiseaseButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton7);
-        jButton7.setBounds(780, 640, 410, 50);
+        jPanel4.add(jDiseaseButton);
+        jDiseaseButton.setBounds(780, 640, 410, 50);
 
-        jButton8.setBackground(new java.awt.Color(0, 127, 63));
-        jButton8.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("EVENT BLOG");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        jEventButton.setBackground(new java.awt.Color(0, 127, 63));
+        jEventButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jEventButton.setForeground(new java.awt.Color(255, 255, 255));
+        jEventButton.setText("EVENT BLOG");
+        jEventButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                jEventButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton8);
-        jButton8.setBounds(550, 710, 410, 50);
+        jPanel4.add(jEventButton);
+        jEventButton.setBounds(550, 710, 410, 50);
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Choose Appoin.png"))); // NOI18N
         jPanel4.add(jLabel13);
@@ -241,53 +241,53 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jHomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHomeButtonActionPerformed
         Main m = new Main();
         dispose();
         m.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_jHomeButtonActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void jEventButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEventButtonActionPerformed
         EventBlog eb = new EventBlog();
         dispose();
         eb.setVisible(true);
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_jEventButtonActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void jDiseaseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDiseaseButtonActionPerformed
         DiseaseChecker dc = new DiseaseChecker();
         dispose();
         dc.setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_jDiseaseButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
+    private void jProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         ManageProfile mp = new ManageProfile();
         dispose();
         mp.setVisible(true);
     }// GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
+    private void jBookButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         SelectSpecialisation s = new SelectSpecialisation();
         dispose();
         s.setVisible(true);
     }// GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
+    private void jUpcomingButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         ViewAppointments ea = new ViewAppointments();
         dispose();
         ea.setVisible(true);
     }// GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton4ActionPerformed
+    private void jPreviousButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         AppointmentHistory ap = new AppointmentHistory();
         dispose();
         ap.setVisible(true);
     }// GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton5ActionPerformed
+    private void jLogOutButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton5ActionPerformed
         int ans = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?",
                         "Warning", JOptionPane.YES_NO_OPTION);
         if (ans == JOptionPane.YES_OPTION) {    
@@ -342,14 +342,10 @@ public class AppointmentMainPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jBookButton;
+    private javax.swing.JButton jDiseaseButton;
+    private javax.swing.JButton jEventButton;
+    private javax.swing.JButton jHomeButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -363,7 +359,11 @@ public class AppointmentMainPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton jLogOutButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JButton jPreviousButton;
+    private javax.swing.JButton jProfileButton;
+    private javax.swing.JButton jUpcomingButton;
     // End of variables declaration//GEN-END:variables
 }

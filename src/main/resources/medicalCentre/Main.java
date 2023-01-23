@@ -37,7 +37,7 @@ public class Main extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        jLogOutButton = new javax.swing.JToggleButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -54,24 +54,23 @@ public class Main extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jClickHereButton = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jBookMenu = new javax.swing.JMenuItem();
+        jUpcomingMenu = new javax.swing.JMenuItem();
+        jHistoryMenu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jEventMenu = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jDiseaseCheckerMenu = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.white);
-        setMinimumSize(new java.awt.Dimension(1550, 825));
+        setMinimumSize(new java.awt.Dimension(1550, 850));
         setPreferredSize(new java.awt.Dimension(1550, 825));
-        setResizable(false);
-        setSize(new java.awt.Dimension(1550, 825));
+        setSize(new java.awt.Dimension(1550, 850));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(14, 93, 109));
@@ -82,13 +81,13 @@ public class Main extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/hospitalIcon.png"))); // NOI18N
 
-        jToggleButton1.setBackground(new java.awt.Color(16, 153, 153));
-        jToggleButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("LOG OUT");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLogOutButton.setBackground(new java.awt.Color(16, 153, 153));
+        jLogOutButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        jLogOutButton.setForeground(new java.awt.Color(255, 255, 255));
+        jLogOutButton.setText("LOG OUT");
+        jLogOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                jLogOutButtonActionPerformed(evt);
             }
         });
 
@@ -102,12 +101,12 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(445, 445, 445)
                         .addComponent(jLabel11)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(935, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 195, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGap(522, 522, 522)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(317, 317, 317)
+                        .addComponent(jLogOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -118,11 +117,11 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLogOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(60, 60, 60))
+                .addGap(55, 55, 55))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 170));
@@ -186,17 +185,17 @@ public class Main extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(16, 153, 153));
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("CLICK HERE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jClickHereButton.setBackground(new java.awt.Color(16, 153, 153));
+        jClickHereButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        jClickHereButton.setForeground(new java.awt.Color(255, 255, 255));
+        jClickHereButton.setText("CLICK HERE");
+        jClickHereButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jClickHereButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1);
-        jButton1.setBounds(230, 730, 410, 50);
+        jPanel2.add(jClickHereButton);
+        jClickHereButton.setBounds(230, 730, 410, 50);
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/FrontpageBackground.png"))); // NOI18N
         jPanel2.add(jLabel18);
@@ -207,55 +206,55 @@ public class Main extends javax.swing.JFrame {
         jMenu1.setText("APPOINTMENT");
         jMenu1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
-        jMenuItem1.setText("Book Appoinment");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jBookMenu.setText("Book Appoinment");
+        jBookMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jBookMenuActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(jBookMenu);
 
-        jMenuItem2.setText("Upcoming Appointment");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jUpcomingMenu.setText("Upcoming Appointment");
+        jUpcomingMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                jUpcomingMenuActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(jUpcomingMenu);
 
-        jMenuItem3.setText("Appointment History");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jHistoryMenu.setText("Appointment History");
+        jHistoryMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jHistoryMenuActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(jHistoryMenu);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("EVENT");
         jMenu2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
-        jMenuItem4.setText("Event blog");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        jEventMenu.setText("Event blog");
+        jEventMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                jEventMenuActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem4);
+        jMenu2.add(jEventMenu);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("DISEASE CHECKER");
         jMenu3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
-        jMenuItem5.setText("Check for possible disease");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        jDiseaseCheckerMenu.setText("Check for possible disease");
+        jDiseaseCheckerMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                jDiseaseCheckerMenuActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem5);
+        jMenu3.add(jDiseaseCheckerMenu);
 
         jMenuBar1.add(jMenu3);
 
@@ -264,43 +263,43 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jClickHereButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClickHereButtonActionPerformed
         AppointmentMainPage amp = new AppointmentMainPage();
         dispose();
         amp.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jClickHereButtonActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jBookMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBookMenuActionPerformed
         SelectSpecialisation s = new SelectSpecialisation();
         dispose();
         s.setVisible(true); 
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jBookMenuActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void jUpcomingMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpcomingMenuActionPerformed
         ViewAppointments va = new ViewAppointments();
         dispose();
         va.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_jUpcomingMenuActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void jHistoryMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHistoryMenuActionPerformed
         AppointmentHistory ap = new AppointmentHistory();
         dispose();
         ap.setVisible(true);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_jHistoryMenuActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void jEventMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEventMenuActionPerformed
         EventBlog eb = new EventBlog();
         dispose();
         eb.setVisible(true);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_jEventMenuActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void jDiseaseCheckerMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDiseaseCheckerMenuActionPerformed
         DiseaseChecker dc = new DiseaseChecker();
         dispose();
         dc.setVisible(true);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_jDiseaseCheckerMenuActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void jLogOutButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
         int ans = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?",
                         "Warning", JOptionPane.YES_NO_OPTION);
         if (ans == JOptionPane.YES_OPTION) {    
@@ -309,13 +308,6 @@ public class Main extends javax.swing.JFrame {
             fp.setVisible(true);
         } 
     }// GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
-        Register su = new Register();
-        dispose();
-        su.setVisible(true);
-    }// GEN-LAST:event_jToggleButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -357,7 +349,11 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JMenuItem jBookMenu;
+    private javax.swing.JButton jClickHereButton;
+    private javax.swing.JMenuItem jDiseaseCheckerMenu;
+    private javax.swing.JMenuItem jEventMenu;
+    private javax.swing.JMenuItem jHistoryMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -376,17 +372,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JToggleButton jLogOutButton;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JMenuItem jUpcomingMenu;
     // End of variables declaration//GEN-END:variables
 }
