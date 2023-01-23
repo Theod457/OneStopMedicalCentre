@@ -19,33 +19,6 @@ public class AppointmentHistory extends javax.swing.JFrame {
      */
     public AppointmentHistory() {
         initComponents();
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
-                    "WinMyDowSQL119");
-
-            Statement stmt = conn.createStatement();
-            ResultSet appointmentTable = stmt.executeQuery(
-                    "select doctor.DOCTOR_NAME, appointment.APPOINTMENT_DATE, appointment.APPOINTMENT_TIME from appointment,doctor where doctor.DOCTOR_ID=appointment.DOCTOR_ID and (appointment.USER_ID="
-                            + Login.userIDInput + " and appointment.APPOINTMENT_DATE < curdate())");
-            // appointmentTable.next();
-            int x = 550, y = 350;
-            Panel panel = new Panel();
-            panel.setBounds(40, 80, 200, 200);
-            panel.setBackground(Color.yellow);
-            while (appointmentTable.next()) {
-                JLabel name2 = new JLabel();
-                name2.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                name2.setText("You had an appointment with " + appointmentTable.getString("DOCTOR_NAME") + " on " + appointmentTable.getDate("APPOINTMENT_DATE") + " " + appointmentTable.getTime("APPOINTMENT_TIME"));
-                this.add(name2);
-                name2.setOpaque(true);
-                name2.setBounds(x, y, 600, 50);
-                y += 40;
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -58,7 +31,6 @@ public class AppointmentHistory extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -67,12 +39,10 @@ public class AppointmentHistory extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -82,22 +52,13 @@ public class AppointmentHistory extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        jButton1.setText("Home");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 289, 105, 50));
-
         jPanel1.setBackground(new java.awt.Color(14, 93, 109));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("AMRITA HOSPITAL");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/hospitalIcon.png"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -119,11 +80,12 @@ public class AppointmentHistory extends javax.swing.JFrame {
         jPanel2.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/clipboard.png"))); // NOI18N
         jLabel3.setText("YOUR PREVIOUS APPOINTMENTS");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(540, 180, 510, 59);
+        jLabel3.setBounds(450, 180, 660, 100);
 
-        jButton3.setBackground(new java.awt.Color(3, 153, 153));
+        jButton3.setBackground(new java.awt.Color(0, 102, 51));
         jButton3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("BOOK NEW APPOINTMENT");
@@ -135,7 +97,7 @@ public class AppointmentHistory extends javax.swing.JFrame {
         jPanel2.add(jButton3);
         jButton3.setBounds(360, 730, 410, 50);
 
-        jButton4.setBackground(new java.awt.Color(3, 153, 153));
+        jButton4.setBackground(new java.awt.Color(0, 102, 51));
         jButton4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("UPCOMING APPOINTMENT");
@@ -146,6 +108,18 @@ public class AppointmentHistory extends javax.swing.JFrame {
         });
         jPanel2.add(jButton4);
         jButton4.setBounds(790, 730, 410, 50);
+
+        jButton1.setBackground(new java.awt.Color(3, 153, 153));
+        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("BACK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1);
+        jButton1.setBounds(110, 280, 105, 50);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -158,21 +132,13 @@ public class AppointmentHistory extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(360, 250, 840, 460);
+        jScrollPane1.setBounds(360, 280, 840, 430);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/FrontpageBackground.png"))); // NOI18N
         jPanel2.add(jLabel1);
         jLabel1.setBounds(0, 170, 1550, 630);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, 800));
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -185,18 +151,21 @@ public class AppointmentHistory extends javax.swing.JFrame {
             
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(
-                    "select APPOINTMENT_ID, APPOINTMENT_DATE, APPOINTMENT_TIME, DOCTOR_ID from appointment where USER_ID = " + Login.userIDInput + " and APPOINTMENT_DATE < sysdate()");
+                "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE <sysdate and USER_ID =" +
+                    Login.userIDInput);
             
             while(appointmentTable.next()){
                 String appointmentID = appointmentTable.getString("APPOINTMENT_ID");
                 String appointmentDate = appointmentTable.getString("APPOINTMENT_DATE");
                 String appointmentTime = appointmentTable.getString("APPOINTMENT_TIME");
-                String doctorID = appointmentTable.getString("DOCTOR_ID");
+                String doctorName = appointmentTable.getString("DOCTOR_NAME");
                 
-                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorID};
+                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorName};
                     DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
                     tblModel.addRow(tbData);
             }
+            
+            conn.close();
         }catch(Exception e){
             e.printStackTrace();
         }        // TODO add your handling code here:
@@ -280,9 +249,6 @@ public class AppointmentHistory extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
