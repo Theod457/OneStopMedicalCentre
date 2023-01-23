@@ -216,23 +216,28 @@ public class ChangePassword extends javax.swing.JFrame {
         else{
             if(passInput.equals(repassInput))
             {
-                try {
-                    Class.forName("com.mysql.cj.jdbc.Driver");
-                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
-                        "WinMyDowSQL119");
-                    Statement stmt=conn.createStatement();
-                    ResultSet userTable =stmt.executeQuery("select * from user");
-                    stmt.executeUpdate("update user set USER_PASS = '"+repassInput+"' where USER_ID='"+Login.userIDInput+"'");
-                    Login.passwordInput = repassInput;
-                    JOptionPane.showMessageDialog(rootPane,"Password Changed Successfully");
-                    conn.close();
+                if (passInput.equals(originalPassInput)){
+                    JOptionPane.showMessageDialog(rootPane, "Your new password cannot be the same as your current password.");
                 }
-                catch (Exception e) {
-                    e.printStackTrace();
+                else {
+                    try {
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                                "WinMyDowSQL119");
+                        Statement stmt=conn.createStatement();
+                        ResultSet userTable =stmt.executeQuery("select * from user");
+                        stmt.executeUpdate("update user set USER_PASS = '"+repassInput+"' where USER_ID='"+Login.userIDInput+"'");
+                        Login.passwordInput = repassInput;
+                        JOptionPane.showMessageDialog(rootPane,"Password changed successfully.");
+                        conn.close();
+                    }
+                    catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    ManageProfile mp = new ManageProfile();
+                    dispose();
+                    mp.setVisible(true);
                 }
-                ManageProfile mp = new ManageProfile();
-                dispose();
-                mp.setVisible(true);
             }
             else {
                 JOptionPane.showMessageDialog(rootPane,"Password does not match. Please make sure both the new password and re-entered password is the same.");
