@@ -1,4 +1,4 @@
-package medicalCentre;
+package main.resources.medicalCentre;
 
 import javax.swing.JOptionPane;
 import main.resources.medicalCentre.AppointmentMainPage;

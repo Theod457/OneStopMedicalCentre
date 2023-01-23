@@ -294,9 +294,7 @@ public class AppointmentMainPage extends javax.swing.JFrame {
             FrontPage fp = new FrontPage();
             dispose();
             fp.setVisible(true);
-        } else {
-            System.exit(0);
-        }
+        } 
     }// GEN-LAST:event_jButton5ActionPerformed
 
     /**

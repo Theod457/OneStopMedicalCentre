@@ -205,14 +205,14 @@ public class ViewAppointments extends javax.swing.JFrame {
             
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(
-                    "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE >=sysdate and USER_ID="
-                            + Login.userIDInput + "order by a.APPOINTMENT_DATE");
+                    "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE >= sysdate() and a.USER_ID="
+                            + Login.userIDInput + " order by a.APPOINTMENT_DATE");
             
             while(appointmentTable.next()){
-                String appointmentID = appointmentTable.getString("APPOINTMENT_ID");
-                String appointmentDate = appointmentTable.getString("APPOINTMENT_DATE");
-                String appointmentTime = appointmentTable.getString("APPOINTMENT_TIME");
-                String doctorName = appointmentTable.getString("DOCTOR_NAME");
+                String appointmentID = appointmentTable.getString("a.APPOINTMENT_ID");
+                String appointmentDate = appointmentTable.getString("a.APPOINTMENT_DATE");
+                String appointmentTime = appointmentTable.getString("a.APPOINTMENT_TIME");
+                String doctorName = appointmentTable.getString("d.DOCTOR_NAME");
                 
                 
                 String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorName};
@@ -262,8 +262,6 @@ public class ViewAppointments extends javax.swing.JFrame {
             FrontPage fp = new FrontPage();
             dispose();
             fp.setVisible(true);
-        } else {
-            System.exit(0);
         }
     }// GEN-LAST:event_jButton2ActionPerformed
 
