@@ -92,7 +92,7 @@ public class ViewAppointments extends javax.swing.JFrame {
 
                 appID = rp.getInt("APPOINTMENT_ID");
                 // System.out.println(appID);
-                ChooseAppointment.ea = 1;
+                AppointmentMainPage.ea = 1;
                 JButton editButton = new JButton("Edit Appointment");
                 editButton.setToolTipText(String.valueOf(rp.getInt("APPOINTMENT_ID")));
                 editButton.setFont(new java.awt.Font("Ubuntu", 1, 19));
@@ -301,7 +301,7 @@ public class ViewAppointments extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ChooseAppointment ca = new ChooseAppointment();
+        AppointmentMainPage ca = new AppointmentMainPage();
         dispose();
         ca.setVisible(true);
     }// GEN-LAST:event_jButton1ActionPerformed

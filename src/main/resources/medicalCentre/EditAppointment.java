@@ -296,7 +296,7 @@ public class EditAppointment extends javax.swing.JFrame {
             stmt.executeUpdate("update appointment set APPOINTMENT_DATE = '" + date2 + "' where USER_ID =" + userID
                     + " and APPOINTMENT_DATE > (select curdate()) " + "and " + "APPOINTMENT_ID = " + ViewAppointments.appID);
             JOptionPane.showMessageDialog(rootPane, "Your Appointment Date is changed to " + date2);
-            ChooseAppointment ca = new ChooseAppointment();
+            AppointmentMainPage ca = new AppointmentMainPage();
             dispose();
             ca.setVisible(true);
         } catch (Exception e) {
@@ -314,7 +314,7 @@ public class EditAppointment extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        ChooseAppointment ca = new ChooseAppointment();
+        AppointmentMainPage ca = new AppointmentMainPage();
         dispose();
         ca.setVisible(true);
     }// GEN-LAST:event_jButton2ActionPerformed

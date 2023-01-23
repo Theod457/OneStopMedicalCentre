@@ -274,7 +274,7 @@ public class CancelAppointment extends javax.swing.JFrame {
                 userChoice = (String) JOptionPane.showInputDialog("Reason of cancellation appointment");
             }
             JOptionPane.showMessageDialog(null, "Thank you!");
-            ChooseAppointment ca = new ChooseAppointment();
+            AppointmentMainPage ca = new AppointmentMainPage();
             dispose();
             ca.setVisible(true);
         } catch (Exception e) {
@@ -284,7 +284,7 @@ public class CancelAppointment extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        ChooseAppointment ca = new ChooseAppointment();
+        AppointmentMainPage ca = new AppointmentMainPage();
         dispose();
         ca.setVisible(true);
     }// GEN-LAST:event_jButton2ActionPerformed

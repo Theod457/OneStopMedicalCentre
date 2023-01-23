@@ -5,13 +5,13 @@ package main.resources.medicalCentre;
  * @author raghavendhra
  */
 
-public class ChooseAppointment extends javax.swing.JFrame {
+public class AppointmentMainPage extends javax.swing.JFrame {
     public static int ea = 0;
 
     /**
      * Creates new form ChooseAppointment
      */
-    public ChooseAppointment() {
+    public AppointmentMainPage() {
         initComponents();
     }
 
@@ -245,7 +245,7 @@ public class ChooseAppointment extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Specialisation s = new Specialisation();
+        SelectSpecialisation s = new SelectSpecialisation();
         dispose();
         s.setVisible(true);
     }// GEN-LAST:event_jButton2ActionPerformed
@@ -292,24 +292,25 @@ public class ChooseAppointment extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ChooseAppointment.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(AppointmentMainPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ChooseAppointment.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(AppointmentMainPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ChooseAppointment.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(AppointmentMainPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ChooseAppointment.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(AppointmentMainPage.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         }
+        // </editor-fold>
         // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ChooseAppointment().setVisible(true);
+                new AppointmentMainPage().setVisible(true);
             }
         });
     }

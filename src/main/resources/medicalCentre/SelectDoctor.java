@@ -33,7 +33,7 @@ public class SelectDoctor extends javax.swing.JFrame {
         initComponents();
         int x, y, w, dateSelectCheck;
         date = null;
-        String docname1 = Specialisation.docName;
+        String docname1 = SelectSpecialisation.docName;
         String name;
         JLabel[] array = new JLabel[10];
 
@@ -323,7 +323,7 @@ public class SelectDoctor extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-        Specialisation s = new Specialisation();
+        SelectSpecialisation s = new SelectSpecialisation();
         dispose();
         s.setVisible(true);
     }// GEN-LAST:event_jToggleButton1ActionPerformed
