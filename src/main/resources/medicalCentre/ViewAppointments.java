@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -205,7 +206,7 @@ public class ViewAppointments extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(
                     "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE >=sysdate and USER_ID="
-                            + Login.userIDInput);
+                            + Login.userIDInput + "order by a.APPOINTMENT_DATE");
             
             while(appointmentTable.next()){
                 String appointmentID = appointmentTable.getString("APPOINTMENT_ID");
@@ -255,10 +256,15 @@ public class ViewAppointments extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        FrontPage fp = new FrontPage();
-        dispose();
-        fp.setVisible(true);
+        int ans = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?",
+                        "Warning", JOptionPane.YES_NO_OPTION);
+        if (ans == JOptionPane.YES_OPTION) {    
+            FrontPage fp = new FrontPage();
+            dispose();
+            fp.setVisible(true);
+        } else {
+            System.exit(0);
+        }
     }// GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed

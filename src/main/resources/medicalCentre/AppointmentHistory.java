@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -45,6 +46,8 @@ public class AppointmentHistory extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1550, 825));
+        setPreferredSize(new java.awt.Dimension(1550, 825));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -136,7 +139,7 @@ public class AppointmentHistory extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/FrontpageBackground.png"))); // NOI18N
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(0, 170, 1550, 630);
+        jLabel1.setBounds(0, 170, 1550, 660);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, 800));
 
@@ -152,7 +155,7 @@ public class AppointmentHistory extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(
                 "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE <sysdate and USER_ID =" +
-                    Login.userIDInput);
+                    Login.userIDInput + "order by a.APPOINTMENT_DATE desc");
             
             while(appointmentTable.next()){
                 String appointmentID = appointmentTable.getString("APPOINTMENT_ID");
@@ -180,7 +183,7 @@ public class AppointmentHistory extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         ViewAppointments va = new ViewAppointments();
         dispose();
-        va.setVisible(true);        // TODO add your handling code here:
+        va.setVisible(true);        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
@@ -191,10 +194,15 @@ public class AppointmentHistory extends javax.swing.JFrame {
     }// GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        FrontPage fp = new FrontPage();
-        dispose();
-        fp.setVisible(true);
+        int ans = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?",
+                        "Warning", JOptionPane.YES_NO_OPTION);
+        if (ans == JOptionPane.YES_OPTION) {    
+            FrontPage fp = new FrontPage();
+            dispose();
+            fp.setVisible(true);
+        } else {
+            System.exit(0);
+        }
     }// GEN-LAST:event_jButton2ActionPerformed
 
     /**
