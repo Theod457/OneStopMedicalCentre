@@ -25,6 +25,31 @@ public class ViewAppointments extends javax.swing.JFrame {
      */
     public ViewAppointments() {
         initComponents();
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                    "WinMyDowSQL119");// TODO add your handling code here:
+            
+            Statement stmt = conn.createStatement();
+            ResultSet appointmentTable = stmt.executeQuery(
+                    "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME, d.DOCTOR_SPEC from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE >= sysdate() and a.USER_ID=" +
+                            "'" + Login.userIDInput + "'" + " order by a.APPOINTMENT_DATE");
+            
+            while(appointmentTable.next()){
+                String appointmentID = appointmentTable.getString("a.APPOINTMENT_ID");
+                String appointmentDate = appointmentTable.getString("a.APPOINTMENT_DATE");
+                String appointmentTime = appointmentTable.getString("a.APPOINTMENT_TIME");
+                String doctorName = appointmentTable.getString("d.DOCTOR_NAME");
+                String doctorSpec = appointmentTable.getString("d.DOCTOR_SPEC");
+                
+                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorName, doctorSpec};
+                    DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
+                    tblModel.addRow(tbData);
+            }
+            conn.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }  
     }
 
     /**
@@ -54,11 +79,6 @@ public class ViewAppointments extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(13, 91, 107));
@@ -201,34 +221,6 @@ public class ViewAppointments extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
-                    "WinMyDowSQL119");// TODO add your handling code here:
-            
-            Statement stmt = conn.createStatement();
-            ResultSet appointmentTable = stmt.executeQuery(
-                    "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME, d.DOCTOR_SPEC from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE >= sysdate() and a.USER_ID="
-                            + Login.userIDInput + " order by a.APPOINTMENT_DATE");
-            
-            while(appointmentTable.next()){
-                String appointmentID = appointmentTable.getString("a.APPOINTMENT_ID");
-                String appointmentDate = appointmentTable.getString("a.APPOINTMENT_DATE");
-                String appointmentTime = appointmentTable.getString("a.APPOINTMENT_TIME");
-                String doctorName = appointmentTable.getString("d.DOCTOR_NAME");
-                String doctorSpec = appointmentTable.getString("d.DOCTOR_SPEC");
-                
-                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorName, doctorSpec};
-                    DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
-                    tblModel.addRow(tbData);
-            }
-            conn.close();
-        }catch(Exception e){
-            e.printStackTrace();
-        }  
-    }//GEN-LAST:event_formWindowOpened
 
     private void jEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEditButtonActionPerformed
         int index = jTable1.getSelectedRow();

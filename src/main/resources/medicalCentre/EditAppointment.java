@@ -118,7 +118,7 @@ public class EditAppointment extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 153, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setLabel("HOME");
+        jButton2.setText("BACK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -298,9 +298,9 @@ public class EditAppointment extends javax.swing.JFrame {
             stmt.executeUpdate("update appointment set APPOINTMENT_DATE = '" + date2 + "' where USER_ID =" + userID
                     + " and APPOINTMENT_DATE > (select curdate()) " + "and " + "APPOINTMENT_ID = " + ViewAppointments.appID);
             JOptionPane.showMessageDialog(rootPane, "Your Appointment Date is changed to " + date2);
-            AppointmentMainPage ca = new AppointmentMainPage();
+            ViewAppointments va = new ViewAppointments();
             dispose();
-            ca.setVisible(true);
+            va.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();
         }

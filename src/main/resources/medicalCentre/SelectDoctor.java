@@ -172,10 +172,13 @@ public class SelectDoctor extends javax.swing.JFrame {
                                         "WinMyDowSQL119");
                                 Statement stmt = conn.createStatement();
                                 ResultSet doctorTable = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + doctorIDInput);
+                                System.out.println("BANANANNANA");
                                 doctorTable.next();
+                                System.out.println(Login.userIDInput);
+                                System.out.println(doctorIDInput);
                                 stmt.executeUpdate(
-                                        "insert into appointment(USER_ID, DOCTOR_ID, APPOINTMENT_DATE, APPOINTMENT_TIME)" + "values("
-                                                + Login.userIDInput + "," + doctorIDInput + ",'" + dateString + "','" + doctorTable.getTime("DOCTOR_TIME") + "')");
+                                        "insert into appointment(USER_ID, DOCTOR_ID, APPOINTMENT_DATE, APPOINTMENT_TIME)" + " values("
+                                                +  Login.userIDInput + "," + doctorIDInput + ",'" + dateString + "','" + doctorTable.getTime("DOCTOR_TIME") + "')");
                                 ConfirmAppointment ca = new ConfirmAppointment();
                                 dispose();
                                 ca.setVisible(true);
@@ -224,8 +227,9 @@ public class SelectDoctor extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(0, 0, 0));
-        setPreferredSize(new java.awt.Dimension(1540, 810));
-        setSize(new java.awt.Dimension(1540, 810));
+        setPreferredSize(new java.awt.Dimension(1550, 825));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1550, 825));
         getContentPane().setLayout(null);
 
         jToggleButton1.setBackground(new java.awt.Color(0, 153, 153));
@@ -288,7 +292,7 @@ public class SelectDoctor extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(1040, 690, 200, 50);
+        jButton1.setBounds(220, 690, 200, 50);
 
         jLabel1.setBackground(java.awt.Color.white);
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N

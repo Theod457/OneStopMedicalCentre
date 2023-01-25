@@ -23,22 +23,36 @@ public class ConfirmAppointment extends javax.swing.JFrame {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                     "WinMyDowSQL119");
-            Statement stmt = conn.createStatement();
-            ResultSet appointmentTable = stmt.executeQuery(
+            Statement stmt1 = conn.createStatement();
+            ResultSet appointmentTable = stmt1.executeQuery(
                     "select * from appointment where APPOINTMENT_ID=(select max(APPOINTMENT_ID) from appointment)");
+            Statement stmt2 = conn.createStatement();
+            ResultSet userTable = stmt2.executeQuery(
+                        "select USER_NAME, USER_CONTACT from user where USER_ID = " + "'" + Login.userIDInput + "'");
+                    
             appointmentTable.next();
+            int appID = appointmentTable.getInt("APPOINTMENT_ID");
             int docID = appointmentTable.getInt("DOCTOR_ID");
-            String userID = appointmentTable.getString("USER_ID");
-            appDate.setText(String.valueOf(appointmentTable.getDate("APPOINTMENT_DATE")));
-            appTime.setText(String.valueOf(appointmentTable.getTime("APPOINTMENT_TIME")));
-            ResultSet doctorTable = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
+//            String userID = appointmentTable.getString("USER_ID");
+            jLabel9.setText(appointmentTable.getString("APPOINTMENT_DATE"));
+            jLabel11.setText(appointmentTable.getString("APPOINTMENT_TIME"));
+            
+            Statement stmt3 = conn.createStatement();
+            ResultSet docTable = stmt3.executeQuery(
+                     "select DOCTOR_NAME, DOCTOR_SPEC from doctor where DOCTOR_ID = " + docID);
+            
+            //appDate.setText(String.valueOf(appointmentTable.getDate("APPOINTMENT_DATE")));
+//            ResultSet doctorTable = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
 
-            doctorTable.next();
-            nameofdoctor.setText(String.valueOf(doctorTable.getString("DOCTOR_NAME")));
-
-            ResultSet userTable = stmt.executeQuery("select * from user where USER_ID=" + userID);
+            docTable.next();
+//            nameofdoctor.setText(String.valueOf(doctorTable.getString("DOCTOR_NAME")));
+            doctorName.setText(docTable.getString("DOCTOR_NAME"));
+            
+//            ResultSet userTable = stmt.executeQuery("select * from user where USER_ID=" + userID);
             userTable.next();
-            nameofpat.setText(String.valueOf(userTable.getString(2)));
+            patient_name.setText(userTable.getString("USER_NAME"));
+            contact.setText(userTable.getString("USER_CONTACT"));
+//            nameofpat.setText(String.valueOf(userTable.getString(2)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -63,7 +77,7 @@ public class ConfirmAppointment extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         patient_name = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        gender = new javax.swing.JLabel();
+        contact = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -81,10 +95,14 @@ public class ConfirmAppointment extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1550, 825));
         setMinimumSize(new java.awt.Dimension(1550, 825));
         setPreferredSize(new java.awt.Dimension(1550, 825));
         setSize(new java.awt.Dimension(0, 0));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(14, 93, 109));
@@ -125,9 +143,9 @@ public class ConfirmAppointment extends javax.swing.JFrame {
         patient_name.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel4.setText("Gender :");
+        jLabel4.setText("Contact :");
 
-        gender.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        contact.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 3, 25)); // NOI18N
@@ -143,14 +161,14 @@ public class ConfirmAppointment extends javax.swing.JFrame {
         doctorName.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel10.setText("Date of appointment :");
+        jLabel10.setText("Date of Appointment :");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel7.setText("Time of appointment :");
+        jLabel7.setText("Time of Appointment :");
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -201,7 +219,7 @@ public class ConfirmAppointment extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
@@ -226,7 +244,7 @@ public class ConfirmAppointment extends javax.swing.JFrame {
                         .addGap(65, 65, 65)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4)
-                            .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jLabel5)
@@ -268,7 +286,7 @@ public class ConfirmAppointment extends javax.swing.JFrame {
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, -1, 50));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/girl_nurse.png"))); // NOI18N
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 400, 300, 490));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 430, 300, 490));
 
         jButton3.setBackground(new java.awt.Color(0, 102, 51));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -312,10 +330,14 @@ public class ConfirmAppointment extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "You will receive notification " + userChoice,
                     "Notification set", JOptionPane.INFORMATION_MESSAGE, icon_R);
         }
-        ViewAppointments ea = new ViewAppointments();
+        ViewAppointments va = new ViewAppointments();
         dispose();
-        ea.setVisible(true);
+        va.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        
+    }//GEN-LAST:event_formWindowOpened
 
     public class ClassNameHere {
 
@@ -390,8 +412,8 @@ public class ConfirmAppointment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel contact;
     private javax.swing.JLabel doctorName;
-    private javax.swing.JLabel gender;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

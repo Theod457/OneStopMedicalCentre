@@ -1651,3 +1651,813 @@ Caused by: java.net.URISyntaxException: Illegal character in query at index 119:
 2023.01.25 19:07:16 INFO  time: code lens generation in 4.31s
 Jan 25, 2023 7:07:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 WARNING: Unmatched cancel notification for request id 201
+2023.01.25 19:35:56 WARN  Running javac-semanticdb failed for file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.java. Output:
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:315: error: illegal start of expression
+<<<<<<< HEAD
+^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:315: error: illegal start of expression
+<<<<<<< HEAD
+  ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:315: error: illegal start of expression
+<<<<<<< HEAD
+    ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:317: error: > or ',' expected
+=======
+^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:317: error: illegal start of expression
+=======
+  ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:317: error: illegal start of expression
+=======
+    ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:317: error: illegal start of expression
+=======
+      ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:318: error: ';' expected
+        ViewAppointments ea = new ViewAppointments();
+                        ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:321: error: illegal start of expression
+>>>>>>> b119166a179deb7b87bebd6253a355d6615c7235
+^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:321: error: illegal start of expression
+>>>>>>> b119166a179deb7b87bebd6253a355d6615c7235
+   ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:321: error: illegal start of expression
+>>>>>>> b119166a179deb7b87bebd6253a355d6615c7235
+      ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:321: error: ';' expected
+>>>>>>> b119166a179deb7b87bebd6253a355d6615c7235
+                                                ^
+12 errors
+2023.01.25 19:35:56 INFO  time: code lens generation in 2.46s
+2023.01.25 19:36:47 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1916)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:36:47 INFO  time: code lens generation in 5.06s
+2023.01.25 19:40:13 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1916)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:40:13 INFO  time: code lens generation in 5.89s
+2023.01.25 19:40:38 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1916)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:40:38 INFO  time: code lens generation in 5.96s
+2023.01.25 19:43:11 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1916)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:43:11 INFO  time: code lens generation in 3.68s
+Jan 25, 2023 7:43:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 234
+Jan 25, 2023 7:43:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 235
+2023.01.25 19:43:46 WARN  no build target for: C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java
+2023.01.25 19:43:57 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1940)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:43:57 INFO  time: code lens generation in 7.56s
+2023.01.25 19:44:02 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1916)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:44:02 INFO  time: code lens generation in 3.89s
+2023.01.25 19:44:11 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1916)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:44:11 INFO  time: code lens generation in 3.55s
+2023.01.25 19:44:47 WARN  no build target for: C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java
+2023.01.25 19:44:56 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1940)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:44:56 INFO  time: code lens generation in 6.12s
+2023.01.25 19:45:00 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1940)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.MetalsLanguageServer.definitionOrReferences(MetalsLanguageServer.scala:2667)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$definition$1(MetalsLanguageServer.scala:1533)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.definition(MetalsLanguageServer.scala:1532)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:578)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:45:04 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1940)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.DefinitionProvider.definition(DefinitionProvider.scala:83)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$definitionResult$1(MetalsLanguageServer.scala:2730)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.definitionResult(MetalsLanguageServer.scala:2730)
+	at scala.meta.internal.metals.MetalsLanguageServer.definitionOrReferences(MetalsLanguageServer.scala:2706)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$definition$1(MetalsLanguageServer.scala:1533)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.definition(MetalsLanguageServer.scala:1532)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:578)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:45:04 WARN  code navigation does not work for the file 'C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java' because it doesn't belong to a build target.
+2023.01.25 19:45:08 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1940)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:45:08 INFO  time: code lens generation in 3.71s
+2023.01.25 19:45:37 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1940)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:45:37 INFO  time: code lens generation in 4.33s
+2023.01.25 19:45:38 WARN  no build target for: C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java
+2023.01.25 19:45:40 WARN  Running javac-semanticdb failed for file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.java. Output:
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:215: error: illegal start of expression
+<<<<<<< Updated upstream
+  ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:215: error: illegal start of expression
+<<<<<<< Updated upstream
+    ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:215: error: > or ',' expected
+<<<<<<< Updated upstream
+                ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:217: error: illegal start of expression
+=======
+  ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:217: error: illegal start of expression
+=======
+    ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:217: error: illegal start of expression
+=======
+      ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:218: error: illegal start of expression
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:229: error: illegal start of expression
+>>>>>>> Stashed changes
+   ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:229: error: illegal start of expression
+>>>>>>> Stashed changes
+      ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:229: error: ')' or ',' expected
+>>>>>>> Stashed changes
+               ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:245: error: ';' expected
+                .addContainerGap(54, Short.MAX_VALUE))
+                                                     ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:292: error: illegal start of expression
+<<<<<<< Updated upstream
+^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:292: error: illegal start of expression
+<<<<<<< Updated upstream
+  ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:292: error: illegal start of expression
+<<<<<<< Updated upstream
+    ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:292: error: > or ',' expected
+<<<<<<< Updated upstream
+                ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:293: error: ';' expected
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 790, 370, -1));
+                      ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:297: error: illegal start of expression
+=======
+^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:297: error: illegal start of expression
+=======
+  ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:297: error: illegal start of expression
+=======
+    ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:297: error: illegal start of expression
+=======
+      ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:300: error: illegal start of expression
+>>>>>>> Stashed changes
+^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:300: error: illegal start of expression
+>>>>>>> Stashed changes
+   ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:300: error: illegal start of expression
+>>>>>>> Stashed changes
+      ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:300: error: ';' expected
+>>>>>>> Stashed changes
+               ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:302: error: ';' expected
+        pack();
+            ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:429: error: illegal start of type
+<<<<<<< Updated upstream
+^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:429: error: > expected
+<<<<<<< Updated upstream
+               ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:429: error: <identifier> expected
+<<<<<<< Updated upstream
+                        ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:430: error: '(' expected
+    private javax.swing.JLabel appTime;
+    ^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:433: error: illegal start of type
+=======
+^
+C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java:434: error: ';' expected
+>>>>>>> Stashed changes
+                       ^
+31 errors
+2023.01.25 19:45:40 INFO  shutting down Metals
+2023.01.25 19:45:41 ERROR Unexpected error initializing serverorg.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request window/showMessageRequest failed with message: Canceled
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:209)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:193)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:47:32 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at c:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\.metals\lsp.trace.json or C:\Users\aaronpeng\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2023.01.25 19:47:42 INFO  logging to file C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\.metals\metals.log
+2023.01.25 19:47:42 INFO  Started: Metals version 0.11.10 in workspace 'C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre' for client Visual Studio Code 1.74.3.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/C:/Users/aaronpeng/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.10.5/scribe-slf4j_2.13-3.10.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.01.25 19:47:59 INFO  time: initialize in 16s
+2023.01.25 19:48:08 WARN  Build server is not auto-connectable.
+2023.01.25 19:48:08 WARN  no build target for: C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java
+Jan 25, 2023 7:48:11 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Jan 25, 2023 7:48:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2023.01.25 19:49:53 WARN  no build target for: C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\ConfirmAppointment.java
+Jan 25, 2023 7:49:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 15
+Jan 25, 2023 7:49:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 18
+2023.01.25 19:50:26 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/ConfirmAppointment.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1916)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:50:26 INFO  time: code lens generation in 9.26s
+2023.01.25 19:51:54 WARN  no build target for: C:\Users\aaronpeng\Documents\CAT201\OneStopMedicalCentre\src\main\resources\medicalCentre\FrontPage.java
+2023.01.25 19:52:21 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1916)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:52:21 INFO  time: code lens generation in 7.68s
+2023.01.25 19:54:32 ERROR text document: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.javajava.nio.file.InvalidPathException: Illegal char <:> at index 4: file:///C:/Users/aaronpeng/Documents/CAT201/OneStopMedicalCentre/src/main/resources/medicalCentre/FrontPage.java
+	at sun.nio.fs.WindowsPathParser.normalize(WindowsPathParser.java:182)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:153)
+	at sun.nio.fs.WindowsPathParser.parse(WindowsPathParser.java:77)
+	at sun.nio.fs.WindowsPath.parse(WindowsPath.java:92)
+	at sun.nio.fs.WindowsFileSystem.getPath(WindowsFileSystem.java:232)
+	at java.nio.file.Path.resolve(Path.java:515)
+	at scala.meta.io.AbsolutePath.resolve(AbsolutePath.scala:43)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$2(ImplementationProvider.scala:85)
+	at scala.collection.immutable.Vector.foreach(Vector.scala:1895)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1(ImplementationProvider.scala:79)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$computeInheritance$1$adapted(ImplementationProvider.scala:78)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.implementation.ImplementationProvider.computeInheritance(ImplementationProvider.scala:78)
+	at scala.meta.internal.implementation.ImplementationProvider.$anonfun$onChange$1(ImplementationProvider.scala:68)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1916)
+	at scala.meta.internal.implementation.ImplementationProvider.onChange(ImplementationProvider.scala:68)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.$anonfun$onChange$1$adapted(SemanticdbIndexer.scala:81)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:81)
+	at scala.meta.internal.metals.SemanticdbIndexer.onChange(SemanticdbIndexer.scala:77)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.$anonfun$textDocument$1(InteractiveSemanticdbs.scala:96)
+	at java.util.HashMap.compute(HashMap.java:1324)
+	at java.util.Collections$SynchronizedMap.compute(Collections.java:2770)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:89)
+	at scala.meta.internal.metals.InteractiveSemanticdbs.textDocument(InteractiveSemanticdbs.scala:63)
+	at scala.meta.internal.metals.AggregateSemanticdbs.loop$1(AggregateSemanticdbs.scala:30)
+	at scala.meta.internal.metals.AggregateSemanticdbs.textDocument(AggregateSemanticdbs.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:22)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1589)
+
+2023.01.25 19:54:32 INFO  time: code lens generation in 6.56s
