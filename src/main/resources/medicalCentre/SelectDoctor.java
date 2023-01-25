@@ -33,7 +33,7 @@ public class SelectDoctor extends javax.swing.JFrame {
         initComponents();
         int x, y, w, dateSelectCheck;
         date = null;
-        String docname1 = SelectSpecialisation.docName;
+        String docSpec1 = SelectSpecialisation.docSpec;
         String name;
         JLabel[] array = new JLabel[10];
 
@@ -55,9 +55,9 @@ public class SelectDoctor extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
-            ResultSet rp = stmt.executeQuery("select * from doctor where DOCTOR_SPEC='" + docname1 + "'");
-            x = 70;
-            w = 260;
+            ResultSet rp = stmt.executeQuery("select * from doctor where DOCTOR_SPEC='" + docSpec1 + "'");
+            x = 890;
+            w = 1000;
             y = 250;
             // name1.setText(" " );
             while (rp.next()) {
@@ -138,12 +138,12 @@ public class SelectDoctor extends javax.swing.JFrame {
 //                y += 55;
                 docID = rp.getInt("DOCTOR_ID");
                 // System.out.println(docID);
-                JButton bookButton = new JButton(" Book Appointment");
+                JButton bookButton = new JButton(" BOOK APPOINTMENT");
                 bookButton.setToolTipText(String.valueOf(rp.getInt("DOCTOR_ID")));
                 bookButton.setFont(new java.awt.Font("Segoe UI Bold", 1, 20));
                 this.add(bookButton);
                 bookButton.setOpaque(true);
-                bookButton.setBounds(70, y, 215, 55);
+                bookButton.setBounds(890, y, 215, 55);
                 bookButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         // System.out.println(docID);
@@ -192,7 +192,7 @@ public class SelectDoctor extends javax.swing.JFrame {
                 //
                 // break;
                 // }
-                x = 70;
+                x = 890;
                 y += 50;
                 // i++;
             }
@@ -228,7 +228,7 @@ public class SelectDoctor extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1540, 810));
         getContentPane().setLayout(null);
 
-        jToggleButton1.setBackground(new java.awt.Color(2, 153, 153));
+        jToggleButton1.setBackground(new java.awt.Color(0, 153, 153));
         jToggleButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
         jToggleButton1.setSelected(true);
@@ -293,7 +293,7 @@ public class SelectDoctor extends javax.swing.JFrame {
         jLabel1.setBackground(java.awt.Color.white);
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Select Doctor");
+        jLabel1.setText("SELECT DOCTOR");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(590, 190, 360, 41);
 
@@ -315,7 +315,7 @@ public class SelectDoctor extends javax.swing.JFrame {
         jCalendar1.setMinimumSize(new java.awt.Dimension(250, 250));
         jCalendar1.setPreferredSize(new java.awt.Dimension(250, 250));
         getContentPane().add(jCalendar1);
-        jCalendar1.setBounds(890, 260, 500, 400);
+        jCalendar1.setBounds(70, 260, 500, 400);
 
         pack();
         setLocationRelativeTo(null);
