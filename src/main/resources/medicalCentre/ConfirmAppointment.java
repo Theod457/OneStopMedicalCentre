@@ -312,7 +312,7 @@ public class ConfirmAppointment extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "You will receive notification " + userChoice,
                     "Notification set", JOptionPane.INFORMATION_MESSAGE, icon_R);
         }
-
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public class ClassNameHere {

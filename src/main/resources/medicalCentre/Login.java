@@ -282,10 +282,10 @@ public class Login extends javax.swing.JFrame {
                     if(user.equals(usernameInput)&&pass.equals(passwordInput))
                     {
                         userIDInput = rs.getString("USER_ID");
-                        AppointmentMainPage mp = new AppointmentMainPage();
+                        Main m = new Main();
                         dispose();
                         loginSuccess=1;
-                        mp.setVisible(true);
+                        m.setVisible(true);
                     }
                 }
                 if(loginSuccess == 0 && passwordCheck == 1 && usernameCheck == 1)

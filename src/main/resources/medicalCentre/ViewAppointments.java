@@ -118,7 +118,7 @@ public class ViewAppointments extends javax.swing.JFrame {
 
             },
             new String [] {
-                "APPOINTMENT ID", "APPOINTMENT DATE", "APPOINTMENT TIME", "DOCTOR NAME"
+                "APPOINTMENT ID", "APPOINTMENT DATE", "APPOINTMENT TIME", "DOCTOR NAME", "SPECIALISATION"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -210,7 +210,7 @@ public class ViewAppointments extends javax.swing.JFrame {
             
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(
-                    "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE >= sysdate() and a.USER_ID="
+                    "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME, d.DOCTOR_SPEC from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE >= sysdate() and a.USER_ID="
                             + Login.userIDInput + " order by a.APPOINTMENT_DATE");
             
             while(appointmentTable.next()){
@@ -218,9 +218,9 @@ public class ViewAppointments extends javax.swing.JFrame {
                 String appointmentDate = appointmentTable.getString("a.APPOINTMENT_DATE");
                 String appointmentTime = appointmentTable.getString("a.APPOINTMENT_TIME");
                 String doctorName = appointmentTable.getString("d.DOCTOR_NAME");
+                String doctorSpec = appointmentTable.getString("d.DOCTOR_SPEC");
                 
-                
-                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorName};
+                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorName, doctorSpec};
                     DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
                     tblModel.addRow(tbData);
             }
@@ -232,20 +232,32 @@ public class ViewAppointments extends javax.swing.JFrame {
 
     private void jEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEditButtonActionPerformed
         int index = jTable1.getSelectedRow();
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        appID = model.getValueAt(index, 0).toString();
-        EditAppointment o = new EditAppointment();
-        dispose();
-        o.setVisible(true);        
+        
+        if(index<0)
+        {
+            JOptionPane.showMessageDialog(rootPane, "No rows selected."); 
+        } else {
+            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+            appID = model.getValueAt(index, 0).toString();
+            EditAppointment o = new EditAppointment();
+            dispose();
+            o.setVisible(true);  
+        }
     }//GEN-LAST:event_jEditButtonActionPerformed
 
     private void jDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteButtonActionPerformed
         int index = jTable1.getSelectedRow();
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        appID = model.getValueAt(index, 0).toString();
-        CancelAppointment o = new CancelAppointment();
-        dispose();
-        o.setVisible(true);        
+        
+        if(index<0)
+        {
+            JOptionPane.showMessageDialog(rootPane, "No rows selected.");
+        } else {
+            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+            appID = model.getValueAt(index, 0).toString();
+            CancelAppointment o = new CancelAppointment();
+            dispose();
+            o.setVisible(true);  
+        }
     }//GEN-LAST:event_jDeleteButtonActionPerformed
 
     private void jNewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNewButtonActionPerformed

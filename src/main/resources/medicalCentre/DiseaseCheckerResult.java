@@ -180,9 +180,9 @@ public class DiseaseCheckerResult extends javax.swing.JFrame {
     }//GEN-LAST:event_BackActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        SelectDoctor sd = new SelectDoctor();
+        SelectSpecialisation ss = new SelectSpecialisation();
         dispose();
-        sd.setVisible(true);
+        ss.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

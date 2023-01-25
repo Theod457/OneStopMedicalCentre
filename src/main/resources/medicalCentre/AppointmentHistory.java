@@ -48,7 +48,6 @@ public class AppointmentHistory extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1550, 825));
-        setPreferredSize(new java.awt.Dimension(1550, 825));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -130,7 +129,7 @@ public class AppointmentHistory extends javax.swing.JFrame {
 
             },
             new String [] {
-                "APPOINtMENT ID", "APPOINTMENT DATE", "APPOINTMENT TIME", "DOCTOR NAME"
+                "APPOINtMENT ID", "APPOINTMENT DATE", "APPOINTMENT TIME", "DOCTOR NAME", "SPECIALISATION"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -159,7 +158,7 @@ public class AppointmentHistory extends javax.swing.JFrame {
             
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(
-                "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE < sysdate() and a.USER_ID = " +
+                "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME, d.DOCTOR_SPEC from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE < sysdate() and a.USER_ID = " +
                     Login.userIDInput + " order by a.APPOINTMENT_DATE desc");
             
             while(appointmentTable.next()){
@@ -167,8 +166,9 @@ public class AppointmentHistory extends javax.swing.JFrame {
                 String appointmentDate = appointmentTable.getString("a.APPOINTMENT_DATE");
                 String appointmentTime = appointmentTable.getString("a.APPOINTMENT_TIME");
                 String doctorName = appointmentTable.getString("d.DOCTOR_NAME");
+                String doctorSpec = appointmentTable.getString("d.DOCTOR_SPEC");
                 
-                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorName};
+                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorName, doctorSpec};
                     DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
                     tblModel.addRow(tbData);
             }
