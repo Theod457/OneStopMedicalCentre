@@ -29,7 +29,7 @@ public class ConfirmAppointment extends javax.swing.JFrame {
             appointmentTable.next();
             int docID = appointmentTable.getInt("DOCTOR_ID");
             String userID = appointmentTable.getString("USER_ID");
-            // appDate.setText(String.valueOf(appointmentTable.getDate("APPOINTMENT_DATE")));
+            appDate.setText(String.valueOf(appointmentTable.getDate("APPOINTMENT_DATE")));
             appTime.setText(String.valueOf(appointmentTable.getTime("APPOINTMENT_TIME")));
             ResultSet doctorTable = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
 
@@ -312,7 +312,9 @@ public class ConfirmAppointment extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "You will receive notification " + userChoice,
                     "Notification set", JOptionPane.INFORMATION_MESSAGE, icon_R);
         }
-        
+        ViewAppointments ea = new ViewAppointments();
+        dispose();
+        ea.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public class ClassNameHere {
