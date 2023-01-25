@@ -42,6 +42,7 @@ public class SelectSpecialisation extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1550, 825));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -88,7 +89,7 @@ public class SelectSpecialisation extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(2, 153, 153));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setLabel("HOME");
+        jButton1.setText("BACK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

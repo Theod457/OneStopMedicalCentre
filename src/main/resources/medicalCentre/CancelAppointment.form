@@ -148,12 +148,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="dateofappo" pref="225" max="32767" attributes="0"/>
+                          <Component id="dateofappo" pref="171" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" pref="72" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="doctorname" min="-2" pref="330" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -201,7 +201,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Your upcoming Appointment is on"/>
+            <Property name="text" type="java.lang.String" value="Your upcoming appointment is on"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="dateofappo">
@@ -216,7 +216,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semibold" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="with"/>
+            <Property name="text" type="java.lang.String" value="with Dr."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="doctorname">

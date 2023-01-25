@@ -143,7 +143,7 @@ public class SelectDoctor extends javax.swing.JFrame {
                 bookButton.setFont(new java.awt.Font("Segoe UI Bold", 1, 20));
                 this.add(bookButton);
                 bookButton.setOpaque(true);
-                bookButton.setBounds(890, y, 215, 55);
+                bookButton.setBounds(890, y, 410, 55);
                 bookButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         // System.out.println(docID);
@@ -172,10 +172,7 @@ public class SelectDoctor extends javax.swing.JFrame {
                                         "WinMyDowSQL119");
                                 Statement stmt = conn.createStatement();
                                 ResultSet doctorTable = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + doctorIDInput);
-                                System.out.println("BANANANNANA");
                                 doctorTable.next();
-                                System.out.println(Login.userIDInput);
-                                System.out.println(doctorIDInput);
                                 stmt.executeUpdate(
                                         "insert into appointment(USER_ID, DOCTOR_ID, APPOINTMENT_DATE, APPOINTMENT_TIME)" + " values("
                                                 +  Login.userIDInput + "," + doctorIDInput + ",'" + dateString + "','" + doctorTable.getTime("DOCTOR_TIME") + "')");

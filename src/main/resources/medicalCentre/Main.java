@@ -34,27 +34,27 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLogOutButton = new javax.swing.JToggleButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jBookNowButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jClickHereButton = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -65,6 +65,11 @@ public class Main extends javax.swing.JFrame {
         jEventMenu = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jDiseaseCheckerMenu = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jProfileMenuItem = new javax.swing.JMenuItem();
+        jLogOutMenuItem = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.white);
@@ -81,16 +86,6 @@ public class Main extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/hospitalIcon.png"))); // NOI18N
 
-        jLogOutButton.setBackground(new java.awt.Color(16, 153, 153));
-        jLogOutButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLogOutButton.setForeground(new java.awt.Color(255, 255, 255));
-        jLogOutButton.setText("LOG OUT");
-        jLogOutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jLogOutButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -105,9 +100,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGap(317, 317, 317)
-                        .addComponent(jLogOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58))))
+                        .addGap(548, 548, 548))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,9 +111,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLogOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                .addComponent(jLabel1)
                 .addGap(55, 55, 55))
         );
 
@@ -132,9 +123,6 @@ public class Main extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel10.setText("WELCOME TO AMRITA HOSPITAL");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 778, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/HOME BANNER.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 820, 450));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel4.setText("ABOUT US");
@@ -156,46 +144,56 @@ public class Main extends javax.swing.JFrame {
         jLabel9.setText("cardiologist, otolaryngologist, neurologist, gastroenterologist, pulmonologist, and ophthalmologist.  ");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 430, 720, 30));
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Hotline.png"))); // NOI18N
-        jLabel12.setText("EMERGENCY HOTLINE ");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 490, 250, -1));
+        jPanel2.setLayout(null);
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel15.setText("+6019-911 9111");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 530, -1, -1));
+        jBookNowButton.setBackground(new java.awt.Color(16, 153, 153));
+        jBookNowButton.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jBookNowButton.setForeground(new java.awt.Color(255, 255, 255));
+        jBookNowButton.setText("BOOK NOW");
+        jBookNowButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBookNowButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jBookNowButton);
+        jBookNowButton.setBounds(260, 630, 270, 50);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/HOME BANNER.png"))); // NOI18N
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(20, 250, 820, 450);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Mail.png"))); // NOI18N
         jLabel14.setText(" EMAIL");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 580, 160, -1));
+        jPanel2.add(jLabel14);
+        jLabel14.setBounds(850, 560, 160, 44);
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel16.setText("amrita_hospital@gmail.com");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 620, 270, -1));
+        jPanel2.add(jLabel16);
+        jLabel16.setBounds(900, 600, 270, 27);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Location (2).png"))); // NOI18N
         jLabel13.setText("VENUE");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 670, 200, -1));
+        jPanel2.add(jLabel13);
+        jLabel13.setBounds(850, 630, 200, 47);
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel17.setText("23, Jalan Sungai Dua, Kampung Dua Bukit, 11700 Gelugor, Penang");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 710, 590, -1));
+        jPanel2.add(jLabel17);
+        jLabel17.setBounds(900, 670, 590, 27);
 
-        jPanel2.setLayout(null);
+        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Hotline.png"))); // NOI18N
+        jLabel12.setText("EMERGENCY HOTLINE ");
+        jPanel2.add(jLabel12);
+        jLabel12.setBounds(850, 490, 250, 44);
 
-        jClickHereButton.setBackground(new java.awt.Color(16, 153, 153));
-        jClickHereButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jClickHereButton.setForeground(new java.awt.Color(255, 255, 255));
-        jClickHereButton.setText("CLICK HERE");
-        jClickHereButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jClickHereButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jClickHereButton);
-        jClickHereButton.setBounds(230, 730, 410, 50);
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel15.setText("+6019-911 9111");
+        jPanel2.add(jLabel15);
+        jLabel15.setBounds(900, 530, 148, 27);
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/FrontpageBackground.png"))); // NOI18N
         jPanel2.add(jLabel18);
@@ -203,10 +201,12 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 1550, 820));
 
-        jMenu1.setText("APPOINTMENT");
-        jMenu1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/date-63.png"))); // NOI18N
+        jMenu1.setText("Appointment     ");
+        jMenu1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
-        jBookMenu.setText("Book Appoinment");
+        jBookMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jBookMenu.setText("Book Appointment");
         jBookMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBookMenuActionPerformed(evt);
@@ -214,6 +214,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu1.add(jBookMenu);
 
+        jUpcomingMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jUpcomingMenu.setText("Upcoming Appointment");
         jUpcomingMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,6 +223,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu1.add(jUpcomingMenu);
 
+        jHistoryMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jHistoryMenu.setText("Appointment History");
         jHistoryMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,10 +234,12 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("EVENT");
-        jMenu2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/EventLogo.png"))); // NOI18N
+        jMenu2.setText("Event     ");
+        jMenu2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
-        jEventMenu.setText("Event blog");
+        jEventMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jEventMenu.setText("Event Blog");
         jEventMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jEventMenuActionPerformed(evt);
@@ -245,10 +249,15 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("DISEASE CHECKER");
-        jMenu3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jMenu3.setBackground(new java.awt.Color(13, 91, 107));
+        jMenu3.setForeground(new java.awt.Color(13, 91, 107));
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/DiseaseCheckerLogo - Copy.png"))); // NOI18N
+        jMenu3.setText("Disease Checker                                                                                                                   ");
+        jMenu3.setFocusTraversalPolicyProvider(true);
+        jMenu3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
-        jDiseaseCheckerMenu.setText("Check for possible disease");
+        jDiseaseCheckerMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jDiseaseCheckerMenu.setText("Disease Checker");
         jDiseaseCheckerMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDiseaseCheckerMenuActionPerformed(evt);
@@ -258,16 +267,40 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/LoginLogo.jpg"))); // NOI18N
+        jMenu4.setActionCommand("                                                    Profile");
+        jMenu4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+
+        jProfileMenuItem.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jProfileMenuItem.setText("Manage Profile");
+        jProfileMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jProfileMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jProfileMenuItem);
+
+        jLogOutMenuItem.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLogOutMenuItem.setText("Log Out");
+        jLogOutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLogOutMenuItemActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jLogOutMenuItem);
+
+        jMenuBar1.add(jMenu4);
+
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jClickHereButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClickHereButtonActionPerformed
+    private void jBookNowButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBookNowButtonActionPerformed
         AppointmentMainPage amp = new AppointmentMainPage();
         dispose();
         amp.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jClickHereButtonActionPerformed
+    }//GEN-LAST:event_jBookNowButtonActionPerformed
 
     private void jBookMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBookMenuActionPerformed
         SelectSpecialisation s = new SelectSpecialisation();
@@ -299,15 +332,21 @@ public class Main extends javax.swing.JFrame {
         dc.setVisible(true);
     }//GEN-LAST:event_jDiseaseCheckerMenuActionPerformed
 
-    private void jLogOutButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void jProfileMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jProfileMenuItemActionPerformed
+        ManageProfile mp = new ManageProfile();
+        dispose();
+        mp.setVisible(true);       
+    }//GEN-LAST:event_jProfileMenuItemActionPerformed
+
+    private void jLogOutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogOutMenuItemActionPerformed
         int ans = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?",
                         "Warning", JOptionPane.YES_NO_OPTION);
         if (ans == JOptionPane.YES_OPTION) {    
             FrontPage fp = new FrontPage();
             dispose();
             fp.setVisible(true);
-        } 
-    }// GEN-LAST:event_jToggleButton1ActionPerformed
+        } // TODO add your handling code here:
+    }//GEN-LAST:event_jLogOutMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -350,7 +389,7 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem jBookMenu;
-    private javax.swing.JButton jClickHereButton;
+    private javax.swing.JButton jBookNowButton;
     private javax.swing.JMenuItem jDiseaseCheckerMenu;
     private javax.swing.JMenuItem jEventMenu;
     private javax.swing.JMenuItem jHistoryMenu;
@@ -372,13 +411,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JToggleButton jLogOutButton;
+    private javax.swing.JMenuItem jLogOutMenuItem;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JMenuItem jProfileMenuItem;
     private javax.swing.JMenuItem jUpcomingMenu;
     // End of variables declaration//GEN-END:variables
 }

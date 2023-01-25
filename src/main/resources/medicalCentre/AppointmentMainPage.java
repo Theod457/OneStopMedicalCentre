@@ -41,13 +41,10 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jProfileButton = new javax.swing.JButton();
         jPreviousButton = new javax.swing.JButton();
         jBookButton = new javax.swing.JButton();
         jUpcomingButton = new javax.swing.JButton();
         jHomeButton = new javax.swing.JButton();
-        jDiseaseButton = new javax.swing.JButton();
-        jEventButton = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -59,6 +56,7 @@ public class AppointmentMainPage extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(13, 89, 104));
         jPanel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(1550, 195));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -107,134 +105,101 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel4.setText("Healthcare with a Heart : Our founder, Sri Mata ");
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(900, 240, 421, 27);
+        jLabel4.setBounds(960, 240, 411, 27);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel8.setText("Amritananadamayi Devi (known as AMMA), envisioned ");
         jPanel4.add(jLabel8);
-        jLabel8.setBounds(900, 270, 490, 27);
+        jLabel8.setBounds(960, 270, 482, 27);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel10.setText("creating a not-for-profit top hospital in Kerala, India ");
         jPanel4.add(jLabel10);
-        jLabel10.setBounds(900, 300, 467, 27);
+        jLabel10.setBounds(960, 300, 459, 27);
 
         jLabel5.setBackground(new java.awt.Color(51, 204, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel5.setText("where the poor could have access to advanced medical   ");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(900, 330, 509, 27);
+        jLabel5.setBounds(960, 330, 493, 27);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel11.setText("care in an atmosphere of love and compassion. Amrita ");
         jPanel4.add(jLabel11);
-        jLabel11.setBounds(900, 360, 491, 27);
+        jLabel11.setBounds(960, 360, 477, 27);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel9.setText("Institute of Medical Sciences is now a world-class");
         jPanel4.add(jLabel9);
-        jLabel9.setBounds(900, 390, 436, 27);
+        jLabel9.setBounds(960, 390, 424, 27);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel6.setText("institution of medicine, academics, and research.");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(900, 420, 430, 27);
+        jLabel6.setBounds(960, 420, 418, 27);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/amma.jpg"))); // NOI18N
         jPanel4.add(jLabel3);
-        jLabel3.setBounds(120, 210, 750, 270);
-
-        jProfileButton.setBackground(new java.awt.Color(0, 127, 63));
-        jProfileButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jProfileButton.setForeground(new java.awt.Color(255, 255, 255));
-        jProfileButton.setText("MANAGE PROFILE");
-        jProfileButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jProfileButtonActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jProfileButton);
-        jProfileButton.setBounds(780, 500, 410, 50);
+        jLabel3.setBounds(180, 210, 750, 270);
 
         jPreviousButton.setBackground(new java.awt.Color(0, 127, 63));
         jPreviousButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jPreviousButton.setForeground(new java.awt.Color(255, 255, 255));
         jPreviousButton.setText("PREVIOUS APPOINTMENTS");
+        jPreviousButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPreviousButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPreviousButtonActionPerformed(evt);
             }
         });
         jPanel4.add(jPreviousButton);
-        jPreviousButton.setBounds(340, 640, 410, 50);
+        jPreviousButton.setBounds(520, 700, 410, 50);
 
         jBookButton.setBackground(new java.awt.Color(0, 127, 63));
         jBookButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jBookButton.setForeground(new java.awt.Color(255, 255, 255));
         jBookButton.setText("BOOK APPOINTMENT");
+        jBookButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBookButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBookButtonActionPerformed(evt);
             }
         });
         jPanel4.add(jBookButton);
-        jBookButton.setBounds(340, 570, 410, 50);
+        jBookButton.setBounds(520, 520, 410, 50);
 
         jUpcomingButton.setBackground(new java.awt.Color(0, 127, 63));
         jUpcomingButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jUpcomingButton.setForeground(new java.awt.Color(255, 255, 255));
         jUpcomingButton.setText("UPCOMING APPOINTMENTS");
+        jUpcomingButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jUpcomingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jUpcomingButtonActionPerformed(evt);
             }
         });
         jPanel4.add(jUpcomingButton);
-        jUpcomingButton.setBounds(780, 570, 410, 50);
+        jUpcomingButton.setBounds(520, 610, 410, 50);
 
-        jHomeButton.setBackground(new java.awt.Color(0, 127, 63));
+        jHomeButton.setBackground(new java.awt.Color(3, 153, 153));
         jHomeButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jHomeButton.setForeground(new java.awt.Color(255, 255, 255));
-        jHomeButton.setText("HOME PAGE");
+        jHomeButton.setText("HOME");
         jHomeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jHomeButtonActionPerformed(evt);
             }
         });
         jPanel4.add(jHomeButton);
-        jHomeButton.setBounds(340, 500, 410, 50);
+        jHomeButton.setBounds(30, 210, 120, 50);
 
-        jDiseaseButton.setBackground(new java.awt.Color(0, 127, 63));
-        jDiseaseButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jDiseaseButton.setForeground(new java.awt.Color(255, 255, 255));
-        jDiseaseButton.setText("DISEASE CHECKER");
-        jDiseaseButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jDiseaseButtonActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jDiseaseButton);
-        jDiseaseButton.setBounds(780, 640, 410, 50);
-
-        jEventButton.setBackground(new java.awt.Color(0, 127, 63));
-        jEventButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jEventButton.setForeground(new java.awt.Color(255, 255, 255));
-        jEventButton.setText("EVENT BLOG");
-        jEventButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jEventButtonActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jEventButton);
-        jEventButton.setBounds(550, 710, 410, 50);
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Choose Appoin.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Choose Appoin - Copy.png"))); // NOI18N
         jPanel4.add(jLabel13);
-        jLabel13.setBounds(1180, 390, 440, 410);
+        jLabel13.setBounds(850, 410, 440, 410);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/FrontpageBackground.png"))); // NOI18N
         jPanel4.add(jLabel7);
-        jLabel7.setBounds(-3, 186, 1550, 640);
+        jLabel7.setBounds(0, 190, 1550, 640);
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 1550, 830));
 
@@ -246,18 +211,6 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         dispose();
         m.setVisible(true);
     }//GEN-LAST:event_jHomeButtonActionPerformed
-
-    private void jEventButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEventButtonActionPerformed
-        EventBlog eb = new EventBlog();
-        dispose();
-        eb.setVisible(true);
-    }//GEN-LAST:event_jEventButtonActionPerformed
-
-    private void jDiseaseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDiseaseButtonActionPerformed
-        DiseaseChecker dc = new DiseaseChecker();
-        dispose();
-        dc.setVisible(true);
-    }//GEN-LAST:event_jDiseaseButtonActionPerformed
 
     private void jProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -343,8 +296,6 @@ public class AppointmentMainPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBookButton;
-    private javax.swing.JButton jDiseaseButton;
-    private javax.swing.JButton jEventButton;
     private javax.swing.JButton jHomeButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -363,7 +314,6 @@ public class AppointmentMainPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton jPreviousButton;
-    private javax.swing.JButton jProfileButton;
     private javax.swing.JButton jUpcomingButton;
     // End of variables declaration//GEN-END:variables
 }
