@@ -146,7 +146,7 @@ public class ManageProfile extends javax.swing.JFrame {
         jToggleButton1.setBackground(new java.awt.Color(0, 102, 51));
         jToggleButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jToggleButton1.setForeground(java.awt.Color.white);
-        jToggleButton1.setText("APPOINMENT HISTORY");
+        jToggleButton1.setText("APPOINTMENT HISTORY");
         jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jToggleButton1.setMargin(new java.awt.Insets(1, 1, 1, 1));
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {

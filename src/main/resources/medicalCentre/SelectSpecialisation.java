@@ -4,7 +4,7 @@ package main.resources.medicalCentre;
  * @author raghavendhra
  */
 public class SelectSpecialisation extends javax.swing.JFrame {
-    public static String docName;
+    public static String docSpec;
     /**
      * Creates new form Specilization
      */
@@ -239,7 +239,7 @@ public class SelectSpecialisation extends javax.swing.JFrame {
 
     private void CardiologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CardiologistActionPerformed
         // TODO add your handling code here:
-        docName = "Cardiologist";
+        docSpec = "Cardiologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
         s.setVisible(true);
@@ -248,7 +248,7 @@ public class SelectSpecialisation extends javax.swing.JFrame {
 
     private void PulmonologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PulmonologistActionPerformed
         // TODO add your handling code here:
-        docName = "Pulmonologist";
+        docSpec = "Pulmonologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
         s.setVisible(true);
@@ -256,7 +256,7 @@ public class SelectSpecialisation extends javax.swing.JFrame {
 
     private void GastroenterologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GastroenterologistActionPerformed
         // TODO add your handling code here:
-        docName = "Gastroenterologist";
+        docSpec = "Gastroenterologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
         s.setVisible(true);
@@ -264,7 +264,7 @@ public class SelectSpecialisation extends javax.swing.JFrame {
 
     private void OphthalmologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OphthalmologistActionPerformed
         // TODO add your handling code here:
-        docName = "Ophthalmologist";
+        docSpec = "Ophthalmologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
         s.setVisible(true);
@@ -287,7 +287,7 @@ public class SelectSpecialisation extends javax.swing.JFrame {
 
     private void NeurologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NeurologistActionPerformed
         // TODO add your handling code here:
-         docName = "Neurologist";
+         docSpec = "Neurologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
         s.setVisible(true);
@@ -295,7 +295,7 @@ public class SelectSpecialisation extends javax.swing.JFrame {
 
     private void OtolaryngologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OtolaryngologistActionPerformed
         // TODO add your handling code here:
-        docName = "Otolaryngologist";
+        docSpec = "Otolaryngologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
         s.setVisible(true);
@@ -303,7 +303,7 @@ public class SelectSpecialisation extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        docName = "Cardiologist";
+        docSpec = "Cardiologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
         s.setVisible(true);
