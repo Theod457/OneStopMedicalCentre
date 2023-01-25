@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -19,33 +20,6 @@ public class AppointmentHistory extends javax.swing.JFrame {
      */
     public AppointmentHistory() {
         initComponents();
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
-                    "WinMyDowSQL119");
-
-            Statement stmt = conn.createStatement();
-            ResultSet appointmentTable = stmt.executeQuery(
-                    "select doctor.DOCTOR_NAME, appointment.APPOINTMENT_DATE, appointment.APPOINTMENT_TIME from appointment,doctor where doctor.DOCTOR_ID=appointment.DOCTOR_ID and (appointment.USER_ID="
-                            + Login.userIDInput + " and appointment.APPOINTMENT_DATE < curdate())");
-            // appointmentTable.next();
-            int x = 550, y = 350;
-            Panel panel = new Panel();
-            panel.setBounds(40, 80, 200, 200);
-            panel.setBackground(Color.yellow);
-            while (appointmentTable.next()) {
-                JLabel name2 = new JLabel();
-                name2.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                name2.setText("You had an appointment with " + appointmentTable.getString("DOCTOR_NAME") + " on " + appointmentTable.getDate("APPOINTMENT_DATE") + " " + appointmentTable.getTime("APPOINTMENT_TIME"));
-                this.add(name2);
-                name2.setOpaque(true);
-                name2.setBounds(x, y, 600, 50);
-                y += 40;
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -58,23 +32,23 @@ public class AppointmentHistory extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jLogOutButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jNewButton = new javax.swing.JButton();
+        jUpcomingButton = new javax.swing.JButton();
+        jBackButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1550, 825));
+        setPreferredSize(new java.awt.Dimension(1550, 825));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -82,70 +56,74 @@ public class AppointmentHistory extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        jButton1.setText("Home");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 289, 105, 50));
-
         jPanel1.setBackground(new java.awt.Color(14, 93, 109));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("AMRITA HOSPITAL");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/hospitalIcon.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 11, 162, -1));
 
-        jButton2.setBackground(new java.awt.Color(3, 153, 153));
-        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("LOG OUT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jLogOutButton.setBackground(new java.awt.Color(3, 153, 153));
+        jLogOutButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        jLogOutButton.setForeground(new java.awt.Color(255, 255, 255));
+        jLogOutButton.setText("LOG OUT");
+        jLogOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jLogOutButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1317, 63, 173, 59));
+        jPanel1.add(jLogOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1317, 63, 173, 59));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, -1));
 
         jPanel2.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/clipboard.png"))); // NOI18N
         jLabel3.setText("YOUR PREVIOUS APPOINTMENTS");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(540, 180, 510, 59);
+        jLabel3.setBounds(450, 180, 660, 100);
 
-        jButton3.setBackground(new java.awt.Color(3, 153, 153));
-        jButton3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("BOOK NEW APPOINTMENT");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jNewButton.setBackground(new java.awt.Color(0, 102, 51));
+        jNewButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
+        jNewButton.setForeground(new java.awt.Color(255, 255, 255));
+        jNewButton.setText("BOOK NEW APPOINTMENT");
+        jNewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jNewButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3);
-        jButton3.setBounds(360, 730, 410, 50);
+        jPanel2.add(jNewButton);
+        jNewButton.setBounds(360, 730, 410, 50);
 
-        jButton4.setBackground(new java.awt.Color(3, 153, 153));
-        jButton4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("UPCOMING APPOINTMENT");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jUpcomingButton.setBackground(new java.awt.Color(0, 102, 51));
+        jUpcomingButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jUpcomingButton.setForeground(new java.awt.Color(255, 255, 255));
+        jUpcomingButton.setText("UPCOMING APPOINTMENT");
+        jUpcomingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jUpcomingButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4);
-        jButton4.setBounds(790, 730, 410, 50);
+        jPanel2.add(jUpcomingButton);
+        jUpcomingButton.setBounds(790, 730, 410, 50);
+
+        jBackButton.setBackground(new java.awt.Color(3, 153, 153));
+        jBackButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jBackButton.setForeground(new java.awt.Color(255, 255, 255));
+        jBackButton.setText("BACK");
+        jBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBackButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jBackButton);
+        jBackButton.setBounds(110, 280, 105, 50);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -158,21 +136,17 @@ public class AppointmentHistory extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(360, 250, 840, 460);
+        jScrollPane1.setBounds(360, 280, 840, 430);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Appointment_icon.png"))); // NOI18N
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(1130, 400, 420, 430);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/FrontpageBackground.png"))); // NOI18N
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(0, 170, 1550, 630);
+        jLabel1.setBounds(0, 170, 1550, 660);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, 800));
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -185,47 +159,53 @@ public class AppointmentHistory extends javax.swing.JFrame {
             
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(
-                    "select APPOINTMENT_ID, APPOINTMENT_DATE, APPOINTMENT_TIME, DOCTOR_ID from appointment where USER_ID = " + Login.userIDInput + " and APPOINTMENT_DATE < sysdate()");
+                "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE < sysdate() and a.USER_ID = " +
+                    Login.userIDInput + " order by a.APPOINTMENT_DATE desc");
             
             while(appointmentTable.next()){
-                String appointmentID = appointmentTable.getString("APPOINTMENT_ID");
-                String appointmentDate = appointmentTable.getString("APPOINTMENT_DATE");
-                String appointmentTime = appointmentTable.getString("APPOINTMENT_TIME");
-                String doctorID = appointmentTable.getString("DOCTOR_ID");
+                String appointmentID = appointmentTable.getString("a.APPOINTMENT_ID");
+                String appointmentDate = appointmentTable.getString("a.APPOINTMENT_DATE");
+                String appointmentTime = appointmentTable.getString("a.APPOINTMENT_TIME");
+                String doctorName = appointmentTable.getString("d.DOCTOR_NAME");
                 
-                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorID};
+                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorName};
                     DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
                     tblModel.addRow(tbData);
             }
+            
+            conn.close();
         }catch(Exception e){
             e.printStackTrace();
         }        // TODO add your handling code here:
     }//GEN-LAST:event_formWindowOpened
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Specialisation s = new Specialisation();
+    private void jNewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNewButtonActionPerformed
+        SelectSpecialisation s = new SelectSpecialisation();
         dispose();
         s.setVisible(true); 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jNewButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jUpcomingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpcomingButtonActionPerformed
         ViewAppointments va = new ViewAppointments();
         dispose();
-        va.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        va.setVisible(true);        
+    }//GEN-LAST:event_jUpcomingButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
+    private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ChooseAppointment ca = new ChooseAppointment();
+        AppointmentMainPage ca = new AppointmentMainPage();
         dispose();
         ca.setVisible(true);
     }// GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        FrontPage fp = new FrontPage();
-        dispose();
-        fp.setVisible(true);
+    private void jLogOutButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
+        int ans = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?",
+                        "Warning", JOptionPane.YES_NO_OPTION);
+        if (ans == JOptionPane.YES_OPTION) {    
+            FrontPage fp = new FrontPage();
+            dispose();
+            fp.setVisible(true);
+        } 
     }// GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -272,20 +252,18 @@ public class AppointmentHistory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jBackButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton jLogOutButton;
+    private javax.swing.JButton jNewButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton jUpcomingButton;
     // End of variables declaration//GEN-END:variables
 }

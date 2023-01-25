@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author raghavendhra
  */
-public class ForgotPassword extends javax.swing.JFrame {
+public class ChangePassword extends javax.swing.JFrame {
     public static String usernameInput;
     public static String originalPassInput;
     public static String passInput;
@@ -26,7 +26,7 @@ public class ForgotPassword extends javax.swing.JFrame {
     /**
      * Creates new form ForgotPassword
      */
-    public ForgotPassword() {
+    public ChangePassword() {
         initComponents();
     }
 
@@ -70,7 +70,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 36)); // NOI18N
         jLabel6.setText("CHANGE PASSWORD");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(610, 56, 348, 80);
+        jLabel6.setBounds(610, 60, 349, 80);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 30, true));
@@ -216,23 +216,28 @@ public class ForgotPassword extends javax.swing.JFrame {
         else{
             if(passInput.equals(repassInput))
             {
-                try {
-                    Class.forName("com.mysql.cj.jdbc.Driver");
-                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
-                        "WinMyDowSQL119");
-                    Statement stmt=conn.createStatement();
-                    ResultSet userTable =stmt.executeQuery("select * from user");
-                    stmt.executeUpdate("update user set USER_PASS = '"+repassInput+"' where USER_ID='"+Login.userIDInput+"'");
-                    Login.passwordInput = repassInput;
-                    JOptionPane.showMessageDialog(rootPane,"Password Changed Successfully");
-                    conn.close();
+                if (passInput.equals(originalPassInput)){
+                    JOptionPane.showMessageDialog(rootPane, "Your new password cannot be the same as your current password.");
                 }
-                catch (Exception e) {
-                    e.printStackTrace();
+                else {
+                    try {
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
+                                "WinMyDowSQL119");
+                        Statement stmt=conn.createStatement();
+                        ResultSet userTable =stmt.executeQuery("select * from user");
+                        stmt.executeUpdate("update user set USER_PASS = '"+repassInput+"' where USER_ID='"+Login.userIDInput+"'");
+                        Login.passwordInput = repassInput;
+                        JOptionPane.showMessageDialog(rootPane,"Password changed successfully.");
+                        conn.close();
+                    }
+                    catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    ManageProfile mp = new ManageProfile();
+                    dispose();
+                    mp.setVisible(true);
                 }
-                ManageProfile mp = new ManageProfile();
-                dispose();
-                mp.setVisible(true);
             }
             else {
                 JOptionPane.showMessageDialog(rootPane,"Password does not match. Please make sure both the new password and re-entered password is the same.");
@@ -279,20 +284,21 @@ public class ForgotPassword extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ForgotPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ForgotPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ForgotPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ForgotPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ForgotPassword().setVisible(true);
+                new ChangePassword().setVisible(true);
             }
         });
     }

@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,140 +18,13 @@ import javax.swing.table.DefaultTableModel;
  * @author raghavendhra
  */
 public class ViewAppointments extends javax.swing.JFrame {
-    public static int appID;
+    public static String appID;
 
     /**
      * Creates new form ViewAppointments
      */
     public ViewAppointments() {
         initComponents();
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
-                    "WinMyDowSQL119");
-            Statement stmt = conn.createStatement();
-            ResultSet rp = stmt.executeQuery(
-                    "select a.APPOINTMENT_ID, d.DOCTOR_NAME, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME from appointment as a,doctor as d where a.DOCTOR_ID=d.DOCTOR_ID and (a.APPOINTMENT_DATE >=(select curdate()) and USER_ID="
-                            + Login.userIDInput + ")");
-            int x = 800;
-            int w = 950;
-            int y = 250;
-
-            int labelButtonSequence = 1;
-            while (rp.next()) {
-//                rp.next();
-//                rp.previous();
-                JLabel name2 = new JLabel();
-                name2.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                name2.setText("Name : ");
-                this.add(name2);
-                name2.setOpaque(true);
-                name2.setBounds(x, y, 80, 50);
-                // y+=50
-
-                JLabel name1 = new JLabel();
-                name1.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                name1.setText(String.valueOf(rp.getString("d.DOCTOR_NAME")));
-                this.add(name1);
-                name1.setOpaque(true);
-                name1.setBounds(w, y, 200, 50);
-                // System.out.println(rp.getString(2));
-                y += 40;
-
-                JLabel date2 = new JLabel();
-                date2.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                date2.setText("Date : ");
-                this.add(date2);
-                date2.setOpaque(true);
-                date2.setBounds(x, y, 80, 50);
-
-                JLabel date = new JLabel();
-                date.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                date.setText(String.valueOf(rp.getDate("a.APPOINTMENT_DATE")));
-                this.add(date);
-                date.setOpaque(true);
-                date.setBounds(w, y, 100, 50);
-                // x+=100;
-                y += 40;
-                // y-=50;
-
-                JLabel time2 = new JLabel();
-                time2.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                time2.setText("Time : ");
-                this.add(time2);
-                time2.setOpaque(true);
-                time2.setBounds(x, y, 100, 50);
-                // y-=50;
-
-                JLabel time = new JLabel();
-                time.setFont(new java.awt.Font("Ubuntu", 1, 17));
-                time.setText(String.valueOf(rp.getTime("a.APPOINTMENT_TIME")));
-                this.add(time);
-                time.setOpaque(true);
-                time.setBounds(w, y, 150, 50);
-                y += 55;
-
-                appID = rp.getInt("APPOINTMENT_ID");
-                // System.out.println(appID);
-                ChooseAppointment.ea = 1;
-                JButton editButton = new JButton("Edit Appointment");
-                editButton.setToolTipText(String.valueOf(rp.getInt("APPOINTMENT_ID")));
-                editButton.setFont(new java.awt.Font("Ubuntu", 1, 19));
-                this.add(editButton);
-                editButton.setOpaque(true);
-                editButton.setBounds(700, y, 210, 45);
-                editButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        appID = Integer.valueOf(editButton.getToolTipText());
-//                        String oo = editButton.getText();
-//                        int h = oo.length();
-//                        // char ch = getCharFromString(o, h-1);
-//                        // System.out.println(h);
-//                        if (h == 17) {
-//                            r = oo.charAt(h - 1) - '0';
-//                        } else {
-//                            int b = oo.charAt(h - 2) - '0';
-//                            int bb = oo.charAt(h - 1) - '0';
-//                            r = (b * 10) + bb;
-//                        }
-                        EditAppointment o = new EditAppointment();
-                        dispose();
-                        o.setVisible(true);
-                    }
-                });
-                JButton cancelButton = new JButton("Cancel Appointment");
-                cancelButton.setToolTipText(String.valueOf(rp.getInt("APPOINTMENT_ID")));
-                cancelButton.setFont(new java.awt.Font("Ubuntu", 1, 19));
-                this.add(cancelButton);
-                cancelButton.setOpaque(true);
-                cancelButton.setBounds(930, y, 230, 45);
-                cancelButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        appID = Integer.valueOf(cancelButton.getToolTipText());
-//                        String oo = cancelButton.getText();
-//                        int h = oo.length();
-//                        // char ch = getCharFromString(o, h-1);
-//                        // System.out.println(h);
-//                        // System.out.println(h);
-//                        if (h == 19) {
-//                            r = oo.charAt(h - 1) - '0';
-//                        } else {
-//                            int b = oo.charAt(h - 2) - '0';
-//                            int bb = oo.charAt(h - 1) - '0';
-//                            r = (b * 10) + bb;
-//                        }
-                        CancelAppointment o = new CancelAppointment();
-                        dispose();
-                        o.setVisible(true);
-                    }
-                });
-                x = 800;
-                y += 50;
-            }
-            conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -166,12 +40,17 @@ public class ViewAppointments extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jLogOutButton = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
+        jBackButton = new javax.swing.JButton();
+        jEditButton = new javax.swing.JButton();
+        jDeleteButton = new javax.swing.JButton();
+        jHistoryButton = new javax.swing.JButton();
+        jNewButton = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -190,13 +69,13 @@ public class ViewAppointments extends javax.swing.JFrame {
         jLabel2.setForeground(java.awt.Color.white);
         jLabel2.setText("AMRITA HOSPITAL");
 
-        jButton2.setBackground(new java.awt.Color(3, 153, 153));
-        jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("LOG OUT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jLogOutButton.setBackground(new java.awt.Color(3, 153, 153));
+        jLogOutButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        jLogOutButton.setForeground(new java.awt.Color(255, 255, 255));
+        jLogOutButton.setText("LOG OUT");
+        jLogOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jLogOutButtonActionPerformed(evt);
             }
         });
 
@@ -206,39 +85,33 @@ public class ViewAppointments extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 398, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1037, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
+                .addGap(312, 312, 312)
+                .addComponent(jLogOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)))
-                .addGap(45, 45, 45))
+                .addGap(14, 14, 14)
+                .addComponent(jLogOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, -1));
 
-        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
-        jButton1.setText("Home");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 205, 112, 55));
+        jPanel2.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/clipboard.png"))); // NOI18N
         jLabel3.setText("YOUR UPCOMING APPOINTMENTS");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 540, -1));
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(460, 170, 740, 100);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -250,9 +123,72 @@ public class ViewAppointments extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 890, 450));
+        jPanel2.add(jScrollPane1);
+        jScrollPane1.setBounds(370, 270, 890, 420);
 
-        jPanel2.setLayout(null);
+        jBackButton.setBackground(new java.awt.Color(3, 153, 153));
+        jBackButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jBackButton.setForeground(new java.awt.Color(255, 255, 255));
+        jBackButton.setText("BACK");
+        jBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBackButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jBackButton);
+        jBackButton.setBounds(110, 270, 112, 55);
+
+        jEditButton.setBackground(new java.awt.Color(0, 102, 51));
+        jEditButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jEditButton.setForeground(new java.awt.Color(255, 255, 255));
+        jEditButton.setText("EDIT APPOINTMENT");
+        jEditButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jEditButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jEditButton);
+        jEditButton.setBounds(370, 700, 410, 50);
+
+        jDeleteButton.setBackground(new java.awt.Color(0, 102, 51));
+        jDeleteButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jDeleteButton.setForeground(new java.awt.Color(255, 255, 255));
+        jDeleteButton.setText("DELETE APPOINTMENT");
+        jDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jDeleteButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jDeleteButton);
+        jDeleteButton.setBounds(850, 700, 410, 50);
+
+        jHistoryButton.setBackground(new java.awt.Color(0, 102, 51));
+        jHistoryButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jHistoryButton.setForeground(new java.awt.Color(255, 255, 255));
+        jHistoryButton.setText("APPOINTMENT HISTORY");
+        jHistoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jHistoryButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jHistoryButton);
+        jHistoryButton.setBounds(850, 760, 410, 50);
+
+        jNewButton.setBackground(new java.awt.Color(0, 102, 51));
+        jNewButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jNewButton.setForeground(new java.awt.Color(255, 255, 255));
+        jNewButton.setText("BOOK NEW APPOINTMENT");
+        jNewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jNewButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jNewButton);
+        jNewButton.setBounds(370, 760, 410, 50);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Appointment_icon__2.png"))); // NOI18N
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(1210, 510, 400, 390);
 
         jLabel4.setBackground(new java.awt.Color(3, 153, 153));
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
@@ -274,34 +210,68 @@ public class ViewAppointments extends javax.swing.JFrame {
             
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(
-                    "select APPOINTMENT_ID, APPOINTMENT_DATE, APPOINTMENT_TIME, DOCTOR_ID from appointment where USER_ID = " + Login.userIDInput + " and APPOINTMENT_DATE => sysdate()");
+                    "select a.APPOINTMENT_ID, a.APPOINTMENT_DATE, a.APPOINTMENT_TIME, d.DOCTOR_NAME from appointment as a,doctor as d where a.DOCTOR_ID = d.DOCTOR_ID and a.APPOINTMENT_DATE >= sysdate() and a.USER_ID="
+                            + Login.userIDInput + " order by a.APPOINTMENT_DATE");
             
             while(appointmentTable.next()){
-                String appointmentID = appointmentTable.getString("APPOINTMENT_ID");
-                String appointmentDate = appointmentTable.getString("APPOINTMENT_DATE");
-                String appointmentTime = appointmentTable.getString("APPOINTMENT_TIME");
-                String doctorID = appointmentTable.getString("DOCTOR_ID");
+                String appointmentID = appointmentTable.getString("a.APPOINTMENT_ID");
+                String appointmentDate = appointmentTable.getString("a.APPOINTMENT_DATE");
+                String appointmentTime = appointmentTable.getString("a.APPOINTMENT_TIME");
+                String doctorName = appointmentTable.getString("d.DOCTOR_NAME");
                 
                 
-                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorID};
+                String tbData[] = {appointmentID, appointmentDate, appointmentTime, doctorName};
                     DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
                     tblModel.addRow(tbData);
             }
+            conn.close();
         }catch(Exception e){
             e.printStackTrace();
         }  
     }//GEN-LAST:event_formWindowOpened
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        FrontPage fp = new FrontPage();
+    private void jEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEditButtonActionPerformed
+        int index = jTable1.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        appID = model.getValueAt(index, 0).toString();
+        EditAppointment o = new EditAppointment();
         dispose();
-        fp.setVisible(true);
+        o.setVisible(true);        
+    }//GEN-LAST:event_jEditButtonActionPerformed
+
+    private void jDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteButtonActionPerformed
+        int index = jTable1.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        appID = model.getValueAt(index, 0).toString();
+        CancelAppointment o = new CancelAppointment();
+        dispose();
+        o.setVisible(true);        
+    }//GEN-LAST:event_jDeleteButtonActionPerformed
+
+    private void jNewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNewButtonActionPerformed
+        SelectSpecialisation s = new SelectSpecialisation();
+        dispose();
+        s.setVisible(true);        
+    }//GEN-LAST:event_jNewButtonActionPerformed
+
+    private void jHistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHistoryButtonActionPerformed
+        AppointmentHistory ah = new AppointmentHistory();
+        dispose();
+        ah.setVisible(true);
+    }//GEN-LAST:event_jHistoryButtonActionPerformed
+
+    private void jLogOutButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
+        int ans = JOptionPane.showConfirmDialog(null, "Are you sure you want to log out?",
+                        "Warning", JOptionPane.YES_NO_OPTION);
+        if (ans == JOptionPane.YES_OPTION) {    
+            FrontPage fp = new FrontPage();
+            dispose();
+            fp.setVisible(true);
+        }
     }// GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        ChooseAppointment ca = new ChooseAppointment();
+    private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
+        AppointmentMainPage ca = new AppointmentMainPage();
         dispose();
         ca.setVisible(true);
     }// GEN-LAST:event_jButton1ActionPerformed
@@ -350,12 +320,17 @@ public class ViewAppointments extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jBackButton;
+    private javax.swing.JButton jDeleteButton;
+    private javax.swing.JButton jEditButton;
+    private javax.swing.JButton jHistoryButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton jLogOutButton;
+    private javax.swing.JButton jNewButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

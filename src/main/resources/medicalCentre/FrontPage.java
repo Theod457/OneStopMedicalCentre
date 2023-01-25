@@ -51,8 +51,8 @@ public class FrontPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        jSignUpButton = new javax.swing.JToggleButton();
+        jLogInButton = new javax.swing.JToggleButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -70,49 +70,49 @@ public class FrontPage extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel17.setText("23, Jalan Sungai Dua, Kampung Dua Bukit, 11700 Gelugor, Penang");
         jPanel2.add(jLabel17);
-        jLabel17.setBounds(810, 710, 590, 27);
+        jLabel17.setBounds(900, 720, 590, 27);
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel16.setText("amrita_hospital@gmail.com");
         jPanel2.add(jLabel16);
-        jLabel16.setBounds(810, 620, 270, 27);
+        jLabel16.setBounds(900, 630, 270, 27);
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel15.setText("+6019-911 9111");
         jPanel2.add(jLabel15);
-        jLabel15.setBounds(800, 530, 148, 27);
+        jLabel15.setBounds(890, 540, 148, 27);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Mail.png"))); // NOI18N
         jLabel14.setText(" EMAIL");
         jPanel2.add(jLabel14);
-        jLabel14.setBounds(760, 580, 160, 44);
+        jLabel14.setBounds(850, 590, 160, 44);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Location (2).png"))); // NOI18N
         jLabel13.setText("VENUE");
         jPanel2.add(jLabel13);
-        jLabel13.setBounds(760, 670, 200, 47);
+        jLabel13.setBounds(850, 680, 200, 47);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel10.setText("WELCOME TO AMRITA HOSPITAL");
         jPanel2.add(jLabel10);
-        jLabel10.setBounds(420, 180, 778, 64);
+        jLabel10.setBounds(410, 180, 778, 64);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Hotline.png"))); // NOI18N
         jLabel12.setText("EMERGENCY HOTLINE ");
         jPanel2.add(jLabel12);
-        jLabel12.setBounds(760, 490, 250, 44);
+        jLabel12.setBounds(850, 500, 250, 44);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/BANNER.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/HOME BANNER.png"))); // NOI18N
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(20, 270, 720, 410);
+        jLabel2.setBounds(20, 270, 820, 470);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel4.setText("ABOUT US");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(760, 260, 590, 48);
+        jLabel4.setBounds(850, 270, 590, 48);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jPanel2.add(jLabel6);
@@ -121,22 +121,22 @@ public class FrontPage extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel9.setText("cardiologist, otolaryngologist, neurologist, gastroenterologist, pulmonologist, and ophthalmologist.  ");
         jPanel2.add(jLabel9);
-        jLabel9.setBounds(760, 430, 720, 30);
+        jLabel9.setBounds(850, 440, 720, 30);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel7.setText("Amrita Hospital is located at Penang, Malaysia and has been providing the best quality medical ");
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(760, 310, 680, 30);
+        jLabel7.setBounds(850, 320, 680, 30);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel5.setText("services, as well as being equipped with the best doctors from all across Malaysia since its ");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(760, 350, 640, 30);
+        jLabel5.setBounds(850, 360, 640, 30);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel8.setText("establishment in 2018. Our medical centre have specializations in several fields including ");
         jPanel2.add(jLabel8);
-        jLabel8.setBounds(760, 390, 617, 30);
+        jLabel8.setBounds(850, 400, 617, 30);
 
         jPanel1.setBackground(new java.awt.Color(14, 94, 111));
 
@@ -146,23 +146,23 @@ public class FrontPage extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/hospitalIcon.png"))); // NOI18N
 
-        jToggleButton2.setBackground(new java.awt.Color(2, 153, 153));
-        jToggleButton2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton2.setText("SIGN UP");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        jSignUpButton.setBackground(new java.awt.Color(2, 153, 153));
+        jSignUpButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        jSignUpButton.setForeground(new java.awt.Color(255, 255, 255));
+        jSignUpButton.setText("SIGN UP");
+        jSignUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                jSignUpButtonActionPerformed(evt);
             }
         });
 
-        jToggleButton1.setBackground(new java.awt.Color(2, 153, 153));
-        jToggleButton1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("LOG IN");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLogInButton.setBackground(new java.awt.Color(2, 153, 153));
+        jLogInButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
+        jLogInButton.setForeground(new java.awt.Color(255, 255, 255));
+        jLogInButton.setText("LOG IN");
+        jLogInButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                jLogInButtonActionPerformed(evt);
             }
         });
 
@@ -177,30 +177,30 @@ public class FrontPage extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 377, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 424, Short.MAX_VALUE)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
-                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86))))
+                        .addGap(138, 138, 138)
+                        .addComponent(jLogInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(jSignUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(25, 25, 25)
-                                .addComponent(jLabel1)))))
-                .addGap(0, 0, 0))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLogInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSignUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel1)))
+                .addContainerGap())
+            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jPanel2.add(jPanel1);
@@ -217,14 +217,14 @@ public class FrontPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void jLogInButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
         Login login = new Login();
         dispose();
         login.setVisible(true);
     }// GEN-LAST:event_jToggleButton1ActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void jSignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton2ActionPerformed
         // TODO add your handling code here:
         Register su = new Register();
         dispose();
@@ -289,10 +289,10 @@ public class FrontPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JToggleButton jLogInButton;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jSignUpButton;
     // End of variables declaration//GEN-END:variables
 }

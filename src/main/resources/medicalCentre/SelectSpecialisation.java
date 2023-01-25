@@ -3,12 +3,12 @@ package main.resources.medicalCentre;
  *
  * @author raghavendhra
  */
-public class Specialisation extends javax.swing.JFrame {
+public class SelectSpecialisation extends javax.swing.JFrame {
     public static String docName;
     /**
      * Creates new form Specilization
      */
-    public Specialisation() {
+    public SelectSpecialisation() {
         initComponents();
     }
 
@@ -273,7 +273,7 @@ public class Specialisation extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ChooseAppointment mp = new ChooseAppointment();
+        AppointmentMainPage mp = new AppointmentMainPage();
         dispose();
         mp.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -326,21 +326,23 @@ public class Specialisation extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Specialisation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SelectSpecialisation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Specialisation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SelectSpecialisation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Specialisation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SelectSpecialisation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Specialisation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SelectSpecialisation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Specialisation().setVisible(true);
+                new SelectSpecialisation().setVisible(true);
             }
         });
     }
@@ -362,8 +364,6 @@ public class Specialisation extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JToggleButton jToggleButton1;
     private java.awt.Label label1;
