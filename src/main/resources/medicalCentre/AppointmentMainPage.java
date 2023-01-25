@@ -107,38 +107,38 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel4.setText("Healthcare with a Heart : Our founder, Sri Mata ");
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(900, 240, 411, 27);
+        jLabel4.setBounds(900, 240, 421, 27);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel8.setText("Amritananadamayi Devi (known as AMMA), envisioned ");
         jPanel4.add(jLabel8);
-        jLabel8.setBounds(900, 270, 482, 27);
+        jLabel8.setBounds(900, 270, 490, 27);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel10.setText("creating a not-for-profit top hospital in Kerala, India ");
         jPanel4.add(jLabel10);
-        jLabel10.setBounds(900, 300, 459, 27);
+        jLabel10.setBounds(900, 300, 467, 27);
 
         jLabel5.setBackground(new java.awt.Color(51, 204, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel5.setText("where the poor could have access to advanced medical   ");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(900, 330, 493, 27);
+        jLabel5.setBounds(900, 330, 509, 27);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel11.setText("care in an atmosphere of love and compassion. Amrita ");
         jPanel4.add(jLabel11);
-        jLabel11.setBounds(900, 360, 477, 27);
+        jLabel11.setBounds(900, 360, 491, 27);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel9.setText("Institute of Medical Sciences is now a world-class");
         jPanel4.add(jLabel9);
-        jLabel9.setBounds(900, 390, 424, 27);
+        jLabel9.setBounds(900, 390, 436, 27);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel6.setText("institution of medicine, academics, and research.");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(900, 420, 418, 27);
+        jLabel6.setBounds(900, 420, 430, 27);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/amma.jpg"))); // NOI18N
         jPanel4.add(jLabel3);
