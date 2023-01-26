@@ -61,7 +61,6 @@ public class AppointmentHistory extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLogOutButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jNewButton = new javax.swing.JButton();
@@ -70,11 +69,12 @@ public class AppointmentHistory extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
+        jLogOutButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1550, 825));
-        setPreferredSize(new java.awt.Dimension(1550, 825));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(14, 94, 111));
@@ -89,17 +89,6 @@ public class AppointmentHistory extends javax.swing.JFrame {
         jLabel4.setText("jLabel4");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 11, 162, -1));
 
-        jLogOutButton.setBackground(new java.awt.Color(3, 153, 153));
-        jLogOutButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLogOutButton.setForeground(new java.awt.Color(255, 255, 255));
-        jLogOutButton.setText("LOG OUT");
-        jLogOutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jLogOutButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jLogOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1317, 63, 173, 59));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1550, -1));
 
         jPanel2.setLayout(null);
@@ -108,43 +97,46 @@ public class AppointmentHistory extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/clipboard.png"))); // NOI18N
         jLabel3.setText("YOUR PREVIOUS APPOINTMENTS");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(450, 180, 660, 100);
+        jLabel3.setBounds(430, 180, 660, 100);
 
         jNewButton.setBackground(new java.awt.Color(0, 102, 51));
         jNewButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
         jNewButton.setForeground(new java.awt.Color(255, 255, 255));
         jNewButton.setText("BOOK NEW APPOINTMENT");
+        jNewButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jNewButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jNewButtonActionPerformed(evt);
             }
         });
         jPanel2.add(jNewButton);
-        jNewButton.setBounds(360, 730, 410, 50);
+        jNewButton.setBounds(340, 720, 410, 40);
 
         jUpcomingButton.setBackground(new java.awt.Color(0, 102, 51));
         jUpcomingButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jUpcomingButton.setForeground(new java.awt.Color(255, 255, 255));
         jUpcomingButton.setText("UPCOMING APPOINTMENT");
+        jUpcomingButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jUpcomingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jUpcomingButtonActionPerformed(evt);
             }
         });
         jPanel2.add(jUpcomingButton);
-        jUpcomingButton.setBounds(790, 730, 410, 50);
+        jUpcomingButton.setBounds(770, 720, 410, 40);
 
         jBackButton.setBackground(new java.awt.Color(3, 153, 153));
         jBackButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jBackButton.setForeground(new java.awt.Color(255, 255, 255));
         jBackButton.setText("BACK");
+        jBackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBackButtonActionPerformed(evt);
             }
         });
         jPanel2.add(jBackButton);
-        jBackButton.setBounds(110, 280, 105, 50);
+        jBackButton.setBounds(80, 250, 105, 50);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -157,11 +149,24 @@ public class AppointmentHistory extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(360, 280, 840, 430);
+        jScrollPane1.setBounds(340, 280, 840, 430);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Appointment_icon.png"))); // NOI18N
         jPanel2.add(jLabel5);
         jLabel5.setBounds(1130, 400, 420, 430);
+
+        jLogOutButton.setBackground(new java.awt.Color(3, 153, 153));
+        jLogOutButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        jLogOutButton.setForeground(new java.awt.Color(255, 255, 255));
+        jLogOutButton.setText("LOG OUT");
+        jLogOutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLogOutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLogOutButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jLogOutButton);
+        jLogOutButton.setBounds(1320, 240, 173, 59);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/FrontpageBackground.png"))); // NOI18N
         jPanel2.add(jLabel1);

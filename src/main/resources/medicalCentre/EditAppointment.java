@@ -78,9 +78,8 @@ public class EditAppointment extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 1600, 900));
-        setMaximumSize(new java.awt.Dimension(1550, 825));
         setMinimumSize(new java.awt.Dimension(1500, 750));
-        setPreferredSize(new java.awt.Dimension(1550, 825));
+        setResizable(false);
         setSize(new java.awt.Dimension(1550, 825));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -93,10 +92,10 @@ public class EditAppointment extends javax.swing.JFrame {
         jPanel3.add(patientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 260, 30));
 
         dat_of_appo.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
-        jPanel3.add(dat_of_appo, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 125, 370, 30));
+        jPanel3.add(dat_of_appo, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 115, 370, 50));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel4.setText("Your Appointment is booked on ");
+        jLabel4.setText("Your appointment is booked on ");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 125, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
@@ -104,14 +103,14 @@ public class EditAppointment extends javax.swing.JFrame {
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 80, -1));
 
         nod.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
-        jPanel3.add(nod, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 200, 20));
+        jPanel3.add(nod, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 200, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel5.setText("If you want to change the date of appointment,");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 285, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jLabel7.setText("select the date and press the confirm button.");
+        jLabel7.setText("select the date and press the CONFIRM button");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 285, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
@@ -155,16 +154,18 @@ public class EditAppointment extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("BACK");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 188, 110, 60));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 188, 130, 50));
 
         jButton3.setBackground(new java.awt.Color(0, 153, 153));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.setLabel("LOG OUT");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,7 +177,8 @@ public class EditAppointment extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 102, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("EDIT APPOINTMENT");
+        jButton1.setText("CONFIRM");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -267,9 +269,9 @@ public class EditAppointment extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        AppointmentMainPage ca = new AppointmentMainPage();
+        ViewAppointments va = new ViewAppointments();
         dispose();
-        ca.setVisible(true);
+        va.setVisible(true);
     }// GEN-LAST:event_jButton2ActionPerformed
 
     /**

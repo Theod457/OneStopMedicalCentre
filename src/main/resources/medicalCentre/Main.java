@@ -41,11 +41,11 @@ public class Main extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jBookNowButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -74,7 +74,7 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.white);
         setMinimumSize(new java.awt.Dimension(1550, 850));
-        setPreferredSize(new java.awt.Dimension(1550, 825));
+        setResizable(false);
         setSize(new java.awt.Dimension(1550, 850));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -124,25 +124,25 @@ public class Main extends javax.swing.JFrame {
         jLabel10.setText("WELCOME TO AMRITA HOSPITAL");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 778, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
-        jLabel4.setText("ABOUT US");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, 590, 48));
-
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel7.setText("Amrita Hospital is located at Penang, Malaysia and has been providing the best quality medical ");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 310, 680, 30));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 310, 700, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel5.setText("services, as well as being equipped with the best doctors from all across Malaysia since its ");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 350, 640, 30));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel8.setText("establishment in 2018. Our medical centre have specializations in several fields including ");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 390, -1, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 350, 660, 30));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel9.setText("cardiologist, otolaryngologist, neurologist, gastroenterologist, pulmonologist, and ophthalmologist.  ");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 430, 720, 30));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 430, 740, 30));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jLabel4.setText("ABOUT US");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 260, 610, 48));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel8.setText(" establishment in 2018. Our medical centre have specializations in several fields including ");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(826, 390, 670, 30));
 
         jPanel2.setLayout(null);
 
@@ -150,50 +150,51 @@ public class Main extends javax.swing.JFrame {
         jBookNowButton.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jBookNowButton.setForeground(new java.awt.Color(255, 255, 255));
         jBookNowButton.setText("BOOK NOW");
+        jBookNowButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBookNowButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBookNowButtonActionPerformed(evt);
             }
         });
         jPanel2.add(jBookNowButton);
-        jBookNowButton.setBounds(260, 630, 270, 50);
+        jBookNowButton.setBounds(250, 620, 270, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/HOME BANNER.png"))); // NOI18N
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(20, 250, 820, 450);
+        jLabel2.setBounds(0, 250, 820, 450);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Mail.png"))); // NOI18N
         jLabel14.setText(" EMAIL");
         jPanel2.add(jLabel14);
-        jLabel14.setBounds(850, 560, 160, 44);
+        jLabel14.setBounds(830, 560, 180, 44);
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel16.setText("amrita_hospital@gmail.com");
         jPanel2.add(jLabel16);
-        jLabel16.setBounds(900, 600, 270, 27);
+        jLabel16.setBounds(870, 600, 300, 27);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Location (2).png"))); // NOI18N
         jLabel13.setText("VENUE");
         jPanel2.add(jLabel13);
-        jLabel13.setBounds(850, 630, 200, 47);
+        jLabel13.setBounds(830, 630, 220, 47);
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel17.setText("23, Jalan Sungai Dua, Kampung Dua Bukit, 11700 Gelugor, Penang");
         jPanel2.add(jLabel17);
-        jLabel17.setBounds(900, 670, 590, 27);
+        jLabel17.setBounds(870, 670, 620, 27);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/Hotline.png"))); // NOI18N
         jLabel12.setText("EMERGENCY HOTLINE ");
         jPanel2.add(jLabel12);
-        jLabel12.setBounds(850, 490, 250, 44);
+        jLabel12.setBounds(830, 490, 270, 44);
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel15.setText("+6019-911 9111");
         jPanel2.add(jLabel15);
-        jLabel15.setBounds(900, 530, 148, 27);
+        jLabel15.setBounds(868, 530, 180, 27);
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/FrontpageBackground.png"))); // NOI18N
         jPanel2.add(jLabel18);
@@ -201,10 +202,15 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 1550, 820));
 
+        jMenuBar1.setBorderPainted(false);
+
         jMenu1.setBackground(new java.awt.Color(13, 91, 107));
         jMenu1.setForeground(new java.awt.Color(13, 91, 107));
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/date-63.png"))); // NOI18N
         jMenu1.setText("Appointment     ");
+        jMenu1.setBorderPainted(false);
+        jMenu1.setContentAreaFilled(false);
+        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
         jBookMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -240,6 +246,9 @@ public class Main extends javax.swing.JFrame {
         jMenu2.setForeground(new java.awt.Color(13, 91, 107));
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/EventLogo.png"))); // NOI18N
         jMenu2.setText("Event     ");
+        jMenu2.setBorderPainted(false);
+        jMenu2.setContentAreaFilled(false);
+        jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
         jEventMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -256,7 +265,10 @@ public class Main extends javax.swing.JFrame {
         jMenu3.setBackground(new java.awt.Color(13, 91, 107));
         jMenu3.setForeground(new java.awt.Color(13, 91, 107));
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/DiseaseCheckerLogo - Copy.png"))); // NOI18N
-        jMenu3.setText("Disease Checker                                                                                                                   ");
+        jMenu3.setText("Disease Checker                                                                                                                                    ");
+        jMenu3.setBorderPainted(false);
+        jMenu3.setContentAreaFilled(false);
+        jMenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu3.setFocusTraversalPolicyProvider(true);
         jMenu3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
@@ -273,6 +285,9 @@ public class Main extends javax.swing.JFrame {
 
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/LoginLogo.jpg"))); // NOI18N
         jMenu4.setActionCommand("                                                    Profile");
+        jMenu4.setBorderPainted(false);
+        jMenu4.setContentAreaFilled(false);
+        jMenu4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
         jProfileMenuItem.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N

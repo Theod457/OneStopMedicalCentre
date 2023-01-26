@@ -50,6 +50,7 @@ public class AppointmentMainPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1550, 825));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
 
@@ -183,7 +184,7 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         jHomeButton.setBackground(new java.awt.Color(3, 153, 153));
         jHomeButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 20)); // NOI18N
         jHomeButton.setForeground(new java.awt.Color(255, 255, 255));
-        jHomeButton.setText("HOME");
+        jHomeButton.setText("BACK");
         jHomeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jHomeButtonActionPerformed(evt);
