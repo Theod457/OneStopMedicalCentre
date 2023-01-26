@@ -77,7 +77,7 @@ public class AppointmentHistory extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1550, 825));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(14, 93, 109));
+        jPanel1.setBackground(new java.awt.Color(14, 94, 111));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N

@@ -201,6 +201,8 @@ public class Main extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 1550, 820));
 
+        jMenu1.setBackground(new java.awt.Color(13, 91, 107));
+        jMenu1.setForeground(new java.awt.Color(13, 91, 107));
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/date-63.png"))); // NOI18N
         jMenu1.setText("Appointment     ");
         jMenu1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
@@ -234,6 +236,8 @@ public class Main extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setBackground(new java.awt.Color(13, 91, 107));
+        jMenu2.setForeground(new java.awt.Color(13, 91, 107));
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/EventLogo.png"))); // NOI18N
         jMenu2.setText("Event     ");
         jMenu2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N

@@ -24,7 +24,6 @@ public class EditAppointment extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
-            int y = 0;
             ResultSet appointmentTable = stmt.executeQuery("select * from appointment where APPOINTMENT_ID=" + ViewAppointments.appID);
             appointmentTable.next();
             docID = appointmentTable.getInt("DOCTOR_ID");
@@ -32,12 +31,13 @@ public class EditAppointment extends javax.swing.JFrame {
             dat_of_appo.setText(String.valueOf(appointmentTable.getDate("APPOINTMENT_DATE")));
             
             ResultSet rd = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);
-
             rd.next();
             nod.setText(String.valueOf(rd.getString("DOCTOR_NAME")));
 
             ResultSet rs = stmt.executeQuery("select * from user where USER_ID=" + userID);
             rs.next();
+            patientName.setText(String.valueOf(rs.getString("USER_NAME")));
+        
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,7 +55,6 @@ public class EditAppointment extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         patientName = new javax.swing.JLabel();
-        doctorName = new javax.swing.JLabel();
         dat_of_appo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -90,13 +89,10 @@ public class EditAppointment extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         patientName.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jPanel3.add(patientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 37, 330, 90));
-
-        doctorName.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
-        jPanel3.add(doctorName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 480, 60));
+        jPanel3.add(patientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 260, 30));
 
         dat_of_appo.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
-        jPanel3.add(dat_of_appo, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 125, 370, 70));
+        jPanel3.add(dat_of_appo, new org.netbeans.lib.awtextra.AbsoluteConstraints(368, 125, 370, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel4.setText("Your Appointment is booked on ");
@@ -104,10 +100,10 @@ public class EditAppointment extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
         jLabel6.setText("with Dr.");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 179, 80, -1));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 80, -1));
 
         nod.setFont(new java.awt.Font("Ubuntu", 1, 17)); // NOI18N
-        jPanel3.add(nod, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 80, -1, 18));
+        jPanel3.add(nod, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 200, 20));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel5.setText("If you want to change the date of appointment,");
@@ -119,7 +115,7 @@ public class EditAppointment extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel9.setText("Dear");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 37, 53, -1));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 53, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 840, 390));
 
@@ -320,7 +316,6 @@ public class EditAppointment extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel dat_of_appo;
-    private javax.swing.JLabel doctorName;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

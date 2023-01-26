@@ -54,7 +54,7 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(13, 89, 104));
+        jPanel1.setBackground(new java.awt.Color(14, 94, 111));
         jPanel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(1550, 195));
 
