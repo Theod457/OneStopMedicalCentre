@@ -240,14 +240,12 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordActionPerformed
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
-        // TODO add your handling code here:
         FrontPage fp = new FrontPage();
         dispose();
         fp.setVisible(true);
     }//GEN-LAST:event_BackActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
-        // TODO add your handling code here:
         usernameInput = username.getText();
         if (usernameInput.length() == 0){
             usernameCheck = 0;
@@ -330,22 +328,6 @@ public class Login extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //System.out.println(username1+"100000");
-//        try {
-//           Class.forName("com.mysql.cj.jdbc.Driver");
-//                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root", "WinMyDowSQL119");
-//                Statement stmt=conn.createStatement();  
-//                //stmt.executeQuery("use doctorappointment");
-//                ResultSet rs=stmt.executeQuery("select * from user");
-//                while(rs.next())
-//                {
-//                    System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
-//                }
-//                conn.close();
-//        }
-//         catch (Exception e) {
-//                    e.printStackTrace();
-//		}
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -353,7 +335,6 @@ public class Login extends javax.swing.JFrame {
                 new Login().setVisible(true);
             }
         });
-               // System.out.println(usernameInput+"100000");
 
     }
 

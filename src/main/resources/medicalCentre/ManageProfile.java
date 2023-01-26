@@ -261,29 +261,24 @@ public class ManageProfile extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        // System.out.println(Login.username1);
         FrontPage fp = new FrontPage();
         dispose();
         fp.setVisible(true);
     }// GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         ChangePassword cp = new ChangePassword();
         dispose();
         cp.setVisible(true);
     }// GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
         AppointmentMainPage s = new AppointmentMainPage();
         dispose();
         s.setVisible(true);
     }// GEN-LAST:event_jButton3ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
         AppointmentHistory ah = new AppointmentHistory();
         dispose();
         ah.setVisible(true);
@@ -302,8 +297,6 @@ public class ManageProfile extends javax.swing.JFrame {
          * For details see
          * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          **/
-        // Login l = new Login();
-        // System.out.println(l.username1);
 
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -332,9 +325,6 @@ public class ManageProfile extends javax.swing.JFrame {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
-            // stmt.executeQuery("use doctorappointment");
-            // ResultSet rs=stmt.executeQuery("select * from user");
-            // System.out.println(currUser + "MP");
             ResultSet rp = stmt.executeQuery("select * from user where username='" + Login.usernameInput + "'");
             rp.next();
             System.out.println(rp.getString(3));
@@ -349,8 +339,6 @@ public class ManageProfile extends javax.swing.JFrame {
                 new ManageProfile().setVisible(true);
             }
         });
-        // ManageProfile l = new ManageProfile();
-        // System.out.println(l.currUser);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

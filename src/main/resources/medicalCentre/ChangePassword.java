@@ -247,17 +247,14 @@ public class ChangePassword extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void repassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repassActionPerformed
-        // TODO add your handling code here:
         repassInput = repass.getText();
     }//GEN-LAST:event_repassActionPerformed
 
     private void newPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPassActionPerformed
-        // TODO add your handling code here:
         passInput = newPass.getText();
     }//GEN-LAST:event_newPassActionPerformed
 
     private void currentPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentPassActionPerformed
-        // TODO add your handling code here:
         originalPassInput = currentPass.getText();
     }//GEN-LAST:event_currentPassActionPerformed
 

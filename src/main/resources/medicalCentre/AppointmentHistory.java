@@ -23,7 +23,7 @@ public class AppointmentHistory extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
-                    "WinMyDowSQL119");// TODO add your handling code here:
+                    "WinMyDowSQL119");
             
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(
@@ -190,7 +190,6 @@ public class AppointmentHistory extends javax.swing.JFrame {
     }//GEN-LAST:event_jUpcomingButtonActionPerformed
 
     private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         AppointmentMainPage ca = new AppointmentMainPage();
         dispose();
         ca.setVisible(true);

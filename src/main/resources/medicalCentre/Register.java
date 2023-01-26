@@ -519,7 +519,6 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         FrontPage fp = new FrontPage();
         dispose();
         fp.setVisible(true);
@@ -588,14 +587,6 @@ public class Register extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             // stmt.executeQuery("use doctorappointment");
             ResultSet rs = stmt.executeQuery("select * from user");
-            System.out.println("Checking");
-            System.out.println(passwordCheck);
-            System.out.println(rePasswordCheck);
-            System.out.println(duplicateUserCheck);
-            System.out.println(usernameCheck);
-            System.out.println(contactCheck);
-            System.out.println(addressCheck);
-            System.out.println(IDCheck);
 
             if (passwordCheck == 1 && rePasswordCheck == 1 && duplicateUserCheck == 1 && usernameCheck == 1 && contactCheck == 1 && addressCheck == 1 && IDCheck == 1) {
                 stmt.executeUpdate("insert into user(USER_ID, USER_NAME,USER_PASS,USER_GENDER,USER_BLOOD,USER_CONTACT,USER_ADDRESS)" + "values('"
@@ -662,27 +653,6 @@ public class Register extends javax.swing.JFrame {
         }
         // </editor-fold>
         // </editor-fold>
-
-        // try {
-        // Class.forName("com.mysql.cj.jdbc.Driver");
-        // Connection conn =
-        // DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root", "WinMyDowSQL119");
-        // Statement stmt=conn.createStatement();
-        // //stmt.executeQuery("use doctorappointment");
-        // //ResultSet rs=stmt.executeQuery("select * from user");
-        //// while(rs.next())
-        //// {
-        //// System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
-        // if(passwordCheck==1)
-        // {
-        // stmt.executeUpdate("insert into user(username,password)"+ "values('"+
-        // usernameInput + "','"+finalPasswordInput+"')");
-        // }
-        // conn.close();
-        // }
-        // catch (Exception e) {
-        // e.printStackTrace();
-        // }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

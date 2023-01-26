@@ -318,7 +318,7 @@ public class Main extends javax.swing.JFrame {
     private void jBookNowButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBookNowButtonActionPerformed
         AppointmentMainPage amp = new AppointmentMainPage();
         dispose();
-        amp.setVisible(true);        // TODO add your handling code here:
+        amp.setVisible(true);
     }//GEN-LAST:event_jBookNowButtonActionPerformed
 
     private void jBookMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBookMenuActionPerformed
@@ -364,7 +364,7 @@ public class Main extends javax.swing.JFrame {
             FrontPage fp = new FrontPage();
             dispose();
             fp.setVisible(true);
-        } // TODO add your handling code here:
+        }
     }//GEN-LAST:event_jLogOutMenuItemActionPerformed
 
     /**

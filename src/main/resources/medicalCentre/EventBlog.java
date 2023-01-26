@@ -133,26 +133,17 @@ public class EventBlog extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         Main m = new Main();
         dispose();
         m.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void BloodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BloodActionPerformed
-        // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "You have successfully registered for the event!");
-//        EventRegistered er = new EventRegistered();
-//        dispose();
-//        er.setVisible(true);   
     }//GEN-LAST:event_BloodActionPerformed
 
     private void MedicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicalActionPerformed
-        // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "You have successfully registered for the event!");
-//        EventRegistered er = new EventRegistered();
-//        dispose();
-//        er.setVisible(true);        
     }//GEN-LAST:event_MedicalActionPerformed
 
     /**

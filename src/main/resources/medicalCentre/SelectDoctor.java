@@ -37,19 +37,6 @@ public class SelectDoctor extends javax.swing.JFrame {
         String name;
         JLabel[] array = new JLabel[10];
 
-        // for(int i=0;i<10;i++)
-        // {
-        // array[i] = new JLabel("raghs"+i);
-        // array[i].setText("i"+i);
-        // this.add(array[i]);
-        // array[i].setOpaque(true);
-        // array[i].setBounds(x, y, 40, 40);
-        // // array[i].setBackground(Color.CYAN);
-        // //array[i].setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        // x += 140;
-        //
-        // // System.out.println(array[i].toString());
-        // }
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
@@ -84,7 +71,6 @@ public class SelectDoctor extends javax.swing.JFrame {
                 this.add(name1);
                 name1.setOpaque(true);
                 name1.setBounds(w, y, 200, 70);
-                // System.out.println(rp.getString(2));
                 y += 55;
 
                 JLabel time3 = new JLabel();
@@ -137,7 +123,6 @@ public class SelectDoctor extends javax.swing.JFrame {
 //                // name1=null;
 //                y += 55;
                 docID = rp.getInt("DOCTOR_ID");
-                // System.out.println(docID);
                 JButton bookButton = new JButton(" BOOK APPOINTMENT");
                 bookButton.setToolTipText(String.valueOf(rp.getInt("DOCTOR_ID")));
                 bookButton.setFont(new java.awt.Font("Segoe UI Bold", 1, 20));
@@ -146,22 +131,6 @@ public class SelectDoctor extends javax.swing.JFrame {
                 bookButton.setBounds(890, y, 410, 55);
                 bookButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        // System.out.println(docID);
-//                        String o = bookButton.getText();
-//                        int h = o.length();
-//                        // char ch = getCharFromString(o, h-1);
-//                        System.out.println(h);
-//                        if (h == 17) {
-//                            r = o.charAt(h - 1) - '0';
-//                        } else {
-//                            int bookButton = o.charAt(h - 2) - '0';
-//                            int bb = o.charAt(h - 1) - '0';
-//                            r = (bookButton * 10) + bb;
-//                        }
-                        // System.out.println(o.charAt(h-1));
-                        // System.out.println(o);
-                        // time = rp.getTime("DOCTOR_TIME");
-                        // System.out.println(SelectDoctor.docID);
                         if (SelectDoctor.dateSelectCheck == 0) {
                             JOptionPane.showMessageDialog(rootPane, "Please Select A Date");
                         } else {
@@ -323,37 +292,25 @@ public class SelectDoctor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
         SelectSpecialisation s = new SelectSpecialisation();
         dispose();
         s.setVisible(true);
     }// GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         Date comdate = new Date();
         String f;
         dateSelectCheck = 1;
         SimpleDateFormat dcn = new SimpleDateFormat("yyyy-MM-dd");
         dateString = dcn.format(jCalendar1.getDate());
         JOptionPane.showMessageDialog(rootPane, "Date Selection Confirmed");
-        // dcn.format(comdate);
-        // System.out.println(comdate);
     }// GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         FrontPage fp = new FrontPage();
         dispose();
         fp.setVisible(true);
     }// GEN-LAST:event_jButton2ActionPerformed
-
-//        private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
-//        // TODO add your handling code here:
-//        ConfirmAppointment ca = new ConfirmAppointment();
-//        dispose();
-//        ca.setVisible(true);
-//    }// GEN-LAST:event_jButton3ActionPerformed
         
     /**
      * @param args the command line arguments

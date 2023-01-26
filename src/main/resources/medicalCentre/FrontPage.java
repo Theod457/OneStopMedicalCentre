@@ -222,14 +222,12 @@ public class FrontPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLogInButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
         Login login = new Login();
         dispose();
         login.setVisible(true);
     }// GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jSignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
         Register su = new Register();
         dispose();
         su.setVisible(true);

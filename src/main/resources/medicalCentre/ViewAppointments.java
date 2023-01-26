@@ -28,7 +28,7 @@ public class ViewAppointments extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/onestopmedicalcentre", "root",
-                    "WinMyDowSQL119");// TODO add your handling code here:
+                    "WinMyDowSQL119");
             
             Statement stmt = conn.createStatement();
             ResultSet appointmentTable = stmt.executeQuery(

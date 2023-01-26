@@ -213,28 +213,24 @@ public class AppointmentMainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jHomeButtonActionPerformed
 
     private void jProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         ManageProfile mp = new ManageProfile();
         dispose();
         mp.setVisible(true);
     }// GEN-LAST:event_jButton1ActionPerformed
 
     private void jBookButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
         SelectSpecialisation s = new SelectSpecialisation();
         dispose();
         s.setVisible(true);
     }// GEN-LAST:event_jButton2ActionPerformed
 
     private void jUpcomingButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
         ViewAppointments ea = new ViewAppointments();
         dispose();
         ea.setVisible(true);
     }// GEN-LAST:event_jButton3ActionPerformed
 
     private void jPreviousButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
         AppointmentHistory ap = new AppointmentHistory();
         dispose();
         ap.setVisible(true);

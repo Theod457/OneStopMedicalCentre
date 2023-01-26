@@ -240,16 +240,15 @@ public class DiseaseChecker extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EyePainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EyePainActionPerformed
-        // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_EyePainActionPerformed
 
     private void LimbPainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimbPainActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_LimbPainActionPerformed
 
     private void LimbNumbnessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimbNumbnessActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_LimbNumbnessActionPerformed
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed

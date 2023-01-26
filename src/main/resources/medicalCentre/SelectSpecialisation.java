@@ -245,7 +245,6 @@ public class SelectSpecialisation extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CardiologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CardiologistActionPerformed
-        // TODO add your handling code here:
         docSpec = "Cardiologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
@@ -254,7 +253,6 @@ public class SelectSpecialisation extends javax.swing.JFrame {
     }//GEN-LAST:event_CardiologistActionPerformed
 
     private void PulmonologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PulmonologistActionPerformed
-        // TODO add your handling code here:
         docSpec = "Pulmonologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
@@ -262,7 +260,6 @@ public class SelectSpecialisation extends javax.swing.JFrame {
     }//GEN-LAST:event_PulmonologistActionPerformed
 
     private void GastroenterologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GastroenterologistActionPerformed
-        // TODO add your handling code here:
         docSpec = "Gastroenterologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
@@ -270,7 +267,6 @@ public class SelectSpecialisation extends javax.swing.JFrame {
     }//GEN-LAST:event_GastroenterologistActionPerformed
 
     private void OphthalmologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OphthalmologistActionPerformed
-        // TODO add your handling code here:
         docSpec = "Ophthalmologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
@@ -279,21 +275,18 @@ public class SelectSpecialisation extends javax.swing.JFrame {
     }//GEN-LAST:event_OphthalmologistActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         AppointmentMainPage mp = new AppointmentMainPage();
         dispose();
         mp.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
         FrontPage fp = new FrontPage();
         dispose();
         fp.setVisible(true);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void NeurologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NeurologistActionPerformed
-        // TODO add your handling code here:
          docSpec = "Neurologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
@@ -301,7 +294,6 @@ public class SelectSpecialisation extends javax.swing.JFrame {
     }//GEN-LAST:event_NeurologistActionPerformed
 
     private void OtolaryngologistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OtolaryngologistActionPerformed
-        // TODO add your handling code here:
         docSpec = "Otolaryngologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
@@ -309,7 +301,6 @@ public class SelectSpecialisation extends javax.swing.JFrame {
     }//GEN-LAST:event_OtolaryngologistActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
         docSpec = "Cardiologist";
         SelectDoctor s = new SelectDoctor();
         dispose();
