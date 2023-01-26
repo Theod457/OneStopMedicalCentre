@@ -217,7 +217,7 @@ public class CancelAppointment extends javax.swing.JFrame {
                     "WinMyDowSQL119");
             Statement stmt = conn.createStatement();
             stmt.executeUpdate("delete from appointment where APPOINTMENT_ID=" + appID);
-            ImageIcon Icon_C = new ImageIcon (CancelAppointment.class.getResource("asset/cancel.png"));
+            ImageIcon Icon_C = new ImageIcon (CancelAppointment.class.getResource("/medicalCentre/asset/cancel.png"));
             JOptionPane.showMessageDialog(null, "YOUR APPOINTMENT IS CANCELLED", "CANCELLATION OF APPOINTMENT",
                     JOptionPane.INFORMATION_MESSAGE);
 

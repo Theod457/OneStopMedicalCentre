@@ -12,7 +12,8 @@ import javax.swing.JOptionPane;
  */
 public class EditAppointment extends javax.swing.JFrame {
     public static String date2;
-    public static int docID, userID;
+    public static int docID;
+    public static String userID;
 
     /**
      * Creates new form EditAppointment
@@ -27,7 +28,7 @@ public class EditAppointment extends javax.swing.JFrame {
             ResultSet appointmentTable = stmt.executeQuery("select * from appointment where APPOINTMENT_ID=" + ViewAppointments.appID);
             appointmentTable.next();
             docID = appointmentTable.getInt("DOCTOR_ID");
-            userID = appointmentTable.getInt("USER_ID");
+            userID = appointmentTable.getString("USER_ID");
             dat_of_appo.setText(String.valueOf(appointmentTable.getDate("APPOINTMENT_DATE")));
             
             ResultSet rd = stmt.executeQuery("select * from doctor where DOCTOR_ID=" + docID);

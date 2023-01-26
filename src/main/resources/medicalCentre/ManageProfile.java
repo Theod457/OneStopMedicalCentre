@@ -80,6 +80,7 @@ public class ManageProfile extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.gray);
+        setPreferredSize(new java.awt.Dimension(1550, 825));
         getContentPane().setLayout(null);
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));

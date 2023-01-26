@@ -292,7 +292,7 @@ public class ConfirmAppointment extends javax.swing.JFrame {
     //reminder
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:  ClassNameHere.infoBox("YOUR APPOINTMENT IS CONFIRMED", "REMINDER");
-        ImageIcon icon = new ImageIcon(ConfirmAppointment.class.getResource("asset/calendar.png"));
+        ImageIcon icon = new ImageIcon(ConfirmAppointment.class.getResource("/medicalCentre/asset/calendar.png"));
 
         int result = JOptionPane.showConfirmDialog(null, "Would you like to schedule a notification",
                 "Appointment Notification",
@@ -309,7 +309,7 @@ public class ConfirmAppointment extends javax.swing.JFrame {
                 userChoice = (String) JOptionPane.showInputDialog("Enter your notification period");
             }
 
-            ImageIcon icon_R = new ImageIcon(ConfirmAppointment.class.getResource("asset/reminder.png"));
+            ImageIcon icon_R = new ImageIcon(ConfirmAppointment.class.getResource("/medicalCentre/asset/reminder.png"));
             JOptionPane.showMessageDialog(null, "You will receive notification " + userChoice,
                     "Notification set", JOptionPane.INFORMATION_MESSAGE, icon_R);
         }

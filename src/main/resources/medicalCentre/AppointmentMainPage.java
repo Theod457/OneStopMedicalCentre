@@ -50,7 +50,6 @@ public class AppointmentMainPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1550, 825));
-        setPreferredSize(new java.awt.Dimension(1550, 825));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, -1, -1));
 
@@ -105,38 +104,38 @@ public class AppointmentMainPage extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel4.setText("Healthcare with a Heart : Our founder, Sri Mata ");
         jPanel4.add(jLabel4);
-        jLabel4.setBounds(960, 240, 411, 27);
+        jLabel4.setBounds(960, 240, 470, 27);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel8.setText("Amritananadamayi Devi (known as AMMA), envisioned ");
         jPanel4.add(jLabel8);
-        jLabel8.setBounds(960, 270, 482, 27);
+        jLabel8.setBounds(960, 270, 500, 27);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel10.setText("creating a not-for-profit top hospital in Kerala, India ");
         jPanel4.add(jLabel10);
-        jLabel10.setBounds(960, 300, 459, 27);
+        jLabel10.setBounds(960, 300, 500, 27);
 
         jLabel5.setBackground(new java.awt.Color(51, 204, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel5.setText("where the poor could have access to advanced medical   ");
         jPanel4.add(jLabel5);
-        jLabel5.setBounds(960, 330, 493, 27);
+        jLabel5.setBounds(960, 330, 510, 27);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel11.setText("care in an atmosphere of love and compassion. Amrita ");
         jPanel4.add(jLabel11);
-        jLabel11.setBounds(960, 360, 477, 27);
+        jLabel11.setBounds(960, 360, 520, 27);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel9.setText("Institute of Medical Sciences is now a world-class");
         jPanel4.add(jLabel9);
-        jLabel9.setBounds(960, 390, 424, 27);
+        jLabel9.setBounds(960, 390, 470, 27);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel6.setText("institution of medicine, academics, and research.");
         jPanel4.add(jLabel6);
-        jLabel6.setBounds(960, 420, 418, 27);
+        jLabel6.setBounds(960, 420, 470, 27);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/medicalCentre/asset/amma.jpg"))); // NOI18N
         jPanel4.add(jLabel3);
